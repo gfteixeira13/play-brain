@@ -69,7 +69,7 @@ public class responder : MonoBehaviour
     public void clique(string alternativa)
     {
 
-        if (alternativa == "A") //alternativa clicadao = A
+        if (alternativa == "A") //alternativa clicada = A
         {
             if (txt1 == false) //textx1 está vazio
             {
@@ -84,8 +84,8 @@ public class responder : MonoBehaviour
 
 
                 }
-               if (alternativaA[idFase] == corretaN2[idFase]) //alternativaA é igual ao segundo número escondido, sendo assim a posição está incorreta
-                {
+               if (alternativaA[idFase] == corretaN2[idFase]) //alternativaA é igual ao segundo número escondido, 
+                {                                             //sendo assim a posição está incorreta
 
 
                     posicaoE = true; //posição errada recebe true
