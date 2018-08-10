@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
-
+// texera
 public class responder : MonoBehaviour
 {
     public GameObject btnAvancar;
