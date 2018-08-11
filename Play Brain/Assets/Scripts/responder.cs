@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System;
-
+using System; // ribollí
+// texera
 public class responder : MonoBehaviour
 {
     public GameObject btnAvancar;
@@ -18,7 +18,7 @@ public class responder : MonoBehaviour
     public Text txtFase;
     public Text textX1;
     public Text textX2;
-    //números escondidos que precisam ser adivinhados.
+    
 
    
     //alternativas 
@@ -46,7 +46,7 @@ public class responder : MonoBehaviour
         idFase = 0;
         txtFase.text = "Fase " + (idFase+1);
 
-       btnAvancar.SetActive(false);
+       btnAvancar.SetActive(false); //button avançar invísivel
 
         correta1 = false;
         correta2 = false;
@@ -69,7 +69,7 @@ public class responder : MonoBehaviour
     public void clique(string alternativa)
     {
 
-        if (alternativa == "A") //alternativa clicadao = A
+        if (alternativa == "A") //alternativa clicada = A
         {
             if (txt1 == false) //textx1 está vazio
             {
@@ -84,8 +84,8 @@ public class responder : MonoBehaviour
 
 
                 }
-               if (alternativaA[idFase] == corretaN2[idFase]) //alternativaA é igual ao segundo número escondido, sendo assim a posição está incorreta
-                {
+               if (alternativaA[idFase] == corretaN2[idFase]) //alternativaA é igual ao segundo número escondido, 
+                {                                             //sendo assim a posição está incorreta
 
 
                     posicaoE = true; //posição errada recebe true
@@ -119,21 +119,22 @@ public class responder : MonoBehaviour
 
 
                 }
-                else if (alternativaA[idFase] == corretaN1[idFase])
+                else if (alternativaA[idFase] == corretaN1[idFase]) // Se alternativa A é igual ao n1
+               //posição errada recebe true
                 {
                     posicaoE = true;
                     infoResposta.text = "Meio certo";
 
                 }
 
-                else if (alternativaA[idFase] != corretaN2[idFase])
+                else if (alternativaA[idFase] != corretaN2[idFase]) //se alternativa A for diferente do segundo número a ser adivinhado
                 {
 
-                    if (correta1 == true)
+                    if (correta1 == true) // e se o usuário acertou o primeiro número
                     {
                         infoResposta.text = "Meio certo";
                     }
-                    else if (posicaoE == true)
+                    else if (posicaoE == true) // se o usuário acertar o número porém errar a posição
                     {
                         infoResposta.text = "Meio certo";
                     }
@@ -146,6 +147,7 @@ public class responder : MonoBehaviour
         }/////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////
+        //OS MESMO COMENTÁRIOS SE APLICAM AS OUTRAS ALTERNATIVAS
         else if (alternativa == "B")
         {
             if (txt1 == false)
