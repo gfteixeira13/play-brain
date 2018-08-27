@@ -10,6 +10,7 @@ public class responder : MonoBehaviour
 {
 	public GameObject btnReiniciar;
     public GameObject btnAvancar;
+    
     public GameObject btn0;
     public GameObject btn1;
     public GameObject btn2;
@@ -20,12 +21,14 @@ public class responder : MonoBehaviour
     public GameObject btn7;
     public GameObject btn8;
     public GameObject btn9;
+    public GameObject certo;
+    public GameObject meio;
+    
 
     public GameObject btnMenu;
 
     public TextMeshProUGUI txtFase;
-    public TextMeshProUGUI infoRespostaN1;
-    public TextMeshProUGUI infoRespostaN2;
+    
 
     public TextMeshProUGUI textX1;
     public TextMeshProUGUI textX2;
@@ -42,6 +45,7 @@ public class responder : MonoBehaviour
     ///////////   
     private int idFase;
 
+    private int c1, c2;
     private bool txt1; //serve para verificar se o textX1 está vazio
     private bool txt2; //serve para verificar se o textX2 está vazio;
     private bool correta1; //recebe true quando o usuário adivinhar o primeiro número escondido
@@ -50,19 +54,21 @@ public class responder : MonoBehaviour
     private bool posicaoE1; //recebe true quando o usuário acerta porém na posição errada
     private bool posicaoE2; //recebe true quando o usuário acerta porém na posição errada
 
-   
+    private int tentativas;
 
     void Start()
     {
-        
-        idFase = 0;
+        tentativas = 0;
+        idFase = 0;      
         txtFase.text =""+(idFase+1);
+        
 
         btnAvancar.SetActive(false);
-
         btnReiniciar.SetActive(false);
-
         btnMenu.SetActive(false);
+        certo.SetActive(false);
+        meio.SetActive(false);
+
 
         btn0.SetActive(false);
         btn1.SetActive(false);
@@ -84,7 +90,7 @@ public class responder : MonoBehaviour
 
         
 
-        
+      
         if (alternativaA[idFase] == "0")
         {
             btn0.transform.localPosition = new Vector3(-90, -21, 0);
@@ -408,8 +414,16 @@ public class responder : MonoBehaviour
         }///////////////////////////////////////////////////////////////
         else if (txt2 == false) //segundo número clicado
         {
-          
-            if(numero == alternativaA[idFase])
+            tentativas = tentativas + 1;
+            if(tentativas == 5)
+            {
+                //Você atingiu o limite de tentativas.
+                btnMenu.SetActive(true);
+                btnAvancar.SetActive(false);
+                btnReiniciar.SetActive(false);
+
+            }
+           else if(numero == alternativaA[idFase])
             {
                 textX2.text = alternativaA[idFase];
                 txt2 = true;
@@ -419,8 +433,8 @@ public class responder : MonoBehaviour
 
                     if(correta1 == true) //acertou o primeiro número
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Cheia";
+                        //infoRespostaN1.text = "Bolinha Cheia";
+                        //infoRespostaN2.text = "Bolinha Cheia";
                         if (idFase == 4)
                         {
                             btnMenu.SetActive(true);
@@ -435,14 +449,14 @@ public class responder : MonoBehaviour
                     }
                     else if(posicaoE1 == true) //errou a posição do primeiro clique
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha cheia";
+                        meio.SetActive(true);
+                        certo.SetActive(true); 
                         btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == false)
                     {
-                        infoRespostaN1.text = "Bolinha Vazia";
-                        infoRespostaN2.text = "Bolinha Cheia";
+                        certo.SetActive(true);
+                      
                          btnReiniciar.SetActive(true);
                     }
                 }
@@ -452,20 +466,24 @@ public class responder : MonoBehaviour
                     
                     if(posicaoE1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha Metade";
+                        meio.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Metade";
+                        //infoRespostaN2.text = "Bolinha Metade";
                          btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == false)
                     {
-                        infoRespostaN1.text = "Bolinha Vazia";
-                        infoRespostaN2.text = "Bolinha Metade";
+                        meio.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Vazia";
+                       // infoRespostaN2.text = "Bolinha Metade";
                          btnReiniciar.SetActive(true);
                     }
                     else if(correta1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Metade";
+                        certo.SetActive(true);
+                        meio.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Cheia";
+                        //infoRespostaN2.text = "Bolinha Metade";
                          btnReiniciar.SetActive(true);
                     }
 
@@ -474,20 +492,22 @@ public class responder : MonoBehaviour
                 {
                     if (correta1 == false)
                     {
-                        infoRespostaN1.text = "Bolinha Vazia";
-                        infoRespostaN2.text = "Bolinha Vazia";
+                       // infoRespostaN1.text = "Bolinha Vazia";
+                       // infoRespostaN2.text = "Bolinha Vazia";
                          btnReiniciar.SetActive(true);
                     }
                     if (posicaoE1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha Vazia";
+                        meio.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Metade";
+                       // infoRespostaN2.text = "Bolinha Vazia";
                          btnReiniciar.SetActive(true);
                     }
                     else if(correta1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Vazia";
+                        certo.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Cheia";
+                       // infoRespostaN2.text = "Bolinha Vazia";
                          btnReiniciar.SetActive(true);
                     }
                     
@@ -506,8 +526,8 @@ public class responder : MonoBehaviour
 
                     if (correta1 == true) //acertou o primeiro número
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Cheia";
+                       // infoRespostaN1.text = "Bolinha Cheia";
+                       // infoRespostaN2.text = "Bolinha Cheia";
                         if (idFase == 4)
                         {
                             btnMenu.SetActive(true);
@@ -522,14 +542,17 @@ public class responder : MonoBehaviour
                     }
                     else if (posicaoE1 == true) //errou a posição do primeiro clique
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha cheia";
+                        certo.SetActive(true);
+                        meio.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Metade";
+                       // infoRespostaN2.text = "Bolinha cheia";
                          btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == false)
                     {
-                        infoRespostaN1.text = "Bolinha Vazia";
-                        infoRespostaN2.text = "Bolinha Cheia";
+                        certo.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Vazia";
+                       // infoRespostaN2.text = "Bolinha Cheia";
                          btnReiniciar.SetActive(true);
                     }
                 }
@@ -539,41 +562,47 @@ public class responder : MonoBehaviour
 
                     if (posicaoE1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha Metade";
+                        meio.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Metade";
+                       // infoRespostaN2.text = "Bolinha Metade";
                          btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == false)
                     {
-                        infoRespostaN1.text = "Bolinha Vazia";
-                        infoRespostaN2.text = "Bolinha Metade";
-                         btnReiniciar.SetActive(true);
+                        meio.SetActive(true);
+                        // infoRespostaN1.text = "Bolinha Vazia";
+                        // infoRespostaN2.text = "Bolinha Metade";
+                        btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Metade";
-                         btnReiniciar.SetActive(true);
+                        certo.SetActive(true);
+                        meio.SetActive(true);
+                        // infoRespostaN1.text = "Bolinha Cheia";
+                        //infoRespostaN2.text = "Bolinha Metade";
+                        btnReiniciar.SetActive(true);
                     }
                 }
                 else if (alternativaB[idFase] != corretaN2[idFase] && alternativaB[idFase] != corretaN1[idFase])
                 {
                     if (correta1 == false)
                     {
-                        infoRespostaN1.text = "Bolinha Vazia";
-                        infoRespostaN2.text = "Bolinha Vazia";
+                       // infoRespostaN1.text = "Bolinha Vazia";
+                        //infoRespostaN2.text = "Bolinha Vazia";
                          btnReiniciar.SetActive(true);
                     }
                     if (posicaoE1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha Vazia";
-                         btnReiniciar.SetActive(true);
+                        meio.SetActive(true);
+                        //infoRespostaN1.text = "Bolinha Metade";
+                        // infoRespostaN2.text = "Bolinha Vazia";
+                        btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Vazia";
+                        certo.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Cheia";
+                       // infoRespostaN2.text = "Bolinha Vazia";
                          btnReiniciar.SetActive(true);
                     }
 
@@ -589,8 +618,8 @@ public class responder : MonoBehaviour
 
                     if (correta1 == true) //acertou o primeiro número
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Cheia";
+                       // infoRespostaN1.text = "Bolinha Cheia";
+                        //infoRespostaN2.text = "Bolinha Cheia";
                         if (idFase == 4)
                         {
                             btnMenu.SetActive(true);
@@ -605,14 +634,17 @@ public class responder : MonoBehaviour
                     }
                     else if (posicaoE1 == true) //errou a posição do primeiro clique
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha cheia";
-                         btnReiniciar.SetActive(true);
+                        certo.SetActive(true);
+                        meio.SetActive(true);
+                        // infoRespostaN1.text = "Bolinha Metade";
+                        // infoRespostaN2.text = "Bolinha cheia";
+                        btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == false)
                     {
-                        infoRespostaN1.text = "Bolinha Vazia";
-                        infoRespostaN2.text = "Bolinha Cheia";
+                        certo.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Vazia";
+                       // infoRespostaN2.text = "Bolinha Cheia";
                          btnReiniciar.SetActive(true);
                     }
                 }
@@ -622,42 +654,48 @@ public class responder : MonoBehaviour
 
                     if (posicaoE1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha Metade";
-                         btnReiniciar.SetActive(true);
+                        meio.SetActive(true);
+                        // infoRespostaN1.text = "Bolinha Metade";
+                        // infoRespostaN2.text = "Bolinha Metade";
+                        btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == false)
                     {
-                        infoRespostaN1.text = "BolinhaVazia";
-                        infoRespostaN2.text = "BolinhaMetade";
-                         btnReiniciar.SetActive(true);
+                        meio.SetActive(true);
+                        // infoRespostaN1.text = "BolinhaVazia";
+                        // infoRespostaN2.text = "BolinhaMetade";
+                        btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Metade";
-                         btnReiniciar.SetActive(true);
+                        certo.SetActive(true);
+                        meio.SetActive(true);
+                        // infoRespostaN1.text = "Bolinha Cheia";
+                        // infoRespostaN2.text = "Bolinha Metade";
+                        btnReiniciar.SetActive(true);
                     }
                 }
                 else if (alternativaC[idFase] != corretaN2[idFase] && alternativaC[idFase] != corretaN1[idFase])
                 {
                     if (correta1 == false)
                     {
-                        infoRespostaN1.text = "Bolinha Vazia";
-                        infoRespostaN2.text = "Bolinha Vazia";
+                       // infoRespostaN1.text = "Bolinha Vazia";
+                       // infoRespostaN2.text = "Bolinha Vazia";
                          btnReiniciar.SetActive(true);
                     }
                     if (posicaoE1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha Vazia";
+                        meio.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Metade";
+                       // infoRespostaN2.text = "Bolinha Vazia";
                          btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Vazia";
-                         btnReiniciar.SetActive(true);
+                        certo.SetActive(true);
+                        //infoRespostaN1.text = "Bolinha Cheia";
+                        //infoRespostaN2.text = "Bolinha Vazia";
+                        btnReiniciar.SetActive(true);
                     }
 
                 }
@@ -672,8 +710,8 @@ public class responder : MonoBehaviour
 
                     if (correta1 == true) //acertou o primeiro número
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Cheia";
+                       // infoRespostaN1.text = "Bolinha Cheia";
+                        //infoRespostaN2.text = "Bolinha Cheia";
                         if (idFase == 4)
                         {
                             btnMenu.SetActive(true);
@@ -687,14 +725,17 @@ public class responder : MonoBehaviour
                     }
                     else if (posicaoE1 == true) //errou a posição do primeiro clique
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha cheia";
-                         btnReiniciar.SetActive(true);
+                        certo.SetActive(true);
+                        meio.SetActive(true);
+                        // infoRespostaN1.text = "Bolinha Metade";
+                        // infoRespostaN2.text = "Bolinha cheia";
+                        btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == false)
                     {
-                        infoRespostaN1.text = "Bolinha Vazia";
-                        infoRespostaN2.text = "Bolinha Cheia";
+                        certo.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Vazia";
+                        //infoRespostaN2.text = "Bolinha Cheia";
                          btnReiniciar.SetActive(true);
                     }
 
@@ -705,41 +746,47 @@ public class responder : MonoBehaviour
 
                     if (posicaoE1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha Metade";
-                         btnReiniciar.SetActive(true);
+                        meio.SetActive(true);
+                        // infoRespostaN1.text = "Bolinha Metade";
+                        // infoRespostaN2.text = "Bolinha Metade";
+                        btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == false)
                     {
-                        infoRespostaN1.text = "Bolinha Vazia";
-                        infoRespostaN2.text = "Bolinha Metade";
-                         btnReiniciar.SetActive(true);
+                        meio.SetActive(true);
+                        //infoRespostaN1.text = "Bolinha Vazia";
+                        //infoRespostaN2.text = "Bolinha Metade";
+                        btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Metade";
-                         btnReiniciar.SetActive(true);
+                        certo.SetActive(true);
+                        meio.SetActive(true);
+                        // infoRespostaN1.text = "Bolinha Cheia";
+                        // infoRespostaN2.text = "Bolinha Metade";
+                        btnReiniciar.SetActive(true);
                     }
                 }
                 else if (alternativaD[idFase] != corretaN2[idFase] && alternativaD[idFase] != corretaN1[idFase])
                 {
                     if (correta1 == false)
                     {
-                        infoRespostaN1.text = "Bolinha Vazia";
-                        infoRespostaN2.text = "Bolinha Vazia";
+                       // infoRespostaN1.text = "Bolinha Vazia";
+                        //infoRespostaN2.text = "Bolinha Vazia";
                          btnReiniciar.SetActive(true);
                     }
                     if(posicaoE1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Metade";
-                        infoRespostaN2.text = "Bolinha Vazia";
-                         btnReiniciar.SetActive(true);
+                        meio.SetActive(true);
+                        // infoRespostaN1.text = "Bolinha Metade";
+                        // infoRespostaN2.text = "Bolinha Vazia";
+                        btnReiniciar.SetActive(true);
                     }
                     else if (correta1 == true)
                     {
-                        infoRespostaN1.text = "Bolinha Cheia";
-                        infoRespostaN2.text = "Bolinha Vazia";
+                        certo.SetActive(true);
+                       // infoRespostaN1.text = "Bolinha Cheia";
+                       // infoRespostaN2.text = "Bolinha Vazia";
                          btnReiniciar.SetActive(true);
                     }
 
@@ -757,7 +804,8 @@ public class responder : MonoBehaviour
 
     public void proximaFase()
         {
-
+        certo.SetActive(false);
+        meio.SetActive(false);
         btnMenu.SetActive(false);
         btnAvancar.SetActive(false);
         idFase++;
@@ -1029,15 +1077,16 @@ public class responder : MonoBehaviour
 
         textX1.text = " ";
         textX2.text = " ";
-        infoRespostaN1.text = " ";
-        infoRespostaN2.text = " ";
+       // infoRespostaN1.text = " ";
+       // infoRespostaN2.text = " ";
 
     }
     
     public void reiniciar()
     {
-        
 
+        certo.SetActive(false);
+        meio.SetActive(false);
         correta1 = false;
         correta2 = false;
 
@@ -1304,8 +1353,8 @@ public class responder : MonoBehaviour
 
         textX1.text = " ";
         textX2.text = " ";
-        infoRespostaN1.text = " ";
-        infoRespostaN2.text = " ";
+       // infoRespostaN1.text = " ";
+       // infoRespostaN2.text = " ";
     }
 
     
