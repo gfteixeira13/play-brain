@@ -25,7 +25,7 @@ public class responder : MonoBehaviour
     public GameObject meio;
     
 
-    public GameObject btnMenu;
+   
 
     public TextMeshProUGUI txtFase;
     
@@ -65,7 +65,6 @@ public class responder : MonoBehaviour
 
         btnAvancar.SetActive(false);
         btnReiniciar.SetActive(false);
-        btnMenu.SetActive(false);
         certo.SetActive(false);
         meio.SetActive(false);
 
@@ -418,7 +417,7 @@ public class responder : MonoBehaviour
             if(tentativas == 5)
             {
                 //Você atingiu o limite de tentativas.
-                btnMenu.SetActive(true);
+
                 btnAvancar.SetActive(false);
                 btnReiniciar.SetActive(false);
 
@@ -434,16 +433,10 @@ public class responder : MonoBehaviour
                     if(correta1 == true) //acertou o primeiro número
                     {
                         //infoRespostaN1.text = "Bolinha Cheia";
-                        //infoRespostaN2.text = "Bolinha Cheia";
-                        if (idFase == 4)
-                        {
-                            btnMenu.SetActive(true);
-                            btnAvancar.SetActive(false);
-                        }
-                        else
-                        {
+                       
+                      
                             btnAvancar.SetActive(true);
-                        }
+                       
                         btnReiniciar.SetActive(false);
                        
                     }
@@ -527,16 +520,12 @@ public class responder : MonoBehaviour
                     if (correta1 == true) //acertou o primeiro número
                     {
                        // infoRespostaN1.text = "Bolinha Cheia";
-                       // infoRespostaN2.text = "Bolinha Cheia";
-                        if (idFase == 4)
-                        {
-                            btnMenu.SetActive(true);
-                            btnAvancar.SetActive(false);
-                        }
-                        else
-                        {
+                     
+                        
+                       
+                        
                             btnAvancar.SetActive(true);
-                        }
+                       
                         btnReiniciar.SetActive(false);
                        
                     }
@@ -620,15 +609,9 @@ public class responder : MonoBehaviour
                     {
                        // infoRespostaN1.text = "Bolinha Cheia";
                         //infoRespostaN2.text = "Bolinha Cheia";
-                        if (idFase == 4)
-                        {
-                            btnMenu.SetActive(true);
-                            btnAvancar.SetActive(false);
-                        }
-                        else
-                        {
+                       
                             btnAvancar.SetActive(true);
-                        }
+                        
                         btnReiniciar.SetActive(false);
                         
                     }
@@ -710,17 +693,11 @@ public class responder : MonoBehaviour
 
                     if (correta1 == true) //acertou o primeiro número
                     {
-                       // infoRespostaN1.text = "Bolinha Cheia";
-                        //infoRespostaN2.text = "Bolinha Cheia";
-                        if (idFase == 4)
-                        {
-                            btnMenu.SetActive(true);
+                      
+                           
                             btnAvancar.SetActive(false);
-                        }
-                        else
-                        {
-                            btnAvancar.SetActive(true);
-                        }
+                       
+                       
                         btnReiniciar.SetActive(false);
                     }
                     else if (posicaoE1 == true) //errou a posição do primeiro clique
@@ -806,7 +783,7 @@ public class responder : MonoBehaviour
         {
         certo.SetActive(false);
         meio.SetActive(false);
-        btnMenu.SetActive(false);
+        
         btnAvancar.SetActive(false);
         idFase++;
         txtFase.text = "" + (idFase + 1);
