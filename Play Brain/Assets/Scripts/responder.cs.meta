@@ -1,9 +1,28 @@
 fileFormatVersion: 2
 guid: e2026ff3c1c019f4a921d08e3e852d0f
+timeCreated: 1538604781
+licenseType: Free
 MonoImporter:
-  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - btnConfirmar: {instanceID: 0}
+  - btnAvancar: {instanceID: 0}
+  - btn0: {instanceID: 0}
+  - btn1: {instanceID: 0}
+  - btn2: {instanceID: 0}
+  - btn3: {instanceID: 0}
+  - btn4: {instanceID: 0}
+  - btn5: {instanceID: 0}
+  - btn6: {instanceID: 0}
+  - btn7: {instanceID: 0}
+  - btn8: {instanceID: 0}
+  - btn9: {instanceID: 0}
+  - certo: {instanceID: 0}
+  - meio: {instanceID: 0}
+  - txtFase: {instanceID: 0}
+  - tentativas: {instanceID: 0}
+  - textX1: {instanceID: 0}
+  - textX2: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -25,6 +25,8 @@ public class responder : MonoBehaviour
     public GameObject certo; //Símbolo de certo
     public GameObject meio; //Símbolo de Meio certo
 
+    
+
 
 
 
