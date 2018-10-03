@@ -61,9 +61,9 @@ public class responder : MonoBehaviour
 
     void Start() 
     {
-        ttentativas = 0; //nenhuma tentativa ainda
+        ttentativas = 5; //nenhuma tentativa ainda
         idFase = 0;
-       
+        tentativas.text = ""+ttentativas;
         txtFase.text = " " + (idFase+1); //mostra fase 1 na tela
         btnAvancar.SetActive(false); 
         certo.SetActive(false);
@@ -564,7 +564,7 @@ public class responder : MonoBehaviour
 
         btnConfirmar.SetActive(false);
 
-            ttentativas = ttentativas + 1;
+            ttentativas = ttentativas - 1;
             tentativas.text = "" + ttentativas;
 
             txt1 = false;
@@ -594,12 +594,16 @@ public class responder : MonoBehaviour
         else if(posicaoE1==true && correta2==false && correta1==false && posicaoE2==false)
         {
             meio.SetActive(true);
+            meio.transform.localPosition = new Vector3(-247, -457, 0);
+
         }
         else if(posicaoE1==true && posicaoE2 == true && correta1==false && correta2==false)
         {
             meio.SetActive(true);
+            meio.transform.localPosition = new Vector3(-247, -457, 0);
+
         }
-       else if(correta1==false && correta2==true && posicaoE1==false && posicaoE2==false)
+        else if(correta1==false && correta2==true && posicaoE1==false && posicaoE2==false)
         {
             certo.SetActive(true);
             meio.SetActive(false);
@@ -624,7 +628,7 @@ public class responder : MonoBehaviour
         btnConfirmar.SetActive(false);
         certo.SetActive(false);
         meio.SetActive(false);
-        ttentativas = 0;
+        ttentativas = 5;
         tentativas.text = "";
         btnAvancar.SetActive(false);
         idFase++;
