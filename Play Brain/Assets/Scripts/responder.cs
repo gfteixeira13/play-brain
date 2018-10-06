@@ -591,7 +591,6 @@ public class responder : MonoBehaviour
             else if(correta1==true && correta2 == false && posicaoE2==false && posicaoE1==false) //bolinha cheia e Bolinha vazia
             {
                 certo.SetActive(true);
-                resultado[ttentativas] = "certo";
                 meio.SetActive(false);
                 
             }
@@ -600,14 +599,12 @@ public class responder : MonoBehaviour
                 meio.transform.localPosition = new Vector3(-247, -457, 0);
 
                 meio.SetActive(true);
-                resultado[ttentativas] = "meio";
 
                 certo.SetActive(false);
             }
             else if(posicaoE1==true && correta2==false && correta1==false && posicaoE2==false)
             {
                 meio.SetActive(true);
-                resultado[ttentativas] = "meio";
 
                 meio.transform.localPosition = new Vector3(-247, -457, 0);
 
@@ -615,7 +612,6 @@ public class responder : MonoBehaviour
             else if(posicaoE1==true && posicaoE2 == true && correta1==false && correta2==false)
             {
                 meio.SetActive(true);
-                resultado[ttentativas] = "meio";
 
                 meio.transform.localPosition = new Vector3(-247, -457, 0);
 
@@ -623,7 +619,6 @@ public class responder : MonoBehaviour
             else if(correta1==false && correta2==true && posicaoE1==false && posicaoE2==false)
             {
                 certo.SetActive(true);
-                resultado[ttentativas] = "certo";
 
                 meio.SetActive(false);
             }
@@ -637,7 +632,6 @@ public class responder : MonoBehaviour
                 meio.transform.localPosition = new Vector3(-247, -457, 0);
                 
                meio.SetActive(true);
-                resultado[ttentativas] = "meio";
                 certo.SetActive(false);
             }
         }
@@ -656,8 +650,8 @@ public class responder : MonoBehaviour
     }
     public void proximaSubFase()
         {
-        clique1txt.text = "";
-        clique2txt.text = "";
+        clique1txt.text = " ";
+        clique2txt.text = " ";
         btnConfirmar.SetActive(false);
         certo.SetActive(false);
         meio.SetActive(false);
