@@ -25,8 +25,6 @@ public class responder : MonoBehaviour
     public GameObject certo; //Símbolo de certo
     public GameObject meio; //Símbolo de Meio certo
 
-    
-
 
 
 
@@ -34,6 +32,9 @@ public class responder : MonoBehaviour
     public TextMeshProUGUI tentativas;
     public TextMeshProUGUI textX1; //Objeto de Texto (Simboliza uma textBox1)
     public TextMeshProUGUI textX2; //Objeto de Texto(Simboliza uma textBox2)
+    public TextMeshProUGUI clique1txt;
+    public TextMeshProUGUI clique2txt;
+    
 
 
 
@@ -59,11 +60,14 @@ public class responder : MonoBehaviour
     public bool posicaoE2;
 
 
-    private int ttentativas;
+    public int ttentativas;
+    public string[] clique1; //o parâmetro receberá o número da tentativa
+    public string[] clique2; // ||
+    public string[] resultado;
 
     void Start() 
     {
-        ttentativas = 5; //nenhuma tentativa ainda
+        ttentativas = 0; //nenhuma tentativa ainda
         idFase = 0;
         tentativas.text = ""+ttentativas;
         txtFase.text = " " + (idFase+1); //mostra fase 1 na tela
@@ -89,7 +93,7 @@ public class responder : MonoBehaviour
 
 
 
-        //Abaixo os botçoes são alocados em suas devidas posições:
+        //Abaixo os botões são alocados em suas devidas posições:
 
 ////Alternativa A -------------------------------Alternativa A----------------Alternativa A-----------------
         if (alternativaA[idFase] == "0")
@@ -352,23 +356,27 @@ public class responder : MonoBehaviour
     {
         if (txt1 == false) //primeiro número clicado
         {
+            clique1[ttentativas] = numero;
+
+
             if (numero == alternativaA[idFase]) //Compara se o numero clicado foi igual ao número da alternativaA[fase X] 
             {
-                textX1.text = alternativaA[idFase]; //textX1 recebe o número do button que foi clicado - nesse cado o nº da alternativa A
+                textX1.text = alternativaA[idFase]; //textX1 recebe o número do button que foi clicado - nesse caso o nº da alternativa A
                 txt1 = true; //agora o textx1 tem algo, então o txt1 recebe true;
                 if (alternativaA[idFase] == corretaN1[idFase]) //se a alternativa A for igual ao número1 escondido
                 {
                     correta1 = true; //assim o usuário acertou o primeiro número
-                    posicaoE1 = false;
+                    posicaoE1 = false; //Ele acertou, logo a posição está correta
                 }
                 else if (alternativaA[idFase] == corretaN2[idFase]) //se a alternativa A for igual ao segundo número escondido
                 {
                     posicaoE1 = true;  //posição errada recebe verdadeiro.
-                    correta1 = false;
+                    correta1 = false; 
                 }
                 else if ((alternativaA[idFase] != corretaN1[idFase]) && (alternativaA[idFase] != corretaN2[idFase]))
                 {
-                    correta1 = false;
+                    //errou por completo o primeiro número
+                    correta1 = false; 
                     posicaoE1 = false;
                 }
             }                            
@@ -442,9 +450,8 @@ public class responder : MonoBehaviour
         }///////////////////////////////////////////////////////////////
         else if (txt2 == false) //segundo número clicado
         {
-        
 
-
+            clique2[ttentativas] = numero;
         if (numero == alternativaA[idFase])
         {
             textX2.text = alternativaA[idFase];
@@ -564,73 +571,97 @@ public class responder : MonoBehaviour
     public void confirmarTentativa()
     {
 
-        btnConfirmar.SetActive(false);
-
-            ttentativas = ttentativas - 1;
-            tentativas.text = "" + ttentativas;
-
-            txt1 = false;
-            txt2 = false;
-            textX1.text = " ";
-            textX2.text = " ";
-
-        if(correta1==true && correta2 == true) //Bolinha cheia e bolinha Cheia
-        {
-            btnAvancar.SetActive(true);
-            certo.SetActive(false);
-            meio.SetActive(false);
             btnConfirmar.SetActive(false);
-        }
-        else if(correta1==true && correta2 == false && posicaoE2==false && posicaoE1==false) //bolinha cheia e Bolinha vazia
-        {
-            certo.SetActive(true);
-            meio.SetActive(false);
-        }
-        else if((correta1==true && posicaoE2 == true) || (posicaoE1==true && correta2==true))
-        {
-            meio.transform.localPosition = new Vector3(-247, -457, 0);
 
-            meio.SetActive(true);
-            certo.SetActive(false);
-        }
-        else if(posicaoE1==true && correta2==false && correta1==false && posicaoE2==false)
+           
+        if(ttentativas == 5)
         {
-            meio.SetActive(true);
-            meio.transform.localPosition = new Vector3(-247, -457, 0);
+            //Stop the GAME
+            throw new Exception("Número máximo de tentativas atingido");
+        }
+        else { 
 
-        }
-        else if(posicaoE1==true && posicaoE2 == true && correta1==false && correta2==false)
-        {
-            meio.SetActive(true);
-            meio.transform.localPosition = new Vector3(-247, -457, 0);
+            if(correta1==true && correta2 == true) //Bolinha cheia e bolinha Cheia
+            {
+                btnAvancar.SetActive(true);
+                certo.SetActive(false);
+                meio.SetActive(false);
+                btnConfirmar.SetActive(false);
+            }
+            else if(correta1==true && correta2 == false && posicaoE2==false && posicaoE1==false) //bolinha cheia e Bolinha vazia
+            {
+                certo.SetActive(true);
+                resultado[ttentativas] = "certo";
+                meio.SetActive(false);
+                
+            }
+            else if((correta1==true && posicaoE2 == true) || (posicaoE1==true && correta2==true))
+            {
+                meio.transform.localPosition = new Vector3(-247, -457, 0);
 
-        }
-        else if(correta1==false && correta2==true && posicaoE1==false && posicaoE2==false)
-        {
-            certo.SetActive(true);
-            meio.SetActive(false);
-        }
-        else if(correta1==false && correta2==false && posicaoE1==false && posicaoE2 == false)
-        {
-            certo.SetActive(false);
-            meio.SetActive(false);
-        }
-        else if(posicaoE2==true && posicaoE1==false && correta1==false && correta1 == false)
-        {
-            meio.transform.localPosition = new Vector3(-247, -457, 0);
+                meio.SetActive(true);
+                resultado[ttentativas] = "meio";
 
-            meio.SetActive(true);
-            certo.SetActive(false);
+                certo.SetActive(false);
+            }
+            else if(posicaoE1==true && correta2==false && correta1==false && posicaoE2==false)
+            {
+                meio.SetActive(true);
+                resultado[ttentativas] = "meio";
+
+                meio.transform.localPosition = new Vector3(-247, -457, 0);
+
+            }
+            else if(posicaoE1==true && posicaoE2 == true && correta1==false && correta2==false)
+            {
+                meio.SetActive(true);
+                resultado[ttentativas] = "meio";
+
+                meio.transform.localPosition = new Vector3(-247, -457, 0);
+
+            }
+            else if(correta1==false && correta2==true && posicaoE1==false && posicaoE2==false)
+            {
+                certo.SetActive(true);
+                resultado[ttentativas] = "certo";
+
+                meio.SetActive(false);
+            }
+            else if(correta1==false && correta2==false && posicaoE1==false && posicaoE2 == false)
+            {
+                certo.SetActive(false);
+                meio.SetActive(false);
+            }
+            else if(posicaoE2==true && posicaoE1==false && correta1==false && correta1 == false)
+            {
+                meio.transform.localPosition = new Vector3(-247, -457, 0);
+                
+               meio.SetActive(true);
+                resultado[ttentativas] = "meio";
+                certo.SetActive(false);
+            }
         }
+        clique1txt.text = clique1[ttentativas];
+        clique2txt.text = clique2[ttentativas];
+        ttentativas = ttentativas + 1;
+        tentativas.text = "" + ttentativas;
+
+        txt1 = false;
+        txt2 = false;
+        textX1.text = " ";
+        textX2.text = " ";
+
+       
 
     }
     public void proximaSubFase()
         {
-     
+        clique1txt.text = "";
+        clique2txt.text = "";
         btnConfirmar.SetActive(false);
         certo.SetActive(false);
         meio.SetActive(false);
-        ttentativas = 5;
+        ttentativas = 0;
         tentativas.text = "";
         btnAvancar.SetActive(false);
         idFase++;
