@@ -26,7 +26,7 @@ public class responder : MonoBehaviour
     public GameObject btn9;
     public GameObject certo; //Símbolo de certo
     public GameObject meio; //Símbolo de Meio certo
-    
+    public GameObject meio2;
 
 
 
@@ -38,10 +38,11 @@ public class responder : MonoBehaviour
     public TextMeshProUGUI clique1txt;
     public TextMeshProUGUI clique2txt;
     // Variaveis referente ao menu tentativa
+    public GameObject btnMenuT;
     public TextMeshProUGUI t1, t2, t3, t4, t5;
-    public GameObject C1, M1, C2, M2, C3, M3, C4, M4, C5, M5;
+    public GameObject C1, M1,M11, C2, M2, M22, C3, M3, M33, C4, M4, M44, C5, M5, M55;
     public TextMeshProUGUI cli1_1, cli2_1, cli1_2, cli2_2, cli1_3, cli2_3, cli1_4, cli2_4, cli1_5, cli2_5;
-
+    public string[] resultado;
 
 
 
@@ -69,8 +70,7 @@ public class responder : MonoBehaviour
     public int ttentativas;
     public string[] clique1; //o parâmetro receberá o número da tentativa
     public string[] clique2; // ||
-    // // // Váriaveis referente a tela de menu Tentativa
-    public string[] resultado;
+    
 
 
     void Start() 
@@ -82,6 +82,7 @@ public class responder : MonoBehaviour
         btnAvancar.SetActive(false); 
         certo.SetActive(false);
         meio.SetActive(false);
+        meio2.SetActive(false);
         btnConfirmar.SetActive(false);
         btn0.SetActive(false);
         btn1.SetActive(false);
@@ -93,6 +94,8 @@ public class responder : MonoBehaviour
         btn7.SetActive(false);
         btn8.SetActive(false);
         btn9.SetActive(false);
+
+        btnMenuT.SetActive(false);
         
         //Todos os botões estão invisiveis 
         txt1 = false;
@@ -127,7 +130,7 @@ public class responder : MonoBehaviour
 
         //Abaixo os botões são alocados em suas devidas posições:
 
-        ////Alternativa A -------------------------------Alternativa A----------------Alternativa A-----------------
+        //Alternativa A -------------------------------Alternativa A----------------Alternativa A-----------------//
         if (alternativaA[idFase] == "0")
         {
             btn0.transform.localPosition = new Vector3(-90, -21, 0);
@@ -386,6 +389,8 @@ public class responder : MonoBehaviour
 
     public void clique(string numero)
     {
+
+       
         if (txt1 == false) //primeiro número clicado
         {
             clique1[ttentativas] = numero;
@@ -411,7 +416,7 @@ public class responder : MonoBehaviour
                     correta1 = false; 
                     posicaoE1 = false;
                 }
-            }                            
+            }                //AS MESMAS COMPARAÇÕES SÃO FEITAS COM AS OUTRAS ALTERNATIVAS(B,C E D)            
 
             else if (numero == alternativaB[idFase])
             {
@@ -480,130 +485,126 @@ public class responder : MonoBehaviour
 
 
         }///////////////////////////////////////////////////////////////
+        
+      
         else if (txt2 == false) //segundo número clicado
         {
 
             clique2[ttentativas] = numero;
-        if (numero == alternativaA[idFase])
-        {
-            textX2.text = alternativaA[idFase];
-            txt2 = true;
-            btnConfirmar.SetActive(true);
-            if (alternativaA[idFase] == corretaN2[idFase]) 
+            if (numero == alternativaA[idFase])
             {
-                correta2 = true;
-                    posicaoE2 = false;
+                textX2.text = alternativaA[idFase];
+                txt2 = true;
+                btnConfirmar.SetActive(true);
+                if (alternativaA[idFase] == corretaN2[idFase]) 
+                {
+                        correta2 = true;
+                        posicaoE2 = false;
 
          
                
-            }
-            else if (alternativaA[idFase] == corretaN1[idFase])
+                }
+                else if (alternativaA[idFase] == corretaN1[idFase])
+                {
+                        posicaoE2 = true;
+                        correta2 = false;
+
+                }
+                else if (alternativaA[idFase] != corretaN2[idFase] && alternativaA[idFase] != corretaN1[idFase])
+                {
+                        correta2 = false;
+                        posicaoE2 = false;              
+                }
+
+            }//////////////////////////////////////////////////////////// -- ///////// -- ////// --//////////////////---- ///////////////////////////
+            else if (numero == alternativaB[idFase])
             {
-                posicaoE2 = true;
-                    correta2 = false;
-
-            }
-            else if (alternativaA[idFase] != corretaN2[idFase] && alternativaA[idFase] != corretaN1[idFase])
-            {
-                    correta2 = false;
-                    posicaoE2 = false;
-                
-
-               
-
-            }
-
-
-
-        }//////////////////////////////////////////////////////////// -- ///////// -- ////// --//////////////////---- ///////////////////////////
-        else if (numero == alternativaB[idFase])
-        {
-            textX2.text = alternativaB[idFase];
-            txt2 = true;
+                textX2.text = alternativaB[idFase];
+                txt2 = true;
                 btnConfirmar.SetActive(true);
 
-                if (alternativaB[idFase] == corretaN2[idFase]) //acertou o segundo número
-                {
-                correta2 = true;
-                posicaoE2 = false;
+                    if (alternativaB[idFase] == corretaN2[idFase]) //acertou o segundo número
+                    {
+                        correta2 = true;
+                        posicaoE2 = false;
             
-                }
-            else if (alternativaB[idFase] == corretaN1[idFase])
-            {
-                posicaoE2 = true;
+                    }
+                else if (alternativaB[idFase] == corretaN1[idFase])
+                {
+                    posicaoE2 = true;
                     correta2 = false;
 
                
-            }
-            else if (alternativaB[idFase] != corretaN2[idFase] && alternativaB[idFase] != corretaN1[idFase])
-            {
-                    correta2= false;
-                    posicaoE2 = false;
+                }
+                else if (alternativaB[idFase] != corretaN2[idFase] && alternativaB[idFase] != corretaN1[idFase])
+                {
+                        correta2= false;
+                        posicaoE2 = false;
 
-            }
-        }////////////////////////// ----- /////////////////////// ---- ///////////////////// ----- //////////////////////////////// ---- ///////////////////////////
-        else if (numero == alternativaC[idFase])
-        {
-            textX2.text = alternativaC[idFase];
-            txt2 = true;
+                }
+            }////////////////////////// ----- /////////////////////// ---- ///////////////////// ----- //////////////////////////////// ---- ///////////////////////////
+            else if (numero == alternativaC[idFase])
+            {
+                textX2.text = alternativaC[idFase];
+                txt2 = true;
                 btnConfirmar.SetActive(true);
 
                 if (alternativaC[idFase] == corretaN2[idFase]) //acertou o segundo número
                 {
-                correta2= true;
-                    posicaoE2 = false;
+                  correta2= true;
+                  posicaoE2 = false;
 
                 }
-            else if (alternativaC[idFase] == corretaN1[idFase])
-            {
-                posicaoE2= true;
+                else if (alternativaC[idFase] == corretaN1[idFase])
+                {
+                    posicaoE2= true;
                     correta2 = false;
 
                
-            }
-            else if (alternativaC[idFase] != corretaN2[idFase] && alternativaC[idFase] != corretaN1[idFase])
-            {
-                    correta2 = false;
-                    posicaoE2 = false;
+                }
+                else if (alternativaC[idFase] != corretaN2[idFase] && alternativaC[idFase] != corretaN1[idFase])
+                {
+                        correta2 = false;
+                        posicaoE2 = false;
 
-            }
-        }///////////////----------//////////////---------------/////////////--------------/////////////------------////////////----------/////////////
-        else if (numero == alternativaD[idFase])
-        {
-            textX2.text = alternativaD[idFase];
-            txt2 = true;
+                }
+            }///////////////----------//////////////---------------/////////////--------------/////////////------------////////////----------/////////////
+            else if (numero == alternativaD[idFase])
+            {
+                textX2.text = alternativaD[idFase];
+                txt2 = true;
                 btnConfirmar.SetActive(true);
 
                 if (alternativaD[idFase] == corretaN2[idFase]) //acertou o segundo número
                 {
-                correta2 = true;
+                    correta2 = true;
                     posicaoE2 = false;
                
 
                 }
-            else if (alternativaD[idFase] == corretaN1[idFase])
-            {
-                posicaoE2 = true;
+                else if (alternativaD[idFase] == corretaN1[idFase])
+                {
+                    posicaoE2 = true;
                     correta2 = false;
 
               
+                }
+                else if (alternativaD[idFase] != corretaN2[idFase] && alternativaD[idFase] != corretaN1[idFase])
+                {
+                        correta2 = false;
+                        posicaoE2 = false;
+
+                }
             }
-            else if (alternativaD[idFase] != corretaN2[idFase] && alternativaD[idFase] != corretaN1[idFase])
-            {
-                    correta2 = false;
-                    posicaoE2 = false;
 
-            }
-        }
-
-        }
-    }
+        } //Comparações referente ao segundo número clicado se encerram aqui
+    } //Aqui encerra a função clique
 
 
-    public void confirmarTentativa()
-    {
+    public void confirmarTentativa() //Esta Função é chamada quando o botão CONFIRMAR é clicado
+    {  //Nessa função os resultados são gerados baseados nas booleanas
 
-            btnConfirmar.SetActive(false);
+        btnConfirmar.SetActive(false);
 
            
         if(ttentativas == 5)
@@ -619,58 +620,69 @@ public class responder : MonoBehaviour
                 certo.SetActive(false);
                 meio.SetActive(false);
                 btnConfirmar.SetActive(false);
+                meio2.SetActive(false);
+
             }
             else if(correta1==true && correta2 == false && posicaoE2==false && posicaoE1==false) //bolinha cheia e Bolinha vazia
             {
                 certo.SetActive(true);
                 resultado[ttentativas] = "C";
+                certo.transform.localPosition = new Vector3(-164, -457, 0);
                 meio.SetActive(false);
-                
+                meio2.SetActive(false);
+
+
             }
             else if((correta1==true && posicaoE2 == true) || (posicaoE1==true && correta2==true))
             {
-                meio.transform.localPosition = new Vector3(-247, -457, 0);
-
+                meio.transform.localPosition = new Vector3(-164, -457, 0);
                 meio.SetActive(true);
                 resultado[ttentativas] = "M";
-
                 certo.SetActive(false);
+                meio2.SetActive(false);
+
             }
             else if(posicaoE1==true && correta2==false && correta1==false && posicaoE2==false)
             {
                 meio.SetActive(true);
                 resultado[ttentativas] = "M";
-
-                meio.transform.localPosition = new Vector3(-247, -457, 0);
+                meio.transform.localPosition = new Vector3(-164, -457, 0);
+                meio2.SetActive(false);
 
             }
             else if(posicaoE1==true && posicaoE2 == true && correta1==false && correta2==false)
             {
                 meio.SetActive(true);
-                resultado[ttentativas] = "M";
-
-                meio.transform.localPosition = new Vector3(-247, -457, 0);
+                meio2.SetActive(true);
+                resultado[ttentativas] = "MM";
+                meio.transform.localPosition = new Vector3(-164, -457, 0);
+                meio2.transform.localPosition = new Vector3(-248, -457, 0);
 
             }
             else if(correta1==false && correta2==true && posicaoE1==false && posicaoE2==false)
             {
                 certo.SetActive(true);
+                certo.transform.localPosition = new Vector3(-164, -457, 0);
                 resultado[ttentativas] = "C";
-
+                meio2.SetActive(false);
                 meio.SetActive(false);
             }
             else if(correta1==false && correta2==false && posicaoE1==false && posicaoE2 == false)
             {
                 certo.SetActive(false);
                 meio.SetActive(false);
+                meio2.SetActive(false);
+
             }
             else if(posicaoE2==true && posicaoE1==false && correta1==false && correta1 == false)
             {
-                meio.transform.localPosition = new Vector3(-247, -457, 0);
-                
-               meio.SetActive(true);
+                meio.transform.localPosition = new Vector3(-164, -457, 0);
+
+                meio.SetActive(true);
                 resultado[ttentativas] = "M";
                 certo.SetActive(false);
+                meio2.SetActive(false);
+
             }
         }
         clique1txt.text = clique1[ttentativas];
@@ -683,16 +695,24 @@ public class responder : MonoBehaviour
         textX1.text = " ";
         textX2.text = " ";
 
-       
+        if (ttentativas > 0)
+        {
+            btnMenuT.SetActive(true);
+        }
+
+
 
     }
     public void proximaSubFase()
-        {
+    {
+        
         clique1txt.text = " ";
         clique2txt.text = " ";
         btnConfirmar.SetActive(false);
         certo.SetActive(false);
         meio.SetActive(false);
+        meio2.SetActive(false);
+
         ttentativas = 0;
         tentativas.text = "";
         btnAvancar.SetActive(false);
@@ -726,15 +746,22 @@ public class responder : MonoBehaviour
         t5.text = "";
         C1.SetActive(false);
         M1.SetActive(false);
+        M11.SetActive(false);
         C2.SetActive(false);
         M2.SetActive(false);
+        M22.SetActive(false);
         C3.SetActive(false);
         M3.SetActive(false);
+        M33.SetActive(false);
         C4.SetActive(false);
         M4.SetActive(false);
+        M44.SetActive(false);
         C5.SetActive(false);
         M5.SetActive(false);
+        M55.SetActive(false);
 
+        //for para zerar os resultados:
+       
      
         
         if (alternativaA[idFase] == "0")
@@ -998,14 +1025,14 @@ public class responder : MonoBehaviour
     }
 
 
-    public void menuTentativa()
+    public void menuTentativa() //Função referente à "tela" de tentativas
     {
-        if(ttentativas != 0)
+        if (ttentativas != 0)
         {
             imgMenuT.SetActive(true);
 
             ///------------------/// ///------------------///  ///------------------///
-            if(ttentativas == 1)
+            if (ttentativas == 1)
             {
                 t1.text = "1";
                 cli1_1.text = clique1[0];
@@ -1015,13 +1042,25 @@ public class responder : MonoBehaviour
                 if (resultado[0] == "C")
                 {
                     C1.SetActive(true);
+                    C1.transform.localPosition = new Vector3(-96, 231, 0);
+
                     M1.SetActive(false);
                 }
                 if (resultado[0] == "M")
                 {
                     M1.SetActive(true);
+                    M1.transform.localPosition = new Vector3(-96, 231, 0);
+
                     C1.SetActive(false);
                 }
+                else if (resultado[0] == "MM")
+                {
+                    M1.SetActive(true);
+                    M11.SetActive(true);
+                    M1.transform.localPosition = new Vector3(-50, 231, 0);
+                    M11.transform.localPosition = new Vector3(-137, 231, 0);
+                }
+                ///------------------///
             }
             else if (ttentativas == 2)
             {
@@ -1038,24 +1077,48 @@ public class responder : MonoBehaviour
                 if (resultado[0] == "C")
                 {
                     C1.SetActive(true);
+                    C1.transform.localPosition = new Vector3(-96, 231, 0);
+                    M11.SetActive(false);
+
                     M1.SetActive(false);
                 }
                 if (resultado[0] == "M")
                 {
                     M1.SetActive(true);
+                    M1.transform.localPosition = new Vector3(-96, 231, 0);
+                    M11.SetActive(false);
                     C1.SetActive(false);
+                }
+                else if (resultado[0] == "MM")
+                {
+                    M1.SetActive(true);
+                    M11.SetActive(true);
+                    M1.transform.localPosition = new Vector3(-50, 231, 0);
+                    M11.transform.localPosition = new Vector3(-137, 231, 0);
                 }
                 ///------------------///
                 ///------------------///
                 if (resultado[1] == "C")
                 {
                     C2.SetActive(true);
+                    C2.transform.localPosition = new Vector3(-96, 127, 0);
+                    M22.SetActive(false);
+
                     M2.SetActive(false);
                 }
                 if (resultado[1] == "M")
                 {
                     M2.SetActive(true);
+                    M2.transform.localPosition = new Vector3(-96, 127, 0);
+                    M22.SetActive(false);
                     C2.SetActive(false);
+                }
+                else if (resultado[1] == "MM")
+                {
+                    M2.SetActive(true);
+                    M22.SetActive(true);
+                    M2.transform.localPosition = new Vector3(-50, 127, 0);
+                    M22.transform.localPosition = new Vector3(-137, 127, 0);
                 }
 
             }
@@ -1077,41 +1140,76 @@ public class responder : MonoBehaviour
                 if (resultado[0] == "C")
                 {
                     C1.SetActive(true);
+                    C1.transform.localPosition = new Vector3(-96, 231, 0);
+
                     M1.SetActive(false);
                 }
                 if (resultado[0] == "M")
                 {
                     M1.SetActive(true);
+                    M1.transform.localPosition = new Vector3(-96, 231, 0);
+
                     C1.SetActive(false);
+                }
+                else if (resultado[0] == "MM")
+                {
+                    M1.SetActive(true);
+                    M11.SetActive(true);
+                    M1.transform.localPosition = new Vector3(-50, 231, 0);
+                    M11.transform.localPosition = new Vector3(-137, 231, 0);
                 }
                 ///------------------///
                 ///------------------///
                 if (resultado[1] == "C")
                 {
                     C2.SetActive(true);
+                    C2.transform.localPosition = new Vector3(-96, 127, 0);
+                    M22.SetActive(false);
                     M2.SetActive(false);
                 }
                 if (resultado[1] == "M")
                 {
                     M2.SetActive(true);
+                    M2.transform.localPosition = new Vector3(-96, 127, 0);
+                    M22.SetActive(false);
+
                     C2.SetActive(false);
                 }
+                else if (resultado[1] == "MM")
+                {
+                    M2.SetActive(true);
+                    M22.SetActive(true);
+                    M2.transform.localPosition = new Vector3(-50, 127, 0);
+                    M22.transform.localPosition = new Vector3(-137, 127, 0);
+                }
                 ///------------------///
-                ///------------------///
+
                 if (resultado[2] == "C")
                 {
                     C3.SetActive(true);
+                    C3.transform.localPosition = new Vector3(-96, 26, 0);
+                    M33.SetActive(false);
                     M3.SetActive(false);
 
                 }
                 if (resultado[2] == "M")
                 {
                     M3.SetActive(true);
+                    M3.transform.localPosition = new Vector3(-96, 26, 0);
+                    M33.SetActive(false);
+
                     C3.SetActive(false);
+                }
+                else if (resultado[2] == "MM")
+                {
+                    M3.SetActive(true);
+                    M33.SetActive(true);
+                    M3.transform.localPosition = new Vector3(-137, 26, 0);
+                    M33.transform.localPosition = new Vector3(-50, 26, 0);
                 }
             }
             //**************************//
-            else if(ttentativas == 4)
+            else if (ttentativas == 4)
             {
                 t1.text = "1";
                 t2.text = "2";
@@ -1133,51 +1231,98 @@ public class responder : MonoBehaviour
                 if (resultado[0] == "C")
                 {
                     C1.SetActive(true);
+                    C1.transform.localPosition = new Vector3(-96, 231, 0);
+                    M11.SetActive(false);
                     M1.SetActive(false);
                 }
                 if (resultado[0] == "M")
                 {
                     M1.SetActive(true);
+                    M1.transform.localPosition = new Vector3(-96, 231, 0);
+                    M11.SetActive(false);
+
                     C1.SetActive(false);
+                }
+                else if (resultado[0] == "MM")
+                {
+                    M1.SetActive(true);
+                    M11.SetActive(true);
+                    M1.transform.localPosition = new Vector3(-50, 231, 0);
+                    M11.transform.localPosition = new Vector3(-137, 231, 0);
                 }
                 ///------------------///
                 ///------------------///
                 if (resultado[1] == "C")
                 {
                     C2.SetActive(true);
+                    C2.transform.localPosition = new Vector3(-96, 127, 0);
+                    M22.SetActive(false);
                     M2.SetActive(false);
                 }
                 if (resultado[1] == "M")
                 {
                     M2.SetActive(true);
+                    M2.transform.localPosition = new Vector3(-96, 127, 0);
+                    M22.SetActive(false);
+
                     C2.SetActive(false);
                 }
+                else if (resultado[1] == "MM")
+                {
+                    M2.SetActive(true);
+                    M22.SetActive(true);
+                    M2.transform.localPosition = new Vector3(-50, 127, 0);
+                    M22.transform.localPosition = new Vector3(-137, 127, 0);
+                }
                 ///------------------///
-                ///------------------///
+              
                 if (resultado[2] == "C")
                 {
                     C3.SetActive(true);
+                    C3.transform.localPosition = new Vector3(-96, 26, 0);
+                    M33.SetActive(false);
                     M3.SetActive(false);
 
                 }
                 if (resultado[2] == "M")
                 {
                     M3.SetActive(true);
+                    M3.transform.localPosition = new Vector3(-96, 26, 0);
+                    M33.SetActive(false);
                     C3.SetActive(false);
+                }
+                else if (resultado[2] == "MM")
+                {
+                    M3.SetActive(true);
+                    M33.SetActive(true);
+                    M3.transform.localPosition = new Vector3(-137, 26, 0);
+                    M33.transform.localPosition = new Vector3(-50, 26, 0);
                 }
 
                 ///------------------///
                 if (resultado[3] == "C")
                 {
                     C4.SetActive(true);
+                    C4.transform.localPosition = new Vector3(-96, -70, 0);
+                    M44.SetActive(false);
                     M4.SetActive(false);
                 }
                 if (resultado[3] == "M")
                 {
                     M4.SetActive(true);
+                    M4.transform.localPosition = new Vector3(-96, -70, 0);
+                    M44.SetActive(false);
                     C4.SetActive(false);
                 }
-                
+                else if (resultado[3] == "MM")
+                {
+                    M4.SetActive(true);
+                    M4.transform.localPosition = new Vector3(-137, -70, 0);
+                    M44.SetActive(true);
+                    M44.transform.localPosition = new Vector3(-50, -70, 0);
+                }
+                ///------------------///
+
             }
             ///------------------//////------------------//////------------------//////------------------//////------------------///
             else if (ttentativas == 5)
@@ -1202,67 +1347,128 @@ public class responder : MonoBehaviour
                 ///------------------///
                 cli1_5.text = clique1[4];
                 cli2_5.text = clique2[4];
-///------------------/// ///------------------//////------------------//////------------------///
+                ///------------------/// ///------------------//////------------------//////------------------///
                 if (resultado[0] == "C")
                 {
                     C1.SetActive(true);
+                    C1.transform.localPosition = new Vector3(-96, 231, 0);
+                    M11.SetActive(false);
                     M1.SetActive(false);
                 }
                 if (resultado[0] == "M")
                 {
                     M1.SetActive(true);
+                    M1.transform.localPosition = new Vector3(-96, 231, 0);
+                    M11.SetActive(false);
+
                     C1.SetActive(false);
+                }
+               else if (resultado[0] == "MM")
+                {
+                    M1.SetActive(true);
+                    M11.SetActive(true);
+                    M1.transform.localPosition = new Vector3(-50, 231, 0);
+                    M11.transform.localPosition = new Vector3(-137, 231, 0);
                 }
                 ///------------------///
                 ///------------------///
                 if (resultado[1] == "C")
                 {
                     C2.SetActive(true);
+                    C2.transform.localPosition = new Vector3(-96, 127, 0);
+                    M22.SetActive(false);
                     M2.SetActive(false);
                 }
-               if(resultado[1] == "M")
+                if (resultado[1] == "M")
                 {
                     M2.SetActive(true);
+                    M2.transform.localPosition = new Vector3(-96, 127, 0);
+                    M22.SetActive(false);
+
                     C2.SetActive(false);
+                }
+              else  if (resultado[1] == "MM")
+                {
+                    M2.SetActive(true);
+                    M22.SetActive(true);
+                    M2.transform.localPosition = new Vector3(-50, 127, 0);
+                    M22.transform.localPosition = new Vector3(-137, 127, 0);
                 }
                 ///------------------///
                 ///------------------///
                 if (resultado[2] == "C")
                 {
                     C3.SetActive(true);
+                    C3.transform.localPosition = new Vector3(-96, 26, 0);
+                    M33.SetActive(false);
                     M3.SetActive(false);
 
                 }
                 if (resultado[2] == "M")
                 {
                     M3.SetActive(true);
+                    M3.transform.localPosition = new Vector3(-96, 26, 0);
+                    M33.SetActive(false);
+
                     C3.SetActive(false);
                 }
-                
+              else  if (resultado[2] == "MM")
+                {
+                    M3.SetActive(true);
+                    M33.SetActive(true);
+                    M3.transform.localPosition = new Vector3(-137, 26, 0);
+                    M33.transform.localPosition = new Vector3(-50, 26, 0);
+                }
+
                 ///------------------///
-                if(resultado[3] == "C")
+                if (resultado[3] == "C")
                 {
                     C4.SetActive(true);
+                    C4.transform.localPosition = new Vector3(-96, -70, 0);
+                    M44.SetActive(false);
                     M4.SetActive(false);
                 }
                 if (resultado[3] == "M")
                 {
                     M4.SetActive(true);
+                    M4.transform.localPosition = new Vector3(-96, -70, 0);
+                    M44.SetActive(false);
+
                     C4.SetActive(false);
                 }
+              else  if (resultado[3] == "MM")
+                {
+                    M4.SetActive(true);
+                    M4.transform.localPosition = new Vector3(-137, -70, 0);
+                    M44.SetActive(true);
+                    M44.transform.localPosition = new Vector3(-50, -70, 0);
+                }
                 ///------------------///
-                if(resultado[4] == "C")
+                if (resultado[4] == "C")
                 {
                     C5.SetActive(true);
+                    C5.transform.localPosition = new Vector3(-96, -178, 0);
+                    M55.SetActive(false);
                     M5.SetActive(false);
                 }
-                if(resultado[4] == "M")
+                if (resultado[4] == "M")
                 {
                     M5.SetActive(true);
+                    M5.transform.localPosition = new Vector3(-96, -178, 0);
+                    M55.SetActive(false);
                     C5.SetActive(false);
+                }
+              else  if (resultado[4] == "MM")
+                {
+                    M4.SetActive(true);
+                    M44.SetActive(true);
+                    M4.transform.localPosition = new Vector3(-50, 231, 0);
+                    M44.transform.localPosition = new Vector3(-137, 231, 0);
                 }
             }
         }
+       
+            
     }
    
     public void fecharMenuTentativa()
