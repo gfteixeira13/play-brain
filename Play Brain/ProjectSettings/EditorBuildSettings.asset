@@ -9,11 +9,12 @@ EditorBuildSettings:
     path: Assets/Cenas/titulo.unity
     guid: ac262ae6fb6742a49b6d7570cd20b0f2
   - enabled: 1
-    path: Assets/Cenas/Fases.unity
-    guid: 41c8571e24068e047a61ebda9d09391a
-  - enabled: 1
     path: Assets/Cenas/config.unity
     guid: 70f23296f18f7c54f83dc7c1030371e1
   - enabled: 1
     path: Assets/Cenas/preFase.unity
     guid: 1e5dc929f6daa3c47a7e44f2d08909da
+  - enabled: 1
+    path: Assets/Cenas/Fase1.unity
+    guid: 41c8571e24068e047a61ebda9d09391a
+  m_configObjects: {}

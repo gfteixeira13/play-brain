@@ -27,6 +27,7 @@ public class responder : MonoBehaviour
     public GameObject certo; //Símbolo de certo
     public GameObject meio; //Símbolo de Meio certo
     public GameObject meio2;
+    public GameObject errado;
 
 
 
@@ -40,7 +41,7 @@ public class responder : MonoBehaviour
     // Variaveis referente ao menu tentativa
     public GameObject btnMenuT;
     public TextMeshProUGUI t1, t2, t3, t4, t5;
-    public GameObject C1, M1,M11, C2, M2, M22, C3, M3, M33, C4, M4, M44, C5, M5, M55;
+    public GameObject C1, E1, M1,M11, C2, M2, M22, C3, M3, M33, C4, M4, M44, C5, M5, M55;
     public TextMeshProUGUI cli1_1, cli2_1, cli1_2, cli2_2, cli1_3, cli2_3, cli1_4, cli2_4, cli1_5, cli2_5;
     public string[] resultado;
 
@@ -77,12 +78,13 @@ public class responder : MonoBehaviour
     {
         ttentativas = 0; //nenhuma tentativa ainda
         idFase = 0;
-        tentativas.text = ""+ttentativas;
+        tentativas.text = "";
         txtFase.text = " " + (idFase+1); //mostra fase 1 na tela
         btnAvancar.SetActive(false); 
         certo.SetActive(false);
         meio.SetActive(false);
         meio2.SetActive(false);
+        errado.SetActive(false);
         btnConfirmar.SetActive(false);
         btn0.SetActive(false);
         btn1.SetActive(false);
@@ -621,6 +623,8 @@ public class responder : MonoBehaviour
                 meio.SetActive(false);
                 btnConfirmar.SetActive(false);
                 meio2.SetActive(false);
+                errado.SetActive(false);
+
 
             }
             else if(correta1==true && correta2 == false && posicaoE2==false && posicaoE1==false) //bolinha cheia e Bolinha vazia
@@ -630,6 +634,8 @@ public class responder : MonoBehaviour
                 certo.transform.localPosition = new Vector3(-164, -457, 0);
                 meio.SetActive(false);
                 meio2.SetActive(false);
+                errado.SetActive(false);
+
 
 
             }
@@ -640,6 +646,7 @@ public class responder : MonoBehaviour
                 resultado[ttentativas] = "M";
                 certo.SetActive(false);
                 meio2.SetActive(false);
+                errado.SetActive(false);
 
             }
             else if(posicaoE1==true && correta2==false && correta1==false && posicaoE2==false)
@@ -648,6 +655,7 @@ public class responder : MonoBehaviour
                 resultado[ttentativas] = "M";
                 meio.transform.localPosition = new Vector3(-164, -457, 0);
                 meio2.SetActive(false);
+                errado.SetActive(false);
 
             }
             else if(posicaoE1==true && posicaoE2 == true && correta1==false && correta2==false)
@@ -657,6 +665,7 @@ public class responder : MonoBehaviour
                 resultado[ttentativas] = "MM";
                 meio.transform.localPosition = new Vector3(-164, -457, 0);
                 meio2.transform.localPosition = new Vector3(-248, -457, 0);
+                errado.SetActive(false);
 
             }
             else if(correta1==false && correta2==true && posicaoE1==false && posicaoE2==false)
@@ -666,12 +675,17 @@ public class responder : MonoBehaviour
                 resultado[ttentativas] = "C";
                 meio2.SetActive(false);
                 meio.SetActive(false);
+                errado.SetActive(false);
+
             }
             else if(correta1==false && correta2==false && posicaoE1==false && posicaoE2 == false)
             {
                 certo.SetActive(false);
                 meio.SetActive(false);
                 meio2.SetActive(false);
+                errado.SetActive(true);
+                errado.transform.localPosition = new Vector3(-164, -457, 0);
+                resultado[ttentativas] = "E";
 
             }
             else if(posicaoE2==true && posicaoE1==false && correta1==false && correta1 == false)
@@ -682,6 +696,8 @@ public class responder : MonoBehaviour
                 resultado[ttentativas] = "M";
                 certo.SetActive(false);
                 meio2.SetActive(false);
+                errado.SetActive(false);
+
 
             }
         }
@@ -712,7 +728,7 @@ public class responder : MonoBehaviour
         certo.SetActive(false);
         meio.SetActive(false);
         meio2.SetActive(false);
-
+        errado.SetActive(false);
         ttentativas = 0;
         tentativas.text = "";
         btnAvancar.SetActive(false);
@@ -1045,6 +1061,11 @@ public class responder : MonoBehaviour
                     C1.transform.localPosition = new Vector3(-96, 231, 0);
 
                     M1.SetActive(false);
+                }
+                if(resultado[0] == "E")
+                {
+                    E1.SetActive(true);
+                    E1.transform.localPosition = new Vector3(-96, 231, 0);
                 }
                 if (resultado[0] == "M")
                 {
