@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FasesJogo : MonoBehaviour {
+public class selecaoFases : MonoBehaviour {
 
-   private int idfase;
+    private int idfase;
     public Button btnPlay;
     public TextMeshProUGUI txtFase;
     public string[] NomeFase;
@@ -28,6 +28,10 @@ public class FasesJogo : MonoBehaviour {
     {
         SceneManager.LoadScene("Fase" + idfase.ToString());
 
+    }
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 	
 }

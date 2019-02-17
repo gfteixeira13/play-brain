@@ -9,6 +9,7 @@ using TMPro;
 public class responder : MonoBehaviour
 {
     public GameObject imgMenuT;
+    public GameManager GameManager;
 
     public GameObject btnConfirmar; //Botão de Confirmar Tentativa
     public GameObject btnAvancar; // Botão de Avançar de Fase
@@ -599,15 +600,17 @@ public class responder : MonoBehaviour
 
 
     public void confirmarTentativa() //Esta Função é chamada quando o botão CONFIRMAR é clicado
-    {  //Nessa função os resultados são gerados baseados nas booleanas
+    {  //Nessa função os resultados são gerados baseados nas booleanas da função anterior, no momento em que o usuário clica na alternativa 
+        //a booleana já é marcada como true ou falsa
 
         btnConfirmar.SetActive(false);
 
-           
-        if(ttentativas == 5)
+
+        if (ttentativas == 4 && correta1 != true && correta2 != true)
         {
             //Stop the GAME
-            throw new Exception("Número máximo de tentativas atingido");
+            GameManager.endGame();
+
         }
         else { 
 
@@ -620,6 +623,7 @@ public class responder : MonoBehaviour
                 btnConfirmar.SetActive(false);
                 meio2.SetActive(false);
 
+                
 
             }
             else if(correta1==true && correta2 == false && posicaoE2==false && posicaoE1==false) //bolinha cheia e Bolinha vazia
@@ -709,6 +713,13 @@ public class responder : MonoBehaviour
     }
     public void proximaSubFase()
     {
+        if (idFase == 4)
+        {
+            GameManager.completeLevel();
+        }
+        else
+        {
+
         
         clique1txt.text = " ";
         clique2txt.text = " ";
@@ -1021,7 +1032,7 @@ public class responder : MonoBehaviour
         textX1.text = " ";
         textX2.text = " ";
 
-
+        }
     }
 
 

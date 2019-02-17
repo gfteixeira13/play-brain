@@ -1404,7 +1404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7de016bec196f418f100c47abbcd69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idfase: 0
   btnPlay: {fileID: 285422320}
   txtFase: {fileID: 251658539}
   NomeFase:
