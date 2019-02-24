@@ -43,7 +43,7 @@ public class responder : MonoBehaviour
     // Variaveis referente ao menu tentativa
     public GameObject btnMenuT;
     
-    public GameObject C1, E1, M1,M11, C2, M2, M22, C3, M3, M33, C4, M4, M44, C5, M5, M55;
+    public GameObject C1, M1,M11, C2, M2, M22, C3, M3, M33, C4, M4, M44, C5, M5, M55;
     public TextMeshProUGUI cli1_1, cli2_1, cli1_2, cli2_2, cli1_3, cli2_3, cli1_4, cli2_4, cli1_5, cli2_5;
 
     public AudioSource SomGanhou;
@@ -603,6 +603,11 @@ public class responder : MonoBehaviour
         } //Comparações referente ao segundo número clicado se encerram aqui
     } //Aqui encerra a função clique
 
+    IEnumerator TransitionSubFase()
+    {
+        yield return new WaitForSeconds(2f);
+        btnAvancar.SetActive(true);
+    }
 
     public void confirmarTentativa() //Esta Função é chamada quando o botão CONFIRMAR é clicado
     {  //Nessa função os resultados são gerados baseados nas booleanas da função anterior, no momento em que o usuário clica na alternativa 
@@ -611,17 +616,18 @@ public class responder : MonoBehaviour
         btnConfirmar.SetActive(false);
 
 
-        if (ttentativas == 4 && correta1 != true && correta2 != true)
+        if (ttentativas == 4 && (correta1 ==false || correta2 == false))
         {
             //Stop the GAME
             GameManager.endGame();
+            
 
         }
         else { 
 
             if(correta1==true && correta2 == true) //Bolinha cheia e bolinha Cheia
             {
-                btnAvancar.SetActive(true);
+                
                 abrirCadeado1.Play("CadeadoAbrindo");
                 abrirCadeado2.Play("CadeadoAbrindo2");
                 SomGanhou.Play();
@@ -629,6 +635,8 @@ public class responder : MonoBehaviour
                 meio.SetActive(false);
                 btnConfirmar.SetActive(false);
                 meio2.SetActive(false);
+
+                StartCoroutine(TransitionSubFase());
 
 
 
@@ -1064,11 +1072,7 @@ public class responder : MonoBehaviour
 
                     M1.SetActive(false);
                 }
-                if(resultado[0] == "E")
-                {
-                    E1.SetActive(true);
-                    E1.transform.localPosition = new Vector3(-112, 231, 0);
-                }
+               
                 if (resultado[0] == "M")
                 {
                     M1.SetActive(true);

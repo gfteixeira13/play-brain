@@ -13,13 +13,19 @@ public class GameManager : MonoBehaviour {
         CompleteLevelUI.SetActive(true);
     }
 
+    IEnumerator TransitionGameOVER()
+    {
+        yield return new WaitForSeconds(2f);
+        GameOver.SetActive(true);
+    }
+
     public void endGame()
     {
         if(gameHasEnded == false)
         {
             gameHasEnded = true;
             Debug.Log("Game Over");
-            GameOver.SetActive(true);
+            StartCoroutine(TransitionGameOVER());
         }
     }
 
@@ -27,6 +33,9 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
+    public void Return()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
 }
