@@ -8,6 +8,8 @@ using TMPro;
 
 public class responder : MonoBehaviour
 {
+    public Animator abrirCadeado1;
+    public Animator abrirCadeado2;
     public GameObject imgMenuT;
     public GameManager GameManager;
 
@@ -99,7 +101,7 @@ public class responder : MonoBehaviour
         btn9.SetActive(false);
 
         btnMenuT.SetActive(false);
-        
+
         //Todos os botões estão invisiveis 
         txt1 = false;
         txt2 = false;
@@ -125,6 +127,9 @@ public class responder : MonoBehaviour
         M4.SetActive(false);
         C5.SetActive(false);
         M5.SetActive(false);
+
+        //abrirCadeado1.gameObject.GetComponent<Animator>().enabled = false;
+
 
         //Abaixo os botões são alocados em suas devidas posições:
 
@@ -617,13 +622,16 @@ public class responder : MonoBehaviour
             if(correta1==true && correta2 == true) //Bolinha cheia e bolinha Cheia
             {
                 btnAvancar.SetActive(true);
+                abrirCadeado1.Play("CadeadoAbrindo");
+                abrirCadeado2.Play("CadeadoAbrindo2");
                 SomGanhou.Play();
                 certo.SetActive(false);
                 meio.SetActive(false);
                 btnConfirmar.SetActive(false);
                 meio2.SetActive(false);
 
-                
+
+
 
             }
             else if(correta1==true && correta2 == false && posicaoE2==false && posicaoE1==false) //bolinha cheia e Bolinha vazia
