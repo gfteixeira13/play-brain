@@ -727,6 +727,7 @@ public class responder : MonoBehaviour
 
 
     }
+
     public void proximaSubFase()
     {
         if (idFase == 4)
@@ -1120,7 +1121,7 @@ public class responder : MonoBehaviour
                     M1.SetActive(true);
                     M11.SetActive(true);
                     M1.transform.localPosition = new Vector3(-201, 231, 0);
-                    M11.transform.localPosition = new Vector3(-137, 231, 0);
+                    M11.transform.localPosition = new Vector3(-112, 231, 0);
                 }
                 ///------------------///
                 ///------------------///
