@@ -10,6 +10,9 @@ public class responder : MonoBehaviour
 {
     public Animator abrirCadeado1;
     public Animator abrirCadeado2;
+    public bool cadeadoAberto = false;
+    //public void ResetTrigger(fechaCadeado1);
+    //public void ResetTrigger(int id);
     public GameObject imgMenuT;
     public GameManager GameManager;
 
@@ -128,7 +131,19 @@ public class responder : MonoBehaviour
         C5.SetActive(false);
         M5.SetActive(false);
 
-        //abrirCadeado1.gameObject.GetComponent<Animator>().enabled = false;
+        //reiniciando animação
+        
+        if(cadeadoAberto)
+        {
+            /*
+            abrirCadeado1.ResetTrigger("fechaCadeado1");
+            abrirCadeado2.ResetTrigger("liberaAnimCadeado2");
+
+            abrirCadeado1.animation["liberaAnimCadeado1"].time = 0.0;
+            abrirCadeado1.animation.Sample();
+            abrirCadeado1.animation["liberaAnimCadeado1"].enabled = false;
+            */
+        }
 
 
         //Abaixo os botões são alocados em suas devidas posições:
@@ -628,8 +643,10 @@ public class responder : MonoBehaviour
             if(correta1==true && correta2 == true) //Bolinha cheia e bolinha Cheia
             {
                 
-                abrirCadeado1.Play("CadeadoAbrindo");
-                abrirCadeado2.Play("CadeadoAbrindo2");
+                abrirCadeado1.Play("CadeadoAbrindo", 0, 0f);
+                abrirCadeado2.Play("CadeadoAbrindo2", 0, 0f);
+                cadeadoAberto = true;
+
                 SomGanhou.Play();
                 certo.SetActive(false);
                 meio.SetActive(false);
