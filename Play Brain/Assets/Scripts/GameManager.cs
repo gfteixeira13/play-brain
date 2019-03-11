@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour {
         CompleteLevelUI.SetActive(true); //Chama a tela de 'Level Complete'
     }
 
+    public void closeCompleteLevel()
+    {
+        CompleteLevelUI.SetActive(false);
+    }
     IEnumerator TransitionGameOVER() //pequena transição entre a animação dos cadeados e o aparecimento do botão 'Avançar'
     {
         yield return new WaitForSeconds(2f);
@@ -29,10 +33,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void NextLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    
     public void Return()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

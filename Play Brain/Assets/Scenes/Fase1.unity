@@ -5248,8 +5248,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1203899873}
-        m_MethodName: NextLevel
+      - m_Target: {fileID: 2088217846}
+        m_MethodName: proximaSubFase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9660,6 +9660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abrirCadeado1: {fileID: 1380266904}
   abrirCadeado2: {fileID: 2004351412}
+  cadeadoAberto: 0
   imgMenuT: {fileID: 906331948}
   GameManager: {fileID: 1203899873}
   btnConfirmar: {fileID: 1602697897}

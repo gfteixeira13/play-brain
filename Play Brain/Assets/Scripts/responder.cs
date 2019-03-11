@@ -620,8 +620,8 @@ public class responder : MonoBehaviour
 
     IEnumerator TransitionSubFase()
     {
-        yield return new WaitForSeconds(2f);
-        btnAvancar.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        GameManager.completeLevel();
     }
 
     public void confirmarTentativa() //Esta Função é chamada quando o botão CONFIRMAR é clicado
@@ -747,14 +747,9 @@ public class responder : MonoBehaviour
 
     public void proximaSubFase()
     {
-        if (idFase == 4)
-        {
-            GameManager.completeLevel();
-        }
-        else
-        {
-
-        
+        GameManager.closeCompleteLevel();
+       
+          
         clique1txt.text = " ";
         clique2txt.text = " ";
         btnConfirmar.SetActive(false);
@@ -1067,7 +1062,7 @@ public class responder : MonoBehaviour
         textX2.text = " ";
 
         }
-    }
+    
 
 
     public void menuTentativa() //Função referente à "tela" de tentativas
