@@ -18,13 +18,20 @@ public class Player : MonoBehaviour
         Debug.Log("Pontuação Classe Player: " + Pontuacao);
       
     }
-    public void MudarScore(int s)
+    public void setScore(int s)
     {
         Score += s;
     }
-    public void MudarLevel(int l)
+    public void setLevel(responder responder)
     {
-        Level += l;     
+        //se o usuário chegou em um level mais alto que antes, o level é alterado.
+        if(responder.level > Level)
+        {
+            Level = responder.level;
+            Debug.Log("Leveis desbloqueados=:"+Level);
+        }
+
+
     }
   
 }

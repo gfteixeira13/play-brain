@@ -10,6 +10,7 @@ public class responder : MonoBehaviour
 {
     public Animator abrirCadeado1;
     public Animator abrirCadeado2;
+
     public bool cadeadoAberto = false;
     //public void ResetTrigger(fechaCadeado1);
     //public void ResetTrigger(int id);
@@ -80,7 +81,7 @@ public class responder : MonoBehaviour
     //-------------------------------//
     //Váriaveis relacionadas ao Score e Level do Usuário
     public Text pontuacao;
-    int level;
+    public int level;
     public int pontos;
    
 
@@ -648,10 +649,18 @@ public class responder : MonoBehaviour
             {
                 pontuacaoResposta();
 
+                if (cadeadoAberto == false)
+                {
+                    abrirCadeado1.speed = 1;
+                    abrirCadeado2.speed = 1;
+                    abrirCadeado1.Play("CadeadoAbrindo", 0, 0f);
+                    abrirCadeado2.Play("CadeadoAbrindo2", 0, 0f);
+                    cadeadoAberto = true;
 
-                abrirCadeado1.Play("CadeadoAbrindo", 0, 0f);
-                abrirCadeado2.Play("CadeadoAbrindo2", 0, 0f);
-                cadeadoAberto = true;
+                    level = idFase + 1;
+
+                }
+
 
                 SomGanhou.Play();
                 certo.SetActive(false);
@@ -660,13 +669,13 @@ public class responder : MonoBehaviour
                 meio2.SetActive(false);
 
                 StartCoroutine(TransitionSubFase());
-
+                //-----------------------------------//
+                
 
             }
             else
             {
-                ttentativas++;
-                tentativas.text = "" + ttentativas;
+               
             
                 if (correta1 == true && correta2 == false && posicaoE2 == false && posicaoE1 == false) //bolinha cheia e Bolinha vazia
                 {
@@ -734,17 +743,22 @@ public class responder : MonoBehaviour
 
 
                 }
-            }
-        }
-        clique1txt.text = clique1[ttentativas];
-        clique2txt.text = clique2[ttentativas];
-        
-        
 
-        txt1 = false;
-        txt2 = false;
-        textX1.text = " ";
-        textX2.text = " ";
+              
+            }
+            clique1txt.text = clique1[ttentativas];
+            clique2txt.text = clique2[ttentativas];
+            ttentativas++;
+            tentativas.text = "" + ttentativas;
+
+
+
+            txt1 = false;
+            txt2 = false;
+            textX1.text = " ";
+            textX2.text = " ";
+        }
+        
 
         if (ttentativas > 0)
         {
@@ -818,6 +832,12 @@ public class responder : MonoBehaviour
         txt1 = false;
         txt2 = false;
 
+
+        abrirCadeado1.speed = -1;
+        abrirCadeado2.speed = -1;
+        abrirCadeado1.Play("CadeadoAbrindo", 0, 0f);
+        abrirCadeado2.Play("CadeadoAbrindo2", 0, 0f);
+        cadeadoAberto = false;
         //--------------------------//
         cli1_1.text = "";
         cli2_1.text = "";
