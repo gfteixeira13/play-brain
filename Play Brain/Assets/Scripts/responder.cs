@@ -34,8 +34,7 @@ public class responder : MonoBehaviour
     public GameObject meio; //Símbolo de Meio certo
     public GameObject meio2;
 
-
-
+  
 
     public TextMeshProUGUI txtFase;
     public TextMeshProUGUI tentativas;
@@ -78,13 +77,18 @@ public class responder : MonoBehaviour
     public int ttentativas;
     public string[] clique1; //o parâmetro receberá o número da tentativa
     public string[] clique2; // ||
-    
-
+    //-------------------------------//
+    //Váriaveis relacionadas ao Score e Level do Usuário
+    public Text pontuacao;
+    int level;
+    public int pontos;
+   
 
     void Start() 
     {
         ttentativas = 0; //nenhuma tentativa ainda
         idFase = 0;
+        pontos = 0;
         tentativas.text = "";
         txtFase.text = " " + (idFase+1); //mostra fase 1 na tela
         btnAvancar.SetActive(false); 
@@ -638,11 +642,13 @@ public class responder : MonoBehaviour
             
 
         }
-        else { 
+        else {
 
-            if(correta1==true && correta2 == true) //Bolinha cheia e bolinha Cheia
+            if (correta1 == true && correta2 == true) //Bolinha cheia e bolinha Cheia
             {
-                
+                pontuacaoResposta();
+
+
                 abrirCadeado1.Play("CadeadoAbrindo", 0, 0f);
                 abrirCadeado2.Play("CadeadoAbrindo2", 0, 0f);
                 cadeadoAberto = true;
@@ -656,80 +662,84 @@ public class responder : MonoBehaviour
                 StartCoroutine(TransitionSubFase());
 
 
-
-
             }
-            else if(correta1==true && correta2 == false && posicaoE2==false && posicaoE1==false) //bolinha cheia e Bolinha vazia
+            else
             {
-                certo.SetActive(true);
-                resultado[ttentativas] = "C";
-                certo.transform.localPosition = new Vector3(-164, -457, 0);
-                meio.SetActive(false);
-                meio2.SetActive(false);
+                ttentativas++;
+                tentativas.text = "" + ttentativas;
+            
+                if (correta1 == true && correta2 == false && posicaoE2 == false && posicaoE1 == false) //bolinha cheia e Bolinha vazia
+                {
+                    certo.SetActive(true);
+                    resultado[ttentativas] = "C";
+                    certo.transform.localPosition = new Vector3(-164, -457, 0);
+                    meio.SetActive(false);
+                    meio2.SetActive(false);
 
 
 
-            }
-            else if((correta1==true && posicaoE2 == true) || (posicaoE1==true && correta2==true))
-            {
-                meio.transform.localPosition = new Vector3(-164, -457, 0);
-                meio.SetActive(true);
-                resultado[ttentativas] = "M";
-                certo.SetActive(false);
-                meio2.SetActive(false);
+                }
+                else if ((correta1 == true && posicaoE2 == true) || (posicaoE1 == true && correta2 == true))
+                {
+                    meio.transform.localPosition = new Vector3(-164, -457, 0);
+                    meio.SetActive(true);
+                    resultado[ttentativas] = "M";
+                    certo.SetActive(false);
+                    meio2.SetActive(false);
 
-            }
-            else if(posicaoE1==true && correta2==false && correta1==false && posicaoE2==false)
-            {
-                meio.SetActive(true);
-                resultado[ttentativas] = "M";
-                meio.transform.localPosition = new Vector3(-164, -457, 0);
-                meio2.SetActive(false);
+                }
+                else if (posicaoE1 == true && correta2 == false && correta1 == false && posicaoE2 == false)
+                {
+                    meio.SetActive(true);
+                    resultado[ttentativas] = "M";
+                    meio.transform.localPosition = new Vector3(-164, -457, 0);
+                    meio2.SetActive(false);
 
-            }
-            else if(posicaoE1==true && posicaoE2 == true && correta1==false && correta2==false)
-            {
-                meio.SetActive(true);
-                meio2.SetActive(true);
-                resultado[ttentativas] = "MM";
-                meio.transform.localPosition = new Vector3(-164, -457, 0);
-                meio2.transform.localPosition = new Vector3(-248, -457, 0);
+                }
+                else if (posicaoE1 == true && posicaoE2 == true && correta1 == false && correta2 == false)
+                {
+                    meio.SetActive(true);
+                    meio2.SetActive(true);
+                    resultado[ttentativas] = "MM";
+                    meio.transform.localPosition = new Vector3(-164, -457, 0);
+                    meio2.transform.localPosition = new Vector3(-248, -457, 0);
 
-            }
-            else if(correta1==false && correta2==true && posicaoE1==false && posicaoE2==false)
-            {
-                certo.SetActive(true);
-                certo.transform.localPosition = new Vector3(-164, -457, 0);
-                resultado[ttentativas] = "C";
-                meio2.SetActive(false);
-                meio.SetActive(false);
+                }
+                else if (correta1 == false && correta2 == true && posicaoE1 == false && posicaoE2 == false)
+                {
+                    certo.SetActive(true);
+                    certo.transform.localPosition = new Vector3(-164, -457, 0);
+                    resultado[ttentativas] = "C";
+                    meio2.SetActive(false);
+                    meio.SetActive(false);
 
-            }
-            else if(correta1==false && correta2==false && posicaoE1==false && posicaoE2 == false)
-            {
-                certo.SetActive(false);
-                meio.SetActive(false);
-                meio2.SetActive(false);
-              
-                resultado[ttentativas] = "E";
+                }
+                else if (correta1 == false && correta2 == false && posicaoE1 == false && posicaoE2 == false)
+                {
+                    certo.SetActive(false);
+                    meio.SetActive(false);
+                    meio2.SetActive(false);
 
-            }
-            else if(posicaoE2==true && posicaoE1==false && correta1==false && correta1 == false)
-            {
-                meio.transform.localPosition = new Vector3(-164, -457, 0);
+                    resultado[ttentativas] = "E";
 
-                meio.SetActive(true);
-                resultado[ttentativas] = "M";
-                certo.SetActive(false);
-                meio2.SetActive(false);
+                }
+                else if (posicaoE2 == true && posicaoE1 == false && correta1 == false && correta1 == false)
+                {
+                    meio.transform.localPosition = new Vector3(-164, -457, 0);
+
+                    meio.SetActive(true);
+                    resultado[ttentativas] = "M";
+                    certo.SetActive(false);
+                    meio2.SetActive(false);
 
 
+                }
             }
         }
         clique1txt.text = clique1[ttentativas];
         clique2txt.text = clique2[ttentativas];
-        ttentativas = ttentativas + 1;
-        tentativas.text = "" + ttentativas;
+        
+        
 
         txt1 = false;
         txt2 = false;
@@ -743,6 +753,43 @@ public class responder : MonoBehaviour
 
 
 
+    }
+    public int pontuacaoResposta()
+    {
+        if (correta1 == true && correta2 == true)
+        {
+            if (ttentativas == 0)
+            {
+                pontos += 10;
+            }
+            else if (ttentativas == 1)
+            {
+                pontos += 8;
+            }
+            else if (ttentativas == 2)
+            {
+                pontos += 6;
+            }
+            else if (ttentativas == 3)
+            {
+                pontos += 4;
+            }
+            else if (ttentativas == 4)
+            {
+                pontos += 2;
+            }
+           
+            
+        }
+        else
+        {
+            pontos += 0;
+        }
+        pontuacao.text = "" + pontos;
+        Debug.Log(pontos);
+       
+        return pontos;
+        
     }
 
     public void proximaSubFase()
