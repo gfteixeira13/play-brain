@@ -12,9 +12,9 @@ public class Player : MonoBehaviour
        public int Level;
 
   
-    public void MudarPontuacao(responder responder)
+    public void MudarPontuacao(GameController GC)
     {
-        Pontuacao = responder.pontos;
+        Pontuacao = GC.pontos;
         Debug.Log("Pontuação Classe Player: " + Pontuacao);
       
     }
@@ -22,16 +22,25 @@ public class Player : MonoBehaviour
     {
         Score += s;
     }
-    public void setLevel(responder responder)
+    public void setLevel(GameController GC)
     {
         //se o usuário chegou em um level mais alto que antes, o level é alterado.
-        if(responder.level > Level)
+        if(GC.level > Level)
         {
-            Level = responder.level;
+            Level = GC.level;
             Debug.Log("Leveis desbloqueados=:"+Level);
         }
 
 
     }
-  
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        Level = data.level;
+    }
+
 }

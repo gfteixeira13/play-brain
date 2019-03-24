@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using System;
 using TMPro;
 
-public class responder : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     public Animator abrirCadeado1;
     public Animator abrirCadeado2;
@@ -18,7 +18,7 @@ public class responder : MonoBehaviour
     public GameManager GameManager;
 
     public GameObject btnConfirmar; //Botão de Confirmar Tentativa
-    public GameObject btnAvancar; // Botão de Avançar de Fase
+
 
     //Botões das Alternativas:
     public GameObject btn0;
@@ -83,16 +83,21 @@ public class responder : MonoBehaviour
     public Text pontuacao;
     public int level;
     public int pontos;
-   
 
-    void Start() 
+    void Start()
     {
+        idFase = 1;
+        Player player = new Player();
+        player.LoadPlayer();
+        idFase = PlayerPrefs.GetInt("LevelClicado")-1;
+
+        //Alocação de objetos e variáveis:
+
         ttentativas = 0; //nenhuma tentativa ainda
-        idFase = 0;
         pontos = 0;
         tentativas.text = "";
         txtFase.text = " " + (idFase+1); //mostra fase 1 na tela
-        btnAvancar.SetActive(false); 
+
         certo.SetActive(false);
         meio.SetActive(false);
         meio2.SetActive(false);
@@ -136,19 +141,8 @@ public class responder : MonoBehaviour
         C5.SetActive(false);
         M5.SetActive(false);
 
-        //reiniciando animação
         
-        if(cadeadoAberto)
-        {
-            /*
-            abrirCadeado1.ResetTrigger("fechaCadeado1");
-            abrirCadeado2.ResetTrigger("liberaAnimCadeado2");
-
-            abrirCadeado1.animation["liberaAnimCadeado1"].time = 0.0;
-            abrirCadeado1.animation.Sample();
-            abrirCadeado1.animation["liberaAnimCadeado1"].enabled = false;
-            */
-        }
+     
 
 
         //Abaixo os botões são alocados em suas devidas posições:
@@ -410,16 +404,16 @@ public class responder : MonoBehaviour
 
 
 
-    public void clique(string numero)
+    public void click(string number)
     {
 
        
         if (txt1 == false) //primeiro número clicado
         {
-            clique1[ttentativas] = numero;
+            clique1[ttentativas] = number;
 
 
-            if (numero == alternativaA[idFase]) //Compara se o numero clicado foi igual ao número da alternativaA[fase X] 
+            if (number == alternativaA[idFase]) //Compara se o number clicado foi igual ao número da alternativaA[fase X] 
             {
                 textX1.text = alternativaA[idFase]; //textX1 recebe o número do button que foi clicado - nesse caso o nº da alternativa A
                 txt1 = true; //agora o textx1 tem algo, então o txt1 recebe true;
@@ -441,7 +435,7 @@ public class responder : MonoBehaviour
                 }
             }                //AS MESMAS COMPARAÇÕES SÃO FEITAS COM AS OUTRAS ALTERNATIVAS(B,C E D)            
 
-            else if (numero == alternativaB[idFase])
+            else if (number == alternativaB[idFase])
             {
                 textX1.text = alternativaB[idFase];
                 txt1 = true;
@@ -462,7 +456,7 @@ public class responder : MonoBehaviour
 
                 }
             }
-            else if (numero == alternativaC[idFase])
+            else if (number == alternativaC[idFase])
             {
                 textX1.text = alternativaC[idFase];
                 txt1 = true;
@@ -482,7 +476,7 @@ public class responder : MonoBehaviour
                     posicaoE1 = false;
                 }
             }
-            else if (numero == alternativaD[idFase])
+            else if (number == alternativaD[idFase])
             {
                 textX1.text = alternativaD[idFase];
                 txt1 = true;
@@ -513,8 +507,8 @@ public class responder : MonoBehaviour
         else if (txt2 == false) //segundo número clicado
         {
 
-            clique2[ttentativas] = numero;
-            if (numero == alternativaA[idFase])
+            clique2[ttentativas] = number;
+            if (number == alternativaA[idFase])
             {
                 textX2.text = alternativaA[idFase];
                 txt2 = true;
@@ -540,7 +534,7 @@ public class responder : MonoBehaviour
                 }
 
             }//////////////////////////////////////////////////////////// -- ///////// -- ////// --//////////////////---- ///////////////////////////
-            else if (numero == alternativaB[idFase])
+            else if (number == alternativaB[idFase])
             {
                 textX2.text = alternativaB[idFase];
                 txt2 = true;
@@ -566,7 +560,7 @@ public class responder : MonoBehaviour
 
                 }
             }////////////////////////// ----- /////////////////////// ---- ///////////////////// ----- //////////////////////////////// ---- ///////////////////////////
-            else if (numero == alternativaC[idFase])
+            else if (number == alternativaC[idFase])
             {
                 textX2.text = alternativaC[idFase];
                 txt2 = true;
@@ -592,7 +586,7 @@ public class responder : MonoBehaviour
 
                 }
             }///////////////----------//////////////---------------/////////////--------------/////////////------------////////////----------/////////////
-            else if (numero == alternativaD[idFase])
+            else if (number == alternativaD[idFase])
             {
                 textX2.text = alternativaD[idFase];
                 txt2 = true;
@@ -819,7 +813,7 @@ public class responder : MonoBehaviour
         meio2.SetActive(false);
         ttentativas = 0;
         tentativas.text = "";
-        btnAvancar.SetActive(false);
+
         idFase++;
         txtFase.text = "" + (idFase+1);
 
@@ -1573,7 +1567,7 @@ public class responder : MonoBehaviour
         imgMenuT.SetActive(false);
     }
 
-    
+    //criar script Menu() com métodos/funções abrir/fechar menu;
 }
 
     

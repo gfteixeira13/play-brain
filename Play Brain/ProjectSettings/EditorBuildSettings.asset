@@ -15,9 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/preFase.unity
     guid: 1e5dc929f6daa3c47a7e44f2d08909da
   - enabled: 1
-    path: Assets/Scenes/Fase1.unity
+    path: Assets/Scenes/Fases.unity
     guid: 41c8571e24068e047a61ebda9d09391a
-  - enabled: 1
-    path: Assets/Scenes/Fase2.unity
-    guid: 01d83e7dab92ab24ba766c3cbc23b06c
   m_configObjects: {}

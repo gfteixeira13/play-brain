@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour {
             StartCoroutine(TransitionGameOVER());
         }
     }
+ 
 
     
     public void Return()
