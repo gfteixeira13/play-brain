@@ -10,8 +10,14 @@ public class Player : MonoBehaviour
        public int Pontuacao;
        public int Score;
        public int Level;
+    public bool SalvouAlgumaVez;
 
-  
+    void Start()
+    {
+        SalvouAlgumaVez = false;
+        Level = 0;
+
+    }
     public void MudarPontuacao(GameController GC)
     {
         Pontuacao = GC.pontos;
@@ -24,14 +30,12 @@ public class Player : MonoBehaviour
     }
     public void setLevel(GameController GC)
     {
-        //se o usuário chegou em um level mais alto que antes, o level é alterado.
-        if((GC.level+1) > Level)
+        if (Level < GC.idFase + 1)
         {
-            Level = GC.level+1;
-            Debug.Log("Leveis desbloqueados=:"+Level);
+            Level = GC.idFase + 1;
+            Debug.Log("Level desbloqueado(some+1):" + Level);
         }
-
-
+;
     }
     public void SavePlayer()
     {
@@ -41,6 +45,7 @@ public class Player : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
         Level = data.level;
+        SalvouAlgumaVez = data.salvouAlgumaVez;
     }
 
 }

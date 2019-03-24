@@ -8,10 +8,12 @@ public class PlayerData
 {
     public int level;
     public int pontuacao;
+    public bool salvouAlgumaVez;
 
     public PlayerData(Player player)
     {
         level = player.Level;
         pontuacao = player.Pontuacao;
+        salvouAlgumaVez = true;
     }
 }
