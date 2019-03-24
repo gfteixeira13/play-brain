@@ -25,9 +25,9 @@ public class Player : MonoBehaviour
     public void setLevel(GameController GC)
     {
         //se o usuário chegou em um level mais alto que antes, o level é alterado.
-        if(GC.level > Level)
+        if((GC.level+1) > Level)
         {
-            Level = GC.level;
+            Level = GC.level+1;
             Debug.Log("Leveis desbloqueados=:"+Level);
         }
 

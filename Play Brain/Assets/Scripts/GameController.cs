@@ -87,16 +87,14 @@ public class GameController : MonoBehaviour
     void Start()
     {
         idFase = 1;
-        Player player = new Player();
-        player.LoadPlayer();
-        idFase = PlayerPrefs.GetInt("LevelClicado")-1;
-
+        idFase = PlayerPrefs.GetInt("LevelClicado")-1; //-1 foi adicionado pelo fato dos vetores do jogo começarem no 0, sendo assim a primeira fase corresponde ao vetor 0
+        Debug.Log("Level clicado recebido: " + idFase);
         //Alocação de objetos e variáveis:
 
         ttentativas = 0; //nenhuma tentativa ainda
         pontos = 0;
         tentativas.text = "";
-        txtFase.text = " " + (idFase+1); //mostra fase 1 na tela
+        txtFase.text = " " + (idFase+1); 
 
         certo.SetActive(false);
         meio.SetActive(false);
