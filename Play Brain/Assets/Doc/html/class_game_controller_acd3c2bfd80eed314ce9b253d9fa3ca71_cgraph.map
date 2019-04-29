@@ -1,0 +1,4 @@
+<map id="GameController.ProximaFase" name="GameController.ProximaFase">
+<area shape="rect" id="node1" title="Passa para a próxima fase &quot;zerando&quot; as variáveis necessárias." alt="" coords="5,13,199,39"/>
+<area shape="rect" id="node2" href="$class_game_manager.html#ae7ca31f79eef5dfa0dd3ebac36cfdc39" title="Fecha tela de &#39;Level Complete&#39;" alt="" coords="247,5,445,47"/>
+</map>

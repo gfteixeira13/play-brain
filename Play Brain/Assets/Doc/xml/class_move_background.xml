@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_move_background" kind="class" language="C#" prot="public">
+    <compoundname>MoveBackground</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_move_background_1a90606bdbce1143c43c2b0fe184b34656" prot="private" static="no" mutable="no">
+        <type>Material</type>
+        <definition>Material MoveBackground.materialAtual</definition>
+        <argsstring></argsstring>
+        <name>materialAtual</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/MoveBackground.cs" line="8" column="1" bodyfile="D:/Documentation/Scripts/MoveBackground.cs" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_move_background_1ac81890dd82f727466e609f5fcfba0232" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float MoveBackground.offset</definition>
+        <argsstring></argsstring>
+        <name>offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/MoveBackground.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/MoveBackground.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_move_background_1a2bc82388d7598f636d04217087ee5d22" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float MoveBackground.velocidade</definition>
+        <argsstring></argsstring>
+        <name>velocidade</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/MoveBackground.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/MoveBackground.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_move_background_1a773655c6810eaa36c50b80a73b4737bc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MoveBackground.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/MoveBackground.cs" line="12" column="1" bodyfile="D:/Documentation/Scripts/MoveBackground.cs" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_move_background_1ae77936d78bb9f7a216fc1257781adcf3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void MoveBackground.FixedUpdate</definition>
+        <argsstring>()</argsstring>
+        <name>FixedUpdate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/MoveBackground.cs" line="15" column="1" bodyfile="D:/Documentation/Scripts/MoveBackground.cs" bodystart="15" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="18">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="17">
+        <label>MoveBackground</label>
+        <link refid="class_move_background"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="20">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="19">
+        <label>MoveBackground</label>
+        <link refid="class_move_background"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Documentation/Scripts/MoveBackground.cs" line="5" column="1" bodyfile="D:/Documentation/Scripts/MoveBackground.cs" bodystart="5" bodyend="21"/>
+    <listofallmembers>
+      <member refid="class_move_background_1ae77936d78bb9f7a216fc1257781adcf3" prot="private" virt="non-virtual"><scope>MoveBackground</scope><name>FixedUpdate</name></member>
+      <member refid="class_move_background_1a90606bdbce1143c43c2b0fe184b34656" prot="private" virt="non-virtual"><scope>MoveBackground</scope><name>materialAtual</name></member>
+      <member refid="class_move_background_1ac81890dd82f727466e609f5fcfba0232" prot="private" virt="non-virtual"><scope>MoveBackground</scope><name>offset</name></member>
+      <member refid="class_move_background_1a773655c6810eaa36c50b80a73b4737bc" prot="private" virt="non-virtual"><scope>MoveBackground</scope><name>Start</name></member>
+      <member refid="class_move_background_1a2bc82388d7598f636d04217087ee5d22" prot="public" virt="non-virtual"><scope>MoveBackground</scope><name>velocidade</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

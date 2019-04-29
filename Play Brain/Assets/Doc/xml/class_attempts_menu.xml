@@ -1,0 +1,506 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_attempts_menu" kind="class" language="C#" prot="public">
+    <compoundname>AttemptsMenu</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_attempts_menu_1ab809931e6ce8f4d90114af48657f99d5" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.imgMenuT</definition>
+        <argsstring></argsstring>
+        <name>imgMenuT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="8" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="8" bodyend="-1"/>
+        <referencedby refid="class_attempts_menu_1ab12fb99ad5bccf9f8367ef71e17af628" compoundref="_attempts_menu_8cs" startline="45" endline="479">F_AttemptsMenu</referencedby>
+        <referencedby refid="class_attempts_menu_1a8b44d901a7fe1ac80a990f997512b86e" compoundref="_attempts_menu_8cs" startline="483" endline="486">CloseAttemptsMenu</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a768cb29cf25b9cbfe1058a233eeb173b" prot="public" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.F1</definition>
+        <argsstring></argsstring>
+        <name>F1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+        <referencedby refid="class_attempts_menu_1ae4a4930a24e331b2fdaf2bc215c3449c" compoundref="_attempts_menu_8cs" startline="12" endline="39">Start</referencedby>
+        <referencedby refid="class_attempts_menu_1ab12fb99ad5bccf9f8367ef71e17af628" compoundref="_attempts_menu_8cs" startline="45" endline="479">F_AttemptsMenu</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1af0f61cfb62cbacf7ae6d5412d5c31ec0" prot="public" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI AttemptsMenu.cli1_1</definition>
+        <argsstring></argsstring>
+        <name>cli1_1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="10" bodyend="-1"/>
+        <referencedby refid="class_attempts_menu_1ae4a4930a24e331b2fdaf2bc215c3449c" compoundref="_attempts_menu_8cs" startline="12" endline="39">Start</referencedby>
+        <referencedby refid="class_attempts_menu_1ab12fb99ad5bccf9f8367ef71e17af628" compoundref="_attempts_menu_8cs" startline="45" endline="479">F_AttemptsMenu</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_attempts_menu_1a0d5cbb65dcfff9cfea7c279170ab9d95" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.H1</definition>
+        <argsstring></argsstring>
+        <name>H1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a8a81ad6e0703abd5d0f7ad7803af504a" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.H11</definition>
+        <argsstring></argsstring>
+        <name>H11</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a901a1325e46d2cbe57a5d79a9d7a57fa" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.F2</definition>
+        <argsstring></argsstring>
+        <name>F2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1aa4029a72cc40dc9eebd58d58999d86bb" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.H2</definition>
+        <argsstring></argsstring>
+        <name>H2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1aa5e349ff20f3371d4449e9b91b7865b2" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.H22</definition>
+        <argsstring></argsstring>
+        <name>H22</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1addbb64add56478a8fb8e97742365700c" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.F3</definition>
+        <argsstring></argsstring>
+        <name>F3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a4aaf1fc5fb5a7264cd96c18796a59724" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.H3</definition>
+        <argsstring></argsstring>
+        <name>H3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a6bf8560b9a6246053b3a70839b286172" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.H33</definition>
+        <argsstring></argsstring>
+        <name>H33</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1ae5cc2e69369721a491e23ad2ab930a37" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.F4</definition>
+        <argsstring></argsstring>
+        <name>F4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a5d6935d79d79b071de855f8aaa77907e" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.H4</definition>
+        <argsstring></argsstring>
+        <name>H4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1aa48f283156066cc4055f6c542c89a63f" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.H44</definition>
+        <argsstring></argsstring>
+        <name>H44</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1af89731d7e404e8ed0ae64eee3d6fc554" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.F5</definition>
+        <argsstring></argsstring>
+        <name>F5</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a1f9149e075fd00f81275f4ed438e61a1" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.H5</definition>
+        <argsstring></argsstring>
+        <name>H5</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a1c972da470fb89c44e0fa510cc678503" prot="private" static="no" mutable="no">
+        <type>GameObject</type>
+        <definition>GameObject AttemptsMenu.H55</definition>
+        <argsstring></argsstring>
+        <name>H55</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1aea1490cfbccb4911499882986cf8107a" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI AttemptsMenu.cli2_1</definition>
+        <argsstring></argsstring>
+        <name>cli2_1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a9c5a30ebf9e67852e9667250b49736a0" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI AttemptsMenu.cli1_2</definition>
+        <argsstring></argsstring>
+        <name>cli1_2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1aeac79c511fbf28ab14d91ef7a1127935" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI AttemptsMenu.cli2_2</definition>
+        <argsstring></argsstring>
+        <name>cli2_2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a8564fcb42013febb90d2f6a81280326c" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI AttemptsMenu.cli1_3</definition>
+        <argsstring></argsstring>
+        <name>cli1_3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a752040aae7628d7900e8a5c641c81db7" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI AttemptsMenu.cli2_3</definition>
+        <argsstring></argsstring>
+        <name>cli2_3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1aed96caada9073fa07a6eac475ea02578" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI AttemptsMenu.cli1_4</definition>
+        <argsstring></argsstring>
+        <name>cli1_4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1ab4e11282a583757a0458fdd2469249c4" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI AttemptsMenu.cli2_4</definition>
+        <argsstring></argsstring>
+        <name>cli2_4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1a7fc05cfee24cc8fe1e6b9d13b322d0e2" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI AttemptsMenu.cli1_5</definition>
+        <argsstring></argsstring>
+        <name>cli1_5</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_attempts_menu_1ac071423db61263e272d20584d308322c" prot="private" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI AttemptsMenu.cli2_5</definition>
+        <argsstring></argsstring>
+        <name>cli2_5</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_attempts_menu_1ae4a4930a24e331b2fdaf2bc215c3449c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AttemptsMenu.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="12" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="12" bodyend="39"/>
+        <references refid="class_attempts_menu_1af0f61cfb62cbacf7ae6d5412d5c31ec0" compoundref="_attempts_menu_8cs" startline="10">cli1_1</references>
+        <references refid="class_attempts_menu_1a768cb29cf25b9cbfe1058a233eeb173b" compoundref="_attempts_menu_8cs" startline="9">F1</references>
+      </memberdef>
+      <memberdef kind="function" id="class_attempts_menu_1ab12fb99ad5bccf9f8367ef71e17af628" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AttemptsMenu.F_AttemptsMenu</definition>
+        <argsstring>(GameController GC)</argsstring>
+        <name>F_AttemptsMenu</name>
+        <param>
+          <type><ref refid="class_game_controller" kindref="compound">GameController</ref></type>
+          <declname>GC</declname>
+        </param>
+        <briefdescription>
+<para>Traz dados da Fase para o Menu de Tentativas </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>GC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Controlador do Game</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>---------------<mdash/>/// ///---------------<mdash/>/// ///---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>/// ---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>/// ---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>///---------------<mdash/>//////---------------<mdash/>//////---------------<mdash/>///</para>
+<para>---------------<mdash/>/// ---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>//////---------------<mdash/>//////---------------<mdash/>//////---------------<mdash/>//////---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>/// ///---------------<mdash/>//////---------------<mdash/>//////---------------<mdash/>///</para>
+<para>---------------<mdash/>/// ---------------<mdash/>///</para>
+<para>---------------<mdash/>/// ---------------<mdash/>///</para>
+<para>---------------<mdash/>///</para>
+<para>---------------<mdash/>/// </para>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="45" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="45" bodyend="479"/>
+        <references refid="class_game_controller_1ae17003d8112fdbcbf47399289af10774" compoundref="_game_controller_8cs" startline="60">GameController.attempts</references>
+        <references refid="class_attempts_menu_1ab809931e6ce8f4d90114af48657f99d5" compoundref="_attempts_menu_8cs" startline="8">imgMenuT</references>
+        <references refid="class_attempts_menu_1af0f61cfb62cbacf7ae6d5412d5c31ec0" compoundref="_attempts_menu_8cs" startline="10">cli1_1</references>
+        <references refid="class_game_controller_1a1d2ccb048f9ceda40ed2747722a4c362" compoundref="_game_controller_8cs" startline="61">GameController.click1</references>
+        <references refid="class_game_controller_1af076b749d817c413910c1dd1a024bb09" compoundref="_game_controller_8cs" startline="62">GameController.click2</references>
+        <references refid="class_game_controller_1ab8f039dc0b898da4afa8a87b63c4b1ea" compoundref="_game_controller_8cs" startline="41">GameController.result</references>
+        <references refid="class_attempts_menu_1a768cb29cf25b9cbfe1058a233eeb173b" compoundref="_attempts_menu_8cs" startline="9">F1</references>
+      </memberdef>
+      <memberdef kind="function" id="class_attempts_menu_1a8b44d901a7fe1ac80a990f997512b86e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AttemptsMenu.CloseAttemptsMenu</definition>
+        <argsstring>()</argsstring>
+        <name>CloseAttemptsMenu</name>
+        <briefdescription>
+<para>Fecha o Menu de Tentativas </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="483" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="483" bodyend="486"/>
+        <references refid="class_attempts_menu_1ab809931e6ce8f4d90114af48657f99d5" compoundref="_attempts_menu_8cs" startline="8">imgMenuT</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="0">
+        <label>AttemptsMenu</label>
+        <link refid="class_attempts_menu"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>AttemptsMenu</label>
+        <link refid="class_attempts_menu"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Documentation/Scripts/AttemptsMenu.cs" line="7" column="1" bodyfile="D:/Documentation/Scripts/AttemptsMenu.cs" bodystart="6" bodyend="488"/>
+    <listofallmembers>
+      <member refid="class_attempts_menu_1af0f61cfb62cbacf7ae6d5412d5c31ec0" prot="public" virt="non-virtual"><scope>AttemptsMenu</scope><name>cli1_1</name></member>
+      <member refid="class_attempts_menu_1a9c5a30ebf9e67852e9667250b49736a0" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>cli1_2</name></member>
+      <member refid="class_attempts_menu_1a8564fcb42013febb90d2f6a81280326c" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>cli1_3</name></member>
+      <member refid="class_attempts_menu_1aed96caada9073fa07a6eac475ea02578" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>cli1_4</name></member>
+      <member refid="class_attempts_menu_1a7fc05cfee24cc8fe1e6b9d13b322d0e2" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>cli1_5</name></member>
+      <member refid="class_attempts_menu_1aea1490cfbccb4911499882986cf8107a" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>cli2_1</name></member>
+      <member refid="class_attempts_menu_1aeac79c511fbf28ab14d91ef7a1127935" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>cli2_2</name></member>
+      <member refid="class_attempts_menu_1a752040aae7628d7900e8a5c641c81db7" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>cli2_3</name></member>
+      <member refid="class_attempts_menu_1ab4e11282a583757a0458fdd2469249c4" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>cli2_4</name></member>
+      <member refid="class_attempts_menu_1ac071423db61263e272d20584d308322c" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>cli2_5</name></member>
+      <member refid="class_attempts_menu_1a8b44d901a7fe1ac80a990f997512b86e" prot="public" virt="non-virtual"><scope>AttemptsMenu</scope><name>CloseAttemptsMenu</name></member>
+      <member refid="class_attempts_menu_1a768cb29cf25b9cbfe1058a233eeb173b" prot="public" virt="non-virtual"><scope>AttemptsMenu</scope><name>F1</name></member>
+      <member refid="class_attempts_menu_1a901a1325e46d2cbe57a5d79a9d7a57fa" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>F2</name></member>
+      <member refid="class_attempts_menu_1addbb64add56478a8fb8e97742365700c" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>F3</name></member>
+      <member refid="class_attempts_menu_1ae5cc2e69369721a491e23ad2ab930a37" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>F4</name></member>
+      <member refid="class_attempts_menu_1af89731d7e404e8ed0ae64eee3d6fc554" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>F5</name></member>
+      <member refid="class_attempts_menu_1ab12fb99ad5bccf9f8367ef71e17af628" prot="public" virt="non-virtual"><scope>AttemptsMenu</scope><name>F_AttemptsMenu</name></member>
+      <member refid="class_attempts_menu_1a0d5cbb65dcfff9cfea7c279170ab9d95" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>H1</name></member>
+      <member refid="class_attempts_menu_1a8a81ad6e0703abd5d0f7ad7803af504a" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>H11</name></member>
+      <member refid="class_attempts_menu_1aa4029a72cc40dc9eebd58d58999d86bb" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>H2</name></member>
+      <member refid="class_attempts_menu_1aa5e349ff20f3371d4449e9b91b7865b2" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>H22</name></member>
+      <member refid="class_attempts_menu_1a4aaf1fc5fb5a7264cd96c18796a59724" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>H3</name></member>
+      <member refid="class_attempts_menu_1a6bf8560b9a6246053b3a70839b286172" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>H33</name></member>
+      <member refid="class_attempts_menu_1a5d6935d79d79b071de855f8aaa77907e" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>H4</name></member>
+      <member refid="class_attempts_menu_1aa48f283156066cc4055f6c542c89a63f" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>H44</name></member>
+      <member refid="class_attempts_menu_1a1f9149e075fd00f81275f4ed438e61a1" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>H5</name></member>
+      <member refid="class_attempts_menu_1a1c972da470fb89c44e0fa510cc678503" prot="private" virt="non-virtual"><scope>AttemptsMenu</scope><name>H55</name></member>
+      <member refid="class_attempts_menu_1ab809931e6ce8f4d90114af48657f99d5" prot="public" virt="non-virtual"><scope>AttemptsMenu</scope><name>imgMenuT</name></member>
+      <member refid="class_attempts_menu_1ae4a4930a24e331b2fdaf2bc215c3449c" prot="public" virt="non-virtual"><scope>AttemptsMenu</scope><name>Start</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

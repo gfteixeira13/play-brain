@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,19 +8,14 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    public Animator abrirCadeado1;
-    public Animator abrirCadeado2;
+    public Animator openLock1; 
+    public Animator openLock2; 
+    public bool lockHasOpen = false; 
 
-    public bool cadeadoAberto = false;
-    //public void ResetTrigger(fechaCadeado1);
-    //public void ResetTrigger(int id);
     public GameObject imgMenuT;
     public GameManager GameManager;
 
-    public GameObject btnConfirmar; //Botão de Confirmar Tentativa
-
-
-    //Botões das Alternativas:
+    public GameObject btnConfirm; 
     public GameObject btn0;
     public GameObject btn1;
     public GameObject btn2;
@@ -31,70 +26,58 @@ public class GameController : MonoBehaviour
     public GameObject btn7;
     public GameObject btn8;
     public GameObject btn9;
-    public GameObject certo; //Símbolo de certo
-    public GameObject meio; //Símbolo de Meio certo
-    public GameObject meio2;
+    public GameObject full; 
+    public GameObject half; 
+    public GameObject half2;
 
-  
-
-    public TextMeshProUGUI txtFase;
-    public TextMeshProUGUI tentativas;
-    public TextMeshProUGUI textX1; //Objeto de Texto (Simboliza uma textBox1)
-    public TextMeshProUGUI textX2; //Objeto de Texto(Simboliza uma textBox2)
-    public TextMeshProUGUI clique1txt;
-    public TextMeshProUGUI clique2txt;
+    public TextMeshProUGUI txtPhase;
+    public TextMeshProUGUI textAttempts;
+    public TextMeshProUGUI textX1; 
+    public TextMeshProUGUI textX2; 
+    public TextMeshProUGUI click1txt;
+    public TextMeshProUGUI click2txt;
     
+    public AudioSource soundWin;
+    public string[] result;
+    public string[] alternativeA;
+    public string[] alternativeB;
+    public string[] alternativeC;
+    public string[] alternativeD;
+    public string[] correctN1;
+    public string[] correctN2;
 
-    public AudioSource SomGanhou;
-    public string[] resultado;
+    public int phaseId; 
 
-
-
-    ////////////Strings das Alternativas e dos números corretos(são definidos no gameObject na interface da Unity)
-    public string[] alternativaA;
-    public string[] alternativaB;
-    public string[] alternativaC;
-    public string[] alternativaD;
-    public string[] corretaN1;
-    public string[] corretaN2;
-
-    ///////////Número da Fase:
-   public int idFase; 
-
-    private bool txt1; //serve para verificar se o textX1 está vazio
-    private bool txt2; //serve para verificar se o textX2 está vazio;
-    
-    //booleanas que nos dão o resultado
-    public bool correta1;
-    public bool correta2;
-    public bool posicaoE1;
-    public bool posicaoE2;
+    private bool txt1; 
+    private bool txt2; 
+       
+    public bool correct1;  
+    public bool correct2;
+    public bool positionE1;
+    public bool positionE2;
 
 
-    public int ttentativas;
-    public string[] clique1; //o parâmetro receberá o número da tentativa
-    public string[] clique2; // ||
-    //-------------------------------//
-    //Váriaveis relacionadas ao Score e Level do Usuário
-    public Text pontuacao;
-    public int pontos;
-    //-----------//
+    public int attempts;
+    public string[] click1; /*!< Recebe como Parâmetro a tentativa */
+    public string[] click2; /*!< Recebe como Parâmetro a tentativa */
+
+    public Text txtPoints;
+    public int points;
     public GameObject btnMenu;
+ 
     void Start()
     {
-        idFase = PlayerPrefs.GetInt("LevelClicado"); 
-        Debug.Log("Level clicado recebido: " + idFase);
-        //Alocação de objetos e variáveis:
+        phaseId = PlayerPrefs.GetInt("LevelClicado"); //A Fase recebe a fase clicada na seleção de fases
+        Debug.Log("Level clicado recebido: " + phaseId);    
+        attempts = 0; 
+        points = 0;
+        textAttempts.text = "";
+        txtPhase.text = " " + (phaseId+1); 
 
-        ttentativas = 0; //nenhuma tentativa ainda
-        pontos = 0;
-        tentativas.text = "";
-        txtFase.text = " " + (idFase+1); 
-
-        certo.SetActive(false);
-        meio.SetActive(false);
-        meio2.SetActive(false);
-        btnConfirmar.SetActive(false);
+        full.SetActive(false);
+        half.SetActive(false);
+        half2.SetActive(false);
+        btnConfirm.SetActive(false);
         btn0.SetActive(false);
         btn1.SetActive(false);
         btn2.SetActive(false);
@@ -108,39 +91,37 @@ public class GameController : MonoBehaviour
 
         btnMenu.SetActive(false);
 
-        //Todos os botões estão invisiveis 
-        txt1 = false;
+        /**As booleanas estão falsas pois os 'TextBox1' e 'TextBox2' não foram preenchidos*/
+        txt1 = false; 
         txt2 = false;
-        //As booleanas acimas estão falsas pois os 'TextBox1' e 'TextBox2' não foram preenchidos
-        //Abaixo os botões são alocados em suas devidas posições:
-
-        //Alternativa A -------------------------------Alternativa A----------------Alternativa A-----------------//
-        if (alternativaA[idFase] == "0")
+        
+        /**Abaixo os botões são alocados em suas devidas posições dependendo da pré-definição das alternativas*/
+        if (alternativeA[phaseId] == "0")
         {
             btn0.transform.localPosition = new Vector3(-90, 9, 0);
             btn0.SetActive(true);
 
 
         }
-        if (alternativaA[idFase] == "1")
+        if (alternativeA[phaseId] == "1")
         {
             btn1.transform.localPosition = new Vector3(-90, 9, 0);
             btn1.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "2")
+        if (alternativeA[phaseId] == "2")
         {
             btn2.transform.localPosition = new Vector3(-90, 9, 0);
             btn2.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "3")
+        if (alternativeA[phaseId] == "3")
         {
             btn3.transform.localPosition = new Vector3(-90, 9, 0);
             btn3.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "4")
+        if (alternativeA[phaseId] == "4")
         {
             btn4.transform.localPosition = new Vector3(-90, 9, 0);
             btn4.SetActive(true);
@@ -148,218 +129,215 @@ public class GameController : MonoBehaviour
 
 
         }
-        if (alternativaA[idFase] == "5")
+        if (alternativeA[phaseId] == "5")
         {
             btn5.transform.localPosition = new Vector3(-90, 9, 0);
             btn5.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "6")
+        if (alternativeA[phaseId] == "6")
         {
             btn6.transform.localPosition = new Vector3(-90, 9, 0);
             btn6.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "7")
+        if (alternativeA[phaseId] == "7")
         {
             btn7.transform.localPosition = new Vector3(-90, 9, 0);
             btn7.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "8")
+        if (alternativeA[phaseId] == "8")
         {
             btn8.transform.localPosition = new Vector3(-90, 9, 0);
             btn8.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "9")
+        if (alternativeA[phaseId] == "9")
         {
             btn9.transform.localPosition = new Vector3(-90, 9, 0);
             btn9.SetActive(true);
 
         }
 
-////Alternativa B -------------------------------Alternativa B----------------Alternativa B-----------------
-        if (alternativaB[idFase] == "0")
+        if (alternativeB[phaseId] == "0")
         {
             btn0.transform.localPosition = new Vector3(90, 9, 0);
             btn0.SetActive(true);
 
 
         }
-        if (alternativaB[idFase] == "1")
+        if (alternativeB[phaseId] == "1")
         {
             btn1.transform.localPosition = new Vector3(90, 9, 0);
             btn1.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "2")
+        if (alternativeB[phaseId] == "2")
         {
             btn2.transform.localPosition = new Vector3(90, 9, 0);
             btn2.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "3")
+        if (alternativeB[phaseId] == "3")
         {
             btn3.transform.localPosition = new Vector3(90, 9, 0);
             btn3.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "4")
+        if (alternativeB[phaseId] == "4")
         {
             btn4.transform.localPosition = new Vector3(90, 9, 0);
             btn4.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "5")
+        if (alternativeB[phaseId] == "5")
         {
             btn5.transform.localPosition = new Vector3(90, 9, 0);
             btn5.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "6")
+        if (alternativeB[phaseId] == "6")
         {
             btn6.transform.localPosition = new Vector3(90, 9, 0);
             btn6.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "7")
+        if (alternativeB[phaseId] == "7")
         {
             btn7.transform.localPosition = new Vector3(90, 9, 0);
             btn7.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "8")
+        if (alternativeB[phaseId] == "8")
         {
             btn8.transform.localPosition = new Vector3(90, 9, 0);
             btn8.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "9")
+        if (alternativeB[phaseId] == "9")
         {
             btn9.transform.localPosition = new Vector3(90, 9, 0);
             btn9.SetActive(true);
 
         }
-////Alternativa C -------------------------------Alternativa C----------------Alternativa C------------------
-        if (alternativaC[idFase] == "0")
+        if (alternativeC[phaseId] == "0")
         {
             btn0.transform.localPosition = new Vector3(-90, -171, 0);
             btn0.SetActive(true);
 
 
         }
-        if (alternativaC[idFase] == "1")
+        if (alternativeC[phaseId] == "1")
         {
             btn1.transform.localPosition = new Vector3(-90, -171, 0);
             btn1.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "2")
+        if (alternativeC[phaseId] == "2")
         {
             btn2.transform.localPosition = new Vector3(-90, -171, 0);
             btn2.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "3")
+        if (alternativeC[phaseId] == "3")
         {
             btn3.transform.localPosition = new Vector3(-90, -171, 0);
             btn3.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "4")
+        if (alternativeC[phaseId] == "4")
         {
             btn4.transform.localPosition = new Vector3(-90, -171, 0);
             btn4.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "5")
+        if (alternativeC[phaseId] == "5")
         {
             btn5.transform.localPosition = new Vector3(-90, -171, 0);
             btn5.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "6")
+        if (alternativeC[phaseId] == "6")
         {
             btn6.transform.localPosition = new Vector3(-90, -171, 0);
             btn6.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "7")
+        if (alternativeC[phaseId] == "7")
         {
             btn7.transform.localPosition = new Vector3(-90, -171, 0);
             btn7.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "8")
+        if (alternativeC[phaseId] == "8")
         {
             btn8.transform.localPosition = new Vector3(-90, -171, 0);
             btn8.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "9")
+        if (alternativeC[phaseId] == "9")
         {
             btn9.transform.localPosition = new Vector3(-90, -171, 0);
             btn9.SetActive(true);
 
         }
-////Alternativa D-------------------------------Alternativa D----------------Alternativa D-----------------
-        if (alternativaD[idFase] == "0")
+        if (alternativeD[phaseId] == "0")
         {
             btn0.transform.localPosition = new Vector3(90, -171, 0);
             btn0.SetActive(true);
 
 
         }
-        if (alternativaD[idFase] == "1")
+        if (alternativeD[phaseId] == "1")
         {
             btn1.transform.localPosition = new Vector3(90, -171, 0);
             btn1.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "2")
+        if (alternativeD[phaseId] == "2")
         {
             btn2.transform.localPosition = new Vector3(90, -171, 0);
             btn2.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "3")
+        if (alternativeD[phaseId] == "3")
         {
             btn3.transform.localPosition = new Vector3(90, -171, 0);
             btn3.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "4")
+        if (alternativeD[phaseId] == "4")
         {
             btn4.transform.localPosition = new Vector3(90, -171, 0);
             btn4.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "5")
+        if (alternativeD[phaseId] == "5")
         {
             btn5.transform.localPosition = new Vector3(90, -171, 0);
             btn5.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "6")
+        if (alternativeD[phaseId] == "6")
         {
             btn6.transform.localPosition = new Vector3(90, -171, 0);
             btn6.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "7")
+        if (alternativeD[phaseId] == "7")
         {
             btn7.transform.localPosition = new Vector3(90, -171, 0);
             btn7.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "8")
+        if (alternativeD[phaseId] == "8")
         {
             btn8.transform.localPosition = new Vector3(90, -171, 0);
             btn8.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "9")
+        if (alternativeD[phaseId] == "9")
         {
             btn9.transform.localPosition = new Vector3(90, -171, 0);
             btn9.SetActive(true);
@@ -367,100 +345,100 @@ public class GameController : MonoBehaviour
         }
     }
 
-
-
-
-
-    public void click(string number)
+    /// <summary>
+    /// Recebe o Clique do usuário  e já compara com o número escondido, preenchendo as booleanas.
+    /// </summary>
+    /// <param name="number">Número clicado pelo usuário.</param>
+    public void Click(string number)
     {
 
        
-        if (txt1 == false) //primeiro número clicado
+        if (txt1 == false) 
         {
-            clique1[ttentativas] = number;
+            click1[attempts] = number;
 
 
-            if (number == alternativaA[idFase]) //Compara se o number clicado foi igual ao número da alternativaA[fase X] 
+            if (number == alternativeA[phaseId]) 
             {
-                textX1.text = alternativaA[idFase]; //textX1 recebe o número do button que foi clicado - nesse caso o nº da alternativa A
-                txt1 = true; //agora o textx1 tem algo, então o txt1 recebe true;
-                if (alternativaA[idFase] == corretaN1[idFase]) //se a alternativa A for igual ao número1 escondido
+                textX1.text = alternativeA[phaseId]; 
+                txt1 = true; 
+                if (alternativeA[phaseId] == correctN1[phaseId]) 
                 {
-                    correta1 = true; //assim o usuário acertou o primeiro número
-                    posicaoE1 = false; //Ele acertou, logo a posição está correta
+                    correct1 = true; 
+                    positionE1 = false; 
                 }
-                else if (alternativaA[idFase] == corretaN2[idFase]) //se a alternativa A for igual ao segundo número escondido
+                else if (alternativeA[phaseId] == correctN2[phaseId]) 
                 {
-                    posicaoE1 = true;  //posição errada recebe verdadeiro.
-                    correta1 = false; 
+                    positionE1 = true;  
+                    correct1 = false; 
                 }
-                else if ((alternativaA[idFase] != corretaN1[idFase]) && (alternativaA[idFase] != corretaN2[idFase]))
+                else if ((alternativeA[phaseId] != correctN1[phaseId]) && (alternativeA[phaseId] != correctN2[phaseId]))
                 {
-                    //errou por completo o primeiro número
-                    correta1 = false; 
-                    posicaoE1 = false;
+                  
+                    correct1 = false; 
+                    positionE1 = false;
                 }
-            }                //AS MESMAS COMPARAÇÕES SÃO FEITAS COM AS OUTRAS ALTERNATIVAS(B,C E D)            
+            }              
 
-            else if (number == alternativaB[idFase])
+            else if (number == alternativeB[phaseId])
             {
-                textX1.text = alternativaB[idFase];
+                textX1.text = alternativeB[phaseId];
                 txt1 = true;
-                if (alternativaB[idFase] == corretaN1[idFase])
+                if (alternativeB[phaseId] == correctN1[phaseId])
                 {
-                    correta1 = true;
-                    posicaoE1 = false;
+                    correct1 = true;
+                    positionE1 = false;
                 }
-                else if (alternativaB[idFase] == corretaN2[idFase])
+                else if (alternativeB[phaseId] == correctN2[phaseId])
                 {
-                    posicaoE1 = true;
-                    correta1 = false;
+                    positionE1 = true;
+                    correct1 = false;
                 }
-                else if ((alternativaB[idFase] != corretaN1[idFase]) && (alternativaB[idFase] != corretaN2[idFase]))
+                else if ((alternativeB[phaseId] != correctN1[phaseId]) && (alternativeB[phaseId] != correctN2[phaseId]))
                 {
-                    correta1 = false;
-                    posicaoE1 = false;
+                    correct1 = false;
+                    positionE1 = false;
 
                 }
             }
-            else if (number == alternativaC[idFase])
+            else if (number == alternativeC[phaseId])
             {
-                textX1.text = alternativaC[idFase];
+                textX1.text = alternativeC[phaseId];
                 txt1 = true;
-                if (alternativaC[idFase] == corretaN1[idFase])
+                if (alternativeC[phaseId] == correctN1[phaseId])
                 {
-                    correta1 = true;
-                    posicaoE1 = false;
+                    correct1 = true;
+                    positionE1 = false;
                 }
-                else if (alternativaC[idFase] == corretaN2[idFase])
+                else if (alternativeC[phaseId] == correctN2[phaseId])
                 {
-                    posicaoE1 = true;
-                    correta1 = false;
+                    positionE1 = true;
+                    correct1 = false;
                 }
-                else if((alternativaC[idFase] != corretaN1[idFase]) && (alternativaC[idFase] != corretaN2[idFase]))
+                else if((alternativeC[phaseId] != correctN1[phaseId]) && (alternativeC[phaseId] != correctN2[phaseId]))
                 {
-                    correta1 = false;
-                    posicaoE1 = false;
+                    correct1 = false;
+                    positionE1 = false;
                 }
             }
-            else if (number == alternativaD[idFase])
+            else if (number == alternativeD[phaseId])
             {
-                textX1.text = alternativaD[idFase];
+                textX1.text = alternativeD[phaseId];
                 txt1 = true;
-                if (alternativaD[idFase] == corretaN1[idFase])
+                if (alternativeD[phaseId] == correctN1[phaseId])
                 {
-                    correta1 = true;
-                    posicaoE1 = false;
+                    correct1 = true;
+                    positionE1 = false;
                 }
-                else if (alternativaD[idFase] == corretaN2[idFase])
+                else if (alternativeD[phaseId] == correctN2[phaseId])
                 {
-                    posicaoE1 = true;
-                    correta1 = false;
+                    positionE1 = true;
+                    correct1 = false;
                 }
-                else if ((alternativaD[idFase] != corretaN1[idFase]) && (alternativaD[idFase] != corretaN2[idFase]))
+                else if ((alternativeD[phaseId] != correctN1[phaseId]) && (alternativeD[phaseId] != correctN2[phaseId]))
                 {
-                    correta1 = false;
-                    posicaoE1 = false;
+                    correct1 = false;
+                    positionE1 = false;
                 }
             }
 
@@ -468,248 +446,234 @@ public class GameController : MonoBehaviour
 
 
 
-        }///////////////////////////////////////////////////////////////
+        }
         
       
-        else if (txt2 == false) //segundo número clicado
+        else if (txt2 == false) 
         {
 
-            clique2[ttentativas] = number;
-            if (number == alternativaA[idFase])
+            click2[attempts] = number;
+            if (number == alternativeA[phaseId])
             {
-                textX2.text = alternativaA[idFase];
+                textX2.text = alternativeA[phaseId];
                 txt2 = true;
-                btnConfirmar.SetActive(true);
-                if (alternativaA[idFase] == corretaN2[idFase]) 
+                btnConfirm.SetActive(true);
+                if (alternativeA[phaseId] == correctN2[phaseId]) 
                 {
-                        correta2 = true;
-                        posicaoE2 = false;
+                        correct2 = true;
+                        positionE2 = false;
 
          
                
                 }
-                else if (alternativaA[idFase] == corretaN1[idFase])
+                else if (alternativeA[phaseId] == correctN1[phaseId])
                 {
-                        posicaoE2 = true;
-                        correta2 = false;
+                        positionE2 = true;
+                        correct2 = false;
 
                 }
-                else if (alternativaA[idFase] != corretaN2[idFase] && alternativaA[idFase] != corretaN1[idFase])
+                else if (alternativeA[phaseId] != correctN2[phaseId] && alternativeA[phaseId] != correctN1[phaseId])
                 {
-                        correta2 = false;
-                        posicaoE2 = false;              
+                        correct2 = false;
+                        positionE2 = false;              
                 }
 
-            }//////////////////////////////////////////////////////////// -- ///////// -- ////// --//////////////////---- ///////////////////////////
-            else if (number == alternativaB[idFase])
+            }
+            else if (number == alternativeB[phaseId])
             {
-                textX2.text = alternativaB[idFase];
+                textX2.text = alternativeB[phaseId];
                 txt2 = true;
-                btnConfirmar.SetActive(true);
+                btnConfirm.SetActive(true);
 
-                    if (alternativaB[idFase] == corretaN2[idFase]) //acertou o segundo número
+                    if (alternativeB[phaseId] == correctN2[phaseId]) 
                     {
-                        correta2 = true;
-                        posicaoE2 = false;
+                        correct2 = true;
+                        positionE2 = false;
             
                     }
-                else if (alternativaB[idFase] == corretaN1[idFase])
+                else if (alternativeB[phaseId] == correctN1[phaseId])
                 {
-                    posicaoE2 = true;
-                    correta2 = false;
+                    positionE2 = true;
+                    correct2 = false;
 
                
                 }
-                else if (alternativaB[idFase] != corretaN2[idFase] && alternativaB[idFase] != corretaN1[idFase])
+                else if (alternativeB[phaseId] != correctN2[phaseId] && alternativeB[phaseId] != correctN1[phaseId])
                 {
-                        correta2= false;
-                        posicaoE2 = false;
+                        correct2= false;
+                        positionE2 = false;
 
                 }
-            }////////////////////////// ----- /////////////////////// ---- ///////////////////// ----- //////////////////////////////// ---- ///////////////////////////
-            else if (number == alternativaC[idFase])
+            }
+            else if (number == alternativeC[phaseId])
             {
-                textX2.text = alternativaC[idFase];
+                textX2.text = alternativeC[phaseId];
                 txt2 = true;
-                btnConfirmar.SetActive(true);
+                btnConfirm.SetActive(true);
 
-                if (alternativaC[idFase] == corretaN2[idFase]) //acertou o segundo número
+                if (alternativeC[phaseId] == correctN2[phaseId]) 
                 {
-                  correta2= true;
-                  posicaoE2 = false;
+                  correct2= true;
+                  positionE2 = false;
 
                 }
-                else if (alternativaC[idFase] == corretaN1[idFase])
+                else if (alternativeC[phaseId] == correctN1[phaseId])
                 {
-                    posicaoE2= true;
-                    correta2 = false;
+                    positionE2= true;
+                    correct2 = false;
 
                
                 }
-                else if (alternativaC[idFase] != corretaN2[idFase] && alternativaC[idFase] != corretaN1[idFase])
+                else if (alternativeC[phaseId] != correctN2[phaseId] && alternativeC[phaseId] != correctN1[phaseId])
                 {
-                        correta2 = false;
-                        posicaoE2 = false;
+                        correct2 = false;
+                        positionE2 = false;
 
                 }
-            }///////////////----------//////////////---------------/////////////--------------/////////////------------////////////----------/////////////
-            else if (number == alternativaD[idFase])
+            }
+            else if (number == alternativeD[phaseId])
             {
-                textX2.text = alternativaD[idFase];
+                textX2.text = alternativeD[phaseId];
                 txt2 = true;
-                btnConfirmar.SetActive(true);
+                btnConfirm.SetActive(true);
 
-                if (alternativaD[idFase] == corretaN2[idFase]) //acertou o segundo número
+                if (alternativeD[phaseId] == correctN2[phaseId]) 
                 {
-                    correta2 = true;
-                    posicaoE2 = false;
+                    correct2 = true;
+                    positionE2 = false;
                
 
                 }
-                else if (alternativaD[idFase] == corretaN1[idFase])
+                else if (alternativeD[phaseId] == correctN1[phaseId])
                 {
-                    posicaoE2 = true;
-                    correta2 = false;
+                    positionE2 = true;
+                    correct2 = false;
 
               
                 }
-                else if (alternativaD[idFase] != corretaN2[idFase] && alternativaD[idFase] != corretaN1[idFase])
+                else if (alternativeD[phaseId] != correctN2[phaseId] && alternativeD[phaseId] != correctN1[phaseId])
                 {
-                        correta2 = false;
-                        posicaoE2 = false;
+                        correct2 = false;
+                        positionE2 = false;
 
                 }
             }
 
-        } //Comparações referente ao segundo número clicado se encerram aqui
-    } //Aqui encerra a função clique
+        } 
+    } 
 
     IEnumerator TransitionFase()
     {
         yield return new WaitForSeconds(3f);
-        GameManager.completeLevel();
+        GameManager.CompleteLevel();
     }
 
-    public void confirmarTentativa() //Esta Função é chamada quando o botão CONFIRMAR é clicado
-    {  //Nessa função os resultados são gerados baseados nas booleanas da função anterior, no momento em que o usuário clica na alternativa 
-        //a booleana já é marcada como true ou falsa
-
-        btnConfirmar.SetActive(false);
-
-
-        if (ttentativas == 4 && (correta1 ==false || correta2 == false))
+    /// <summary>
+    /// Verifica as booleanas preenchidas na função 'Click' e mostra as dicas.
+    /// </summary>
+    public void ConfirmAnswer() 
+    {  
+        btnConfirm.SetActive(false);
+        if (attempts == 4 && (correct1 ==false || correct2 == false))
         {
-            //Stop the GAME
-            GameManager.endGame();
-            
-
+            GameManager.EndGame();        
         }
         else {
 
-            if (correta1 == true && correta2 == true) //Bolinha cheia e bolinha Cheia
+            if (correct1 == true && correct2 == true) 
             {
-                pontuacaoResposta();
-
-                if (cadeadoAberto == false)
+                GCScore();
+                if (lockHasOpen == false)
                 {
-                    abrirCadeado1.speed = 1;
-                    abrirCadeado2.speed = 1;
-                    abrirCadeado1.Play("CadeadoAbrindo", 0, 0f);
-                    abrirCadeado2.Play("CadeadoAbrindo2", 0, 0f);
-                    cadeadoAberto = true;
-
-
+                    openLock1.speed = 1;
+                    openLock2.speed = 1;
+                    openLock1.Play("CadeadoAbrindo", 0, 0f);
+                    openLock2.Play("CadeadoAbrindo2", 0, 0f);
+                    lockHasOpen = true;
                 }
-
-
-                SomGanhou.Play();
-                certo.SetActive(false);
-                meio.SetActive(false);
-                btnConfirmar.SetActive(false);
-                meio2.SetActive(false);
-
-                StartCoroutine(TransitionFase());
-                //-----------------------------------//
-                
+                soundWin.Play();
+                full.SetActive(false);
+                half.SetActive(false);
+                btnConfirm.SetActive(false);
+                half2.SetActive(false);
+                StartCoroutine(TransitionFase());            
 
             }
             else
-            {
-               
-            
-                if (correta1 == true && correta2 == false && posicaoE2 == false && posicaoE1 == false) //bolinha cheia e Bolinha vazia
+            {                          
+                if (correct1 == true && correct2 == false && positionE2 == false && positionE1 == false) 
                 {
-                    certo.SetActive(true);
-                    resultado[ttentativas] = "C";
-                    certo.transform.localPosition = new Vector3(-164, -457, 0);
-                    meio.SetActive(false);
-                    meio2.SetActive(false);
+                    full.SetActive(true);
+                    result[attempts] = "F"; //Full
+                    full.transform.localPosition = new Vector3(-164, -457, 0);
+                    half.SetActive(false);
+                    half2.SetActive(false);
 
 
 
                 }
-                else if ((correta1 == true && posicaoE2 == true) || (posicaoE1 == true && correta2 == true))
+                else if ((correct1 == true && positionE2 == true) || (positionE1 == true && correct2 == true))
                 {
-                    meio.transform.localPosition = new Vector3(-164, -457, 0);
-                    meio.SetActive(true);
-                    resultado[ttentativas] = "M";
-                    certo.SetActive(false);
-                    meio2.SetActive(false);
+                    half.transform.localPosition = new Vector3(-164, -457, 0);
+                    half.SetActive(true);
+                    result[attempts] = "H"; // Half
+                    full.SetActive(false);
+                    half2.SetActive(false);
 
                 }
-                else if (posicaoE1 == true && correta2 == false && correta1 == false && posicaoE2 == false)
+                else if (positionE1 == true && correct2 == false && correct1 == false && positionE2 == false)
                 {
-                    meio.SetActive(true);
-                    resultado[ttentativas] = "M";
-                    meio.transform.localPosition = new Vector3(-164, -457, 0);
-                    meio2.SetActive(false);
+                    half.SetActive(true);
+                    result[attempts] = "H";
+                    half.transform.localPosition = new Vector3(-164, -457, 0);
+                    half2.SetActive(false);
 
                 }
-                else if (posicaoE1 == true && posicaoE2 == true && correta1 == false && correta2 == false)
+                else if (positionE1 == true && positionE2 == true && correct1 == false && correct2 == false)
                 {
-                    meio.SetActive(true);
-                    meio2.SetActive(true);
-                    resultado[ttentativas] = "MM";
-                    meio.transform.localPosition = new Vector3(-164, -457, 0);
-                    meio2.transform.localPosition = new Vector3(-248, -457, 0);
+                    half.SetActive(true);
+                    half2.SetActive(true);
+                    result[attempts] = "HH";
+                    half.transform.localPosition = new Vector3(-164, -457, 0);
+                    half2.transform.localPosition = new Vector3(-248, -457, 0);
 
                 }
-                else if (correta1 == false && correta2 == true && posicaoE1 == false && posicaoE2 == false)
+                else if (correct1 == false && correct2 == true && positionE1 == false && positionE2 == false)
                 {
-                    certo.SetActive(true);
-                    certo.transform.localPosition = new Vector3(-164, -457, 0);
-                    resultado[ttentativas] = "C";
-                    meio2.SetActive(false);
-                    meio.SetActive(false);
+                    full.SetActive(true);
+                    full.transform.localPosition = new Vector3(-164, -457, 0);
+                    result[attempts] = "F";
+                    half2.SetActive(false);
+                    half.SetActive(false);
 
                 }
-                else if (correta1 == false && correta2 == false && posicaoE1 == false && posicaoE2 == false)
+                else if (correct1 == false && correct2 == false && positionE1 == false && positionE2 == false)
                 {
-                    certo.SetActive(false);
-                    meio.SetActive(false);
-                    meio2.SetActive(false);
+                    full.SetActive(false);
+                    half.SetActive(false);
+                    half2.SetActive(false);
 
-                    resultado[ttentativas] = "E";
+                    result[attempts] = "I"; // Incorrect
 
                 }
-                else if (posicaoE2 == true && posicaoE1 == false && correta1 == false && correta1 == false)
+                else if (positionE2 == true && positionE1 == false && correct1 == false && correct1 == false)
                 {
-                    meio.transform.localPosition = new Vector3(-164, -457, 0);
+                    half.transform.localPosition = new Vector3(-164, -457, 0);
 
-                    meio.SetActive(true);
-                    resultado[ttentativas] = "M";
-                    certo.SetActive(false);
-                    meio2.SetActive(false);
+                    half.SetActive(true);
+                    result[attempts] = "H";
+                    full.SetActive(false);
+                    half2.SetActive(false);
 
 
                 }
 
               
             }
-            clique1txt.text = clique1[ttentativas];
-            clique2txt.text = clique2[ttentativas];
-            ttentativas++;
-            tentativas.text = "" + ttentativas;
+            click1txt.text = click1[attempts];
+            click2txt.text = click2[attempts];
+            attempts++;
+            textAttempts.text = "" + attempts;
 
 
 
@@ -720,7 +684,7 @@ public class GameController : MonoBehaviour
         }
 
 
-        if (ttentativas > 0)
+        if (attempts > 0)
         {
             btnMenu.SetActive(true);
         }
@@ -728,105 +692,111 @@ public class GameController : MonoBehaviour
 
 
     }
-    public int pontuacaoResposta()
+    /// <summary>
+    /// Verifica em qual tentativa o usuário acertou e dá a respectiva pontuação.
+    /// </summary>
+    /// <returns></returns>
+    public int GCScore()
     {
-        if (correta1 == true && correta2 == true)
+        if (correct1 == true && correct2 == true)
         {
-            if (ttentativas == 0)
+            if (attempts == 0)
             {
-                pontos += 10;
+                points += 10;
             }
-            else if (ttentativas == 1)
+            else if (attempts == 1)
             {
-                pontos += 8;
+                points += 8;
             }
-            else if (ttentativas == 2)
+            else if (attempts == 2)
             {
-                pontos += 6;
+                points += 6;
             }
-            else if (ttentativas == 3)
+            else if (attempts == 3)
             {
-                pontos += 4;
+                points += 4;
             }
-            else if (ttentativas == 4)
+            else if (attempts == 4)
             {
-                pontos += 2;
+                points += 2;
             }
            
             
         }
         else
         {
-            pontos += 0;
+            points += 0;
         }
-        pontuacao.text = "" + pontos;
-        Debug.Log(pontos);
+        txtPoints.text = "" + points;
+        Debug.Log(points);
        
-        return pontos;
+        return points;
         
     }
-
-    public void proximaFase()
+    /// <summary>
+    /// Passa para a próxima fase "zerando" as variáveis necessárias.
+    /// </summary>
+    public void ProximaFase()
     {
-        idFase++;
+        phaseId++;
 
-        GameManager.closeCompleteLevel();
+        GameManager.CloseCompleteLevel();
        
           
-        clique1txt.text = " ";
-        clique2txt.text = " ";
-        btnConfirmar.SetActive(false);
-        certo.SetActive(false);
-        meio.SetActive(false);
-        meio2.SetActive(false);
-        ttentativas = 0;
-        tentativas.text = "";
+        click1txt.text = " ";
+        click2txt.text = " ";
+        btnConfirm.SetActive(false);
+        full.SetActive(false);
+        half.SetActive(false);
+        half2.SetActive(false);
+        attempts = 0;
+        textAttempts.text = "";
 
-        txtFase.text = "" + (idFase+1);
+        txtPhase.text = "" + (phaseId+1);
 
 
-        correta1 = false;
-        correta2 = false;
-        posicaoE1 = false;
-        posicaoE2 = false;
+        correct1 = false;
+        correct2 = false;
+        positionE1 = false;
+        positionE2 = false;
 
         txt1 = false;
         txt2 = false;
 
-        //Referente à animação:
-        abrirCadeado1.speed = -1;
-        abrirCadeado2.speed = -1;
-        abrirCadeado1.Play("CadeadoAbrindo", 0, 0f);
-        abrirCadeado2.Play("CadeadoAbrindo2", 0, 0f);
-        cadeadoAberto = false;
+       /**Fecha os Cadeados*/
+        openLock1.speed = -1;
+        openLock2.speed = -1;
+        openLock1.Play("CadeadoAbrindo", 0, 0f);
+        openLock2.Play("CadeadoAbrindo2", 0, 0f);
+        lockHasOpen = false;
  
            
-        if (alternativaA[idFase] == "0")
+        if (alternativeA[phaseId] == "0")
         {
             btn0.transform.localPosition = new Vector3(-90, 9, 0);
             btn0.SetActive(true);
 
 
         }
-        if (alternativaA[idFase] == "1")
+        if (alternativeA[phaseId] == "1")
         {
             btn1.transform.localPosition = new Vector3(-90, 9, 0);
             btn1.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "2")
+        if (alternativeA[phaseId] == "2")
         {
             btn2.transform.localPosition = new Vector3(-90, 9, 0);
             btn2.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "3")
+        if (alternativeA[phaseId] == "3")
         {
             btn3.transform.localPosition = new Vector3(-90, 9, 0);
             btn3.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "4")
+        if (alternativeA[phaseId] == "4")
         {
             btn4.transform.localPosition = new Vector3(-90, 9, 0);
             btn4.SetActive(true);
@@ -834,221 +804,220 @@ public class GameController : MonoBehaviour
 
 
         }
-        if (alternativaA[idFase] == "5")
+        if (alternativeA[phaseId] == "5")
         {
             btn5.transform.localPosition = new Vector3(-90, 9, 0);
             btn5.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "6")
+        if (alternativeA[phaseId] == "6")
         {
             btn6.transform.localPosition = new Vector3(-90, 9, 0);
             btn6.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "7")
+        if (alternativeA[phaseId] == "7")
         {
             btn7.transform.localPosition = new Vector3(-90, 9, 0);
             btn7.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "8")
+        if (alternativeA[phaseId] == "8")
         {
             btn8.transform.localPosition = new Vector3(-90, 9, 0);
             btn8.SetActive(true);
 
         }
-        if (alternativaA[idFase] == "9")
+        if (alternativeA[phaseId] == "9")
         {
             btn9.transform.localPosition = new Vector3(-90, 9, 0);
             btn9.SetActive(true);
 
         }
-        /////////////////////////////////////////
+  
        
-        if (alternativaB[idFase] == "0")
+        if (alternativeB[phaseId] == "0")
         {
             btn0.transform.localPosition = new Vector3(90, 9, 0);
             btn0.SetActive(true);
 
 
         }
-        if (alternativaB[idFase] == "1")
+        if (alternativeB[phaseId] == "1")
         {
             btn1.transform.localPosition = new Vector3(90, 9, 0);
             btn1.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "2")
+        if (alternativeB[phaseId] == "2")
         {
             btn2.transform.localPosition = new Vector3(90, 9, 0);
             btn2.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "3")
+        if (alternativeB[phaseId] == "3")
         {
             btn3.transform.localPosition = new Vector3(90, 9, 0);
             btn3.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "4")
+        if (alternativeB[phaseId] == "4")
         {
             btn4.transform.localPosition = new Vector3(90, 9, 0);
             btn4.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "5")
+        if (alternativeB[phaseId] == "5")
         {
             btn5.transform.localPosition = new Vector3(90, 9, 0);
             btn5.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "6")
+        if (alternativeB[phaseId] == "6")
         {
             btn6.transform.localPosition = new Vector3(90, 9, 0);
             btn6.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "7")
+        if (alternativeB[phaseId] == "7")
         {
             btn7.transform.localPosition = new Vector3(90, 9, 0);
             btn7.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "8")
+        if (alternativeB[phaseId] == "8")
         {
             btn8.transform.localPosition = new Vector3(90, 9, 0);
             btn8.SetActive(true);
 
         }
-        if (alternativaB[idFase] == "9")
+        if (alternativeB[phaseId] == "9")
         {
             btn9.transform.localPosition = new Vector3(90, 9, 0);
             btn9.SetActive(true);
 
         }
-        ////////////////////////////////////////
+     
         
-        if (alternativaC[idFase] == "0")
+        if (alternativeC[phaseId] == "0")
         {
             btn0.transform.localPosition = new Vector3(-90, -171, 0);
             btn0.SetActive(true);
 
 
         }
-        if (alternativaC[idFase] == "1")
+        if (alternativeC[phaseId] == "1")
         {
             btn1.transform.localPosition = new Vector3(-90, -171, 0);
             btn1.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "2")
+        if (alternativeC[phaseId] == "2")
         {
             btn2.transform.localPosition = new Vector3(-90, -171, 0);
             btn2.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "3")
+        if (alternativeC[phaseId] == "3")
         {
             btn3.transform.localPosition = new Vector3(-90, -171, 0);
             btn3.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "4")
+        if (alternativeC[phaseId] == "4")
         {
             btn4.transform.localPosition = new Vector3(-90, -171, 0);
             btn4.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "5")
+        if (alternativeC[phaseId] == "5")
         {
             btn5.transform.localPosition = new Vector3(-90, -171, 0);
             btn5.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "6")
+        if (alternativeC[phaseId] == "6")
         {
             btn6.transform.localPosition = new Vector3(-90, -171, 0);
             btn6.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "7")
+        if (alternativeC[phaseId] == "7")
         {
             btn7.transform.localPosition = new Vector3(-90, -171, 0);
             btn7.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "8")
+        if (alternativeC[phaseId] == "8")
         {
             btn8.transform.localPosition = new Vector3(-90, -171, 0);
             btn8.SetActive(true);
 
         }
-        if (alternativaC[idFase] == "9")
+        if (alternativeC[phaseId] == "9")
         {
             btn9.transform.localPosition = new Vector3(-90, -171, 0);
             btn9.SetActive(true);
 
         }
-        //////////////////////////////////////////////////
        
 
-        if (alternativaD[idFase] == "0")
+        if (alternativeD[phaseId] == "0")
         {
             btn0.transform.localPosition = new Vector3(90, -171, 0);
             btn0.SetActive(true);
 
 
         }
-        if (alternativaD[idFase] == "1")
+        if (alternativeD[phaseId] == "1")
         {
             btn1.transform.localPosition = new Vector3(90, -171, 0);
             btn1.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "2")
+        if (alternativeD[phaseId] == "2")
         {
             btn2.transform.localPosition = new Vector3(90, -171, 0);
             btn2.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "3")
+        if (alternativeD[phaseId] == "3")
         {
             btn3.transform.localPosition = new Vector3(90, -171, 0);
             btn3.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "4")
+        if (alternativeD[phaseId] == "4")
         {
             btn4.transform.localPosition = new Vector3(90, -171, 0);
             btn4.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "5")
+        if (alternativeD[phaseId] == "5")
         {
             btn5.transform.localPosition = new Vector3(90, -171, 0);
             btn5.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "6")
+        if (alternativeD[phaseId] == "6")
         {
             btn6.transform.localPosition = new Vector3(90, -171, 0);
             btn6.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "7")
+        if (alternativeD[phaseId] == "7")
         {
             btn7.transform.localPosition = new Vector3(90, -171, 0);
             btn7.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "8")
+        if (alternativeD[phaseId] == "8")
         {
             btn8.transform.localPosition = new Vector3(90, -171, 0);
             btn8.SetActive(true);
 
         }
-        if (alternativaD[idFase] == "9")
+        if (alternativeD[phaseId] == "9")
         {
             btn9.transform.localPosition = new Vector3(90, -171, 0);
             btn9.SetActive(true);
@@ -1060,11 +1029,6 @@ public class GameController : MonoBehaviour
 
         }
     
-
-
-    
-
-    //criar script Menu() com métodos/funções abrir/fechar menu;
 }
 
     

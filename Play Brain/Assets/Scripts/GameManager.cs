@@ -7,23 +7,33 @@ public class GameManager : MonoBehaviour {
     public bool gameHasEnded = false;
     public GameObject CompleteLevelUI;
     public GameObject GameOver;
-
-    public void completeLevel()
+    /// <summary>
+    /// Tela de 'Level Complete' é chamada.
+    /// </summary>
+    public void CompleteLevel()
     {
-        CompleteLevelUI.SetActive(true); //Chama a tela de 'Level Complete'
+        CompleteLevelUI.SetActive(true);
     }
-
-    public void closeCompleteLevel()
+    /// <summary>
+    /// Fecha tela de 'Level Complete'
+    /// </summary>
+    public void CloseCompleteLevel()
     {
         CompleteLevelUI.SetActive(false);
     }
-    IEnumerator TransitionGameOVER() //pequena transição entre a animação dos cadeados e o aparecimento do botão 'Avançar'
+    /// <summary>
+    /// pequena transição entre a animação dos cadeados e o aparecimento do botão 'Avançar'.
+    /// </summary>
+    /// <returns>Valor de 2f</returns>
+    IEnumerator TransitionGameOVER() 
     {
         yield return new WaitForSeconds(2f);
         GameOver.SetActive(true);
     }
-
-    public void endGame()
+    /// <summary>
+    /// Chama tela de 'Game Over'.
+    /// </summary>
+    public void EndGame()
     {
         if(gameHasEnded == false)
         {

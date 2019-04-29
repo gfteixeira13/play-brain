@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="_player_data_8cs" kind="file" language="C#">
+    <compoundname>PlayerData.cs</compoundname>
+    <innerclass refid="class_player_data" prot="public">PlayerData</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System.Collections;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>System.Collections.Generic;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>UnityEngine;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">[System.Serializable]</highlight></codeline>
+<codeline lineno="6" refid="class_player_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_player_data" kindref="compound">PlayerData</ref><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8" refid="class_player_data_1a533cced302f23144fcd25e58a04e96e4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_player_data_1a533cced302f23144fcd25e58a04e96e4" kindref="member">level</ref>;</highlight></codeline>
+<codeline lineno="9" refid="class_player_data_1ace4c3d2afef87f4c3afb760ddbec8139" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_player_data_1ace4c3d2afef87f4c3afb760ddbec8139" kindref="member">thePoints</ref>;</highlight></codeline>
+<codeline lineno="10" refid="class_player_data_1aefee7df606db56d47e71290cf7110d22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_player_data_1aefee7df606db56d47e71290cf7110d22" kindref="member">gameWasSaved</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_player_data_1a47929ba96be8ecea1989cd8587c14214" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_player_data_1a47929ba96be8ecea1989cd8587c14214" kindref="member">PlayerData</ref>(<ref refid="class_player" kindref="compound">Player</ref><sp/>player)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_player_data_1a533cced302f23144fcd25e58a04e96e4" kindref="member">level</ref><sp/>=<sp/>player.<ref refid="class_player_1ad89cb407e6df206d7a21a714006571c9" kindref="member">Level</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_player_data_1ace4c3d2afef87f4c3afb760ddbec8139" kindref="member">thePoints</ref><sp/>=<sp/>player.<ref refid="class_player_1ac264ef6ed906f1c63009864a6b8735b0" kindref="member">ThePoints</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_player_data_1aefee7df606db56d47e71290cf7110d22" kindref="member">gameWasSaved</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/Documentation/Scripts/PlayerData.cs"/>
+  </compounddef>
+</doxygen>

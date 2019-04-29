@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_phase_selection" kind="class" language="C#" prot="public">
+    <compoundname>PhaseSelection</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_phase_selection_1a63ad0372fa65b1f25793550870b696b4" prot="public" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button PhaseSelection.btnPlay</definition>
+        <argsstring></argsstring>
+        <name>btnPlay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/PhaseSelection.cs" line="13" column="1" bodyfile="D:/Documentation/Scripts/PhaseSelection.cs" bodystart="13" bodyend="-1"/>
+        <referencedby refid="class_phase_selection_1a1a0a69fe8ef63cd689c7fa01bcb35dce" compoundref="_phase_selection_8cs" startline="67" endline="72">SelectPhase</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_phase_selection_1a5032e170f74d8f18a0c15e1ab8fa2840" prot="public" static="no" mutable="no">
+        <type>TextMeshProUGUI</type>
+        <definition>TextMeshProUGUI PhaseSelection.txtPhase</definition>
+        <argsstring></argsstring>
+        <name>txtPhase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/PhaseSelection.cs" line="14" column="1" bodyfile="D:/Documentation/Scripts/PhaseSelection.cs" bodystart="14" bodyend="-1"/>
+        <referencedby refid="class_phase_selection_1a1a0a69fe8ef63cd689c7fa01bcb35dce" compoundref="_phase_selection_8cs" startline="67" endline="72">SelectPhase</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_phase_selection_1a0df249da8b118e0983d10728f79c45f1" prot="public" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button PhaseSelection.Level2</definition>
+        <argsstring></argsstring>
+        <name>Level2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/PhaseSelection.cs" line="15" column="1" bodyfile="D:/Documentation/Scripts/PhaseSelection.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_phase_selection_1ab2ff511036f961c25df230334f429718" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button PhaseSelection.Level3</definition>
+        <argsstring></argsstring>
+        <name>Level3</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/PhaseSelection.cs" line="15" column="1" bodyfile="D:/Documentation/Scripts/PhaseSelection.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_phase_selection_1a5f698b708cb292f6f39600d8c5780753" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button PhaseSelection.Level4</definition>
+        <argsstring></argsstring>
+        <name>Level4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/PhaseSelection.cs" line="15" column="1" bodyfile="D:/Documentation/Scripts/PhaseSelection.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_phase_selection_1a033ca8a3c57d2081a5563dc51a753b1f" prot="private" static="no" mutable="no">
+        <type>Button</type>
+        <definition>Button PhaseSelection.Level5</definition>
+        <argsstring></argsstring>
+        <name>Level5</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/PhaseSelection.cs" line="15" column="1" bodyfile="D:/Documentation/Scripts/PhaseSelection.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_phase_selection_1ac55478a9855a1d4711192b816c3015d9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PhaseSelection.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+<para>É verificado se já houve algum salvamento, a partir disso é mostrado as fases desbloqueadas </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/PhaseSelection.cs" line="19" column="1" bodyfile="D:/Documentation/Scripts/PhaseSelection.cs" bodystart="19" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_phase_selection_1a1a0a69fe8ef63cd689c7fa01bcb35dce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PhaseSelection.SelectPhase</definition>
+        <argsstring>(int i)</argsstring>
+        <name>SelectPhase</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+<para>Desbloqueia o botão Play a partir da seleção da fase </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>i</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fase Selecionada</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/PhaseSelection.cs" line="67" column="1" bodyfile="D:/Documentation/Scripts/PhaseSelection.cs" bodystart="67" bodyend="72"/>
+        <references refid="class_phase_selection_1a63ad0372fa65b1f25793550870b696b4" compoundref="_phase_selection_8cs" startline="13">btnPlay</references>
+        <references refid="class_phase_selection_1a5032e170f74d8f18a0c15e1ab8fa2840" compoundref="_phase_selection_8cs" startline="14">txtPhase</references>
+      </memberdef>
+      <memberdef kind="function" id="class_phase_selection_1afe954e403537aebc0f9e055bff5b3ccc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PhaseSelection.Play</definition>
+        <argsstring>()</argsstring>
+        <name>Play</name>
+        <briefdescription>
+<para>Inicia o Jogo </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/PhaseSelection.cs" line="76" column="1" bodyfile="D:/Documentation/Scripts/PhaseSelection.cs" bodystart="76" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_phase_selection_1a40a79cf0cebfb99312810d6ba9d5fd9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PhaseSelection.NextLevel</definition>
+        <argsstring>()</argsstring>
+        <name>NextLevel</name>
+        <briefdescription>
+<para>Avança o Level </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/PhaseSelection.cs" line="84" column="1" bodyfile="D:/Documentation/Scripts/PhaseSelection.cs" bodystart="84" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="21">
+        <label>PhaseSelection</label>
+        <link refid="class_phase_selection"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>MonoBehaviour</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="23">
+        <label>PhaseSelection</label>
+        <link refid="class_phase_selection"/>
+        <childnode refid="24" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>MonoBehaviour</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Documentation/Scripts/PhaseSelection.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/PhaseSelection.cs" bodystart="10" bodyend="89"/>
+    <listofallmembers>
+      <member refid="class_phase_selection_1a63ad0372fa65b1f25793550870b696b4" prot="public" virt="non-virtual"><scope>PhaseSelection</scope><name>btnPlay</name></member>
+      <member refid="class_phase_selection_1a0df249da8b118e0983d10728f79c45f1" prot="public" virt="non-virtual"><scope>PhaseSelection</scope><name>Level2</name></member>
+      <member refid="class_phase_selection_1ab2ff511036f961c25df230334f429718" prot="private" virt="non-virtual"><scope>PhaseSelection</scope><name>Level3</name></member>
+      <member refid="class_phase_selection_1a5f698b708cb292f6f39600d8c5780753" prot="private" virt="non-virtual"><scope>PhaseSelection</scope><name>Level4</name></member>
+      <member refid="class_phase_selection_1a033ca8a3c57d2081a5563dc51a753b1f" prot="private" virt="non-virtual"><scope>PhaseSelection</scope><name>Level5</name></member>
+      <member refid="class_phase_selection_1a40a79cf0cebfb99312810d6ba9d5fd9b" prot="public" virt="non-virtual"><scope>PhaseSelection</scope><name>NextLevel</name></member>
+      <member refid="class_phase_selection_1afe954e403537aebc0f9e055bff5b3ccc" prot="public" virt="non-virtual"><scope>PhaseSelection</scope><name>Play</name></member>
+      <member refid="class_phase_selection_1a1a0a69fe8ef63cd689c7fa01bcb35dce" prot="public" virt="non-virtual"><scope>PhaseSelection</scope><name>SelectPhase</name></member>
+      <member refid="class_phase_selection_1ac55478a9855a1d4711192b816c3015d9" prot="private" virt="non-virtual"><scope>PhaseSelection</scope><name>Start</name></member>
+      <member refid="class_phase_selection_1a5032e170f74d8f18a0c15e1ab8fa2840" prot="public" virt="non-virtual"><scope>PhaseSelection</scope><name>txtPhase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

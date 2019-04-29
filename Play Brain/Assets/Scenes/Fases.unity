@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 53421577}
   - component: {fileID: 53421576}
   m_Layer: 5
-  m_Name: C5
+  m_Name: F5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 68386074}
   - component: {fileID: 68386073}
   m_Layer: 0
-  m_Name: Meio
+  m_Name: Half
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 78255474}
   - component: {fileID: 78255473}
   m_Layer: 5
-  m_Name: M44
+  m_Name: H44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 93516574}
   - component: {fileID: 93516573}
   m_Layer: 5
-  m_Name: M33
+  m_Name: H33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 115746532}
   - component: {fileID: 115746531}
   m_Layer: 5
-  m_Name: btnFechar
+  m_Name: btnClose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -808,7 +808,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217849}
-        m_MethodName: fecharMenuTentativa
+        m_MethodName: CloseAttemptsMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -947,7 +947,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1203899874}
-        m_MethodName: carregaCena
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1435,7 +1435,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1203899874}
-        m_MethodName: carregaCena
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1723,7 +1723,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217846}
-        m_MethodName: clique
+        m_MethodName: Click
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2071,7 +2071,7 @@ GameObject:
   - component: {fileID: 563031338}
   - component: {fileID: 563031337}
   m_Layer: 5
-  m_Name: txtFase
+  m_Name: txtPhase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2456,7 +2456,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217846}
-        m_MethodName: clique
+        m_MethodName: Click
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2824,7 +2824,7 @@ GameObject:
   - component: {fileID: 794238682}
   - component: {fileID: 794238681}
   m_Layer: 5
-  m_Name: M4
+  m_Name: H4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2965,7 +2965,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1203899874}
-        m_MethodName: carregaCena
+        m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3346,7 +3346,7 @@ GameObject:
   - component: {fileID: 846017728}
   - component: {fileID: 846017727}
   m_Layer: 0
-  m_Name: Meio2
+  m_Name: Half2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3789,7 +3789,7 @@ GameObject:
   - component: {fileID: 906331951}
   - component: {fileID: 906331950}
   m_Layer: 5
-  m_Name: MenuTentativas
+  m_Name: AttemptsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3890,7 +3890,7 @@ GameObject:
   - component: {fileID: 920378910}
   - component: {fileID: 920378909}
   m_Layer: 5
-  m_Name: tentativas
+  m_Name: textAttempts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4545,7 +4545,7 @@ GameObject:
   - component: {fileID: 1026709991}
   - component: {fileID: 1026709990}
   m_Layer: 5
-  m_Name: M5
+  m_Name: H5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4619,7 +4619,7 @@ GameObject:
   - component: {fileID: 1034376988}
   - component: {fileID: 1034376987}
   m_Layer: 5
-  m_Name: C1
+  m_Name: F1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4760,7 +4760,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217846}
-        m_MethodName: click
+        m_MethodName: Click
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4899,7 +4899,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217846}
-        m_MethodName: clique
+        m_MethodName: Click
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4960,7 +4960,7 @@ GameObject:
   - component: {fileID: 1085702407}
   - component: {fileID: 1085702406}
   m_Layer: 5
-  m_Name: M55
+  m_Name: H55
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5134,7 +5134,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2088217846}
-        m_MethodName: proximaFase
+        m_MethodName: ProximaFase
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5145,7 +5145,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2088217848}
-        m_MethodName: MudarPontuacao
+        m_MethodName: ChangePoints
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2088217846}
@@ -5271,7 +5271,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1100130747}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1203899874}
+        m_MethodName: carregaCena
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Menu
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1100130747
@@ -5323,7 +5334,7 @@ GameObject:
   - component: {fileID: 1124841116}
   - component: {fileID: 1124841115}
   m_Layer: 5
-  m_Name: Pontuacao
+  m_Name: txtPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5493,7 +5504,7 @@ GameObject:
   - component: {fileID: 1145651095}
   - component: {fileID: 1145651094}
   m_Layer: 5
-  m_Name: M3
+  m_Name: H3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5567,7 +5578,7 @@ GameObject:
   - component: {fileID: 1197056465}
   - component: {fileID: 1197056466}
   m_Layer: 5
-  m_Name: clique1
+  m_Name: txtClick1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5727,7 +5738,7 @@ GameObject:
   - component: {fileID: 1199494863}
   - component: {fileID: 1199494862}
   m_Layer: 5
-  m_Name: M2
+  m_Name: H2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5940,7 +5951,7 @@ GameObject:
   - component: {fileID: 1322095507}
   - component: {fileID: 1322095506}
   m_Layer: 5
-  m_Name: btnMenuT
+  m_Name: btnMenuAttempts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6006,7 +6017,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217849}
-        m_MethodName: menuTentativa
+        m_MethodName: F_AttemptsMenu
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2088217846}
@@ -6238,7 +6249,7 @@ GameObject:
   - component: {fileID: 1355340711}
   - component: {fileID: 1355340710}
   m_Layer: 5
-  m_Name: C3
+  m_Name: F3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6605,7 +6616,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217846}
-        m_MethodName: clique
+        m_MethodName: Click
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6848,7 +6859,7 @@ GameObject:
   - component: {fileID: 1602697900}
   - component: {fileID: 1602697899}
   m_Layer: 5
-  m_Name: btnConfirmar
+  m_Name: btnConfirm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6914,7 +6925,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217846}
-        m_MethodName: confirmarTentativa
+        m_MethodName: ConfirmAnswer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7042,7 +7053,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217846}
-        m_MethodName: click
+        m_MethodName: Click
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7260,7 +7271,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217846}
-        m_MethodName: clique
+        m_MethodName: Click
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7540,7 +7551,7 @@ GameObject:
   - component: {fileID: 1779061556}
   - component: {fileID: 1779061555}
   m_Layer: 5
-  m_Name: M22
+  m_Name: H22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7614,7 +7625,7 @@ GameObject:
   - component: {fileID: 1780208487}
   - component: {fileID: 1780208486}
   m_Layer: 5
-  m_Name: M11
+  m_Name: H11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7688,7 +7699,7 @@ GameObject:
   - component: {fileID: 1782104964}
   - component: {fileID: 1782104963}
   m_Layer: 5
-  m_Name: clique2
+  m_Name: txtClick2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7927,7 +7938,7 @@ GameObject:
   - component: {fileID: 1835762809}
   - component: {fileID: 1835762808}
   m_Layer: 0
-  m_Name: Certo
+  m_Name: Full
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8260,7 +8271,7 @@ GameObject:
   - component: {fileID: 1907891011}
   - component: {fileID: 1907891010}
   m_Layer: 5
-  m_Name: C4
+  m_Name: F4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8401,7 +8412,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217846}
-        m_MethodName: clique
+        m_MethodName: Click
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8689,7 +8700,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217846}
-        m_MethodName: click
+        m_MethodName: Click
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8840,7 +8851,7 @@ GameObject:
   - component: {fileID: 1991092091}
   - component: {fileID: 1991092090}
   m_Layer: 5
-  m_Name: C2
+  m_Name: F2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8914,7 +8925,7 @@ GameObject:
   - component: {fileID: 1991326085}
   - component: {fileID: 1991326084}
   m_Layer: 5
-  m_Name: M1
+  m_Name: H1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9282,7 +9293,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2088217846}
-        m_MethodName: click
+        m_MethodName: Click
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9392,12 +9403,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2026ff3c1c019f4a921d08e3e852d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abrirCadeado1: {fileID: 1380266904}
-  abrirCadeado2: {fileID: 2004351412}
-  cadeadoAberto: 0
+  openLock1: {fileID: 1380266904}
+  openLock2: {fileID: 2004351412}
+  lockHasOpen: 0
   imgMenuT: {fileID: 906331948}
   GameManager: {fileID: 1203899873}
-  btnConfirmar: {fileID: 1602697897}
+  btnConfirm: {fileID: 1602697897}
   btn0: {fileID: 1942101783}
   btn1: {fileID: 2048225277}
   btn2: {fileID: 1610140549}
@@ -9408,78 +9419,74 @@ MonoBehaviour:
   btn7: {fileID: 1468263991}
   btn8: {fileID: 499360987}
   btn9: {fileID: 615468408}
-  certo: {fileID: 1835762806}
-  meio: {fileID: 68386071}
-  meio2: {fileID: 846017725}
-  txtFase: {fileID: 563031337}
-  tentativas: {fileID: 920378909}
+  full: {fileID: 1835762806}
+  half: {fileID: 68386071}
+  half2: {fileID: 846017725}
+  txtPhase: {fileID: 563031337}
+  textAttempts: {fileID: 920378909}
   textX1: {fileID: 1953609036}
   textX2: {fileID: 633407768}
-  clique1txt: {fileID: 1197056466}
-  clique2txt: {fileID: 1782104963}
-  SomGanhou: {fileID: 303084538}
-  resultado:
+  click1txt: {fileID: 1197056466}
+  click2txt: {fileID: 1782104963}
+  soundWin: {fileID: 303084538}
+  result:
   - 
   - 
   - 
   - 
   - 
-  alternativaA:
+  alternativeA:
   - 1
   - 1
   - 1
   - 1
-  - 1
-  alternativaB:
+  alternativeB:
   - 2
   - 2
   - 2
   - 2
-  - 2
-  alternativaC:
+  alternativeC:
   - 3
   - 3
   - 3
   - 3
-  - 3
-  alternativaD:
+  alternativeD:
   - 4
   - 4
   - 4
   - 4
-  - 4
-  corretaN1:
+  correctN1:
   - 1
   - 3
+  - 4
+  - 1
+  - 2
+  correctN2:
   - 2
   - 1
-  - 4
-  corretaN2:
   - 2
-  - 1
-  - 4
   - 3
-  - 2
-  idFase: 0
-  correta1: 0
-  correta2: 0
-  posicaoE1: 0
-  posicaoE2: 0
-  ttentativas: 0
-  clique1:
+  - 4
+  phaseId: 0
+  correct1: 0
+  correct2: 0
+  positionE1: 0
+  positionE2: 0
+  attempts: 0
+  click1:
   - 
   - 
   - 
   - 
   - 
-  clique2:
+  click2:
   - 
   - 
   - 
   - 
   - 
-  pontuacao: {fileID: 1124841115}
-  pontos: 0
+  txtPoints: {fileID: 1124841115}
+  points: 0
   btnMenu: {fileID: 1322095504}
 --- !u!4 &2088217847
 Transform:
@@ -9507,10 +9514,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be624d860896f1478224661f46f726a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Pontuacao: 0
-  Score: 0
+  ThePoints: 0
   Level: 0
-  SalvouAlgumaVez: 0
+  GameWasSaved: 0
 --- !u!114 &2088217849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9524,21 +9530,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imgMenuT: {fileID: 906331948}
-  C1: {fileID: 1034376985}
-  M1: {fileID: 1991326082}
-  M11: {fileID: 1780208484}
-  C2: {fileID: 1991092088}
-  M2: {fileID: 1199494860}
-  M22: {fileID: 1779061553}
-  C3: {fileID: 1355340708}
-  M3: {fileID: 1145651092}
-  M33: {fileID: 93516571}
-  C4: {fileID: 1907891008}
-  M4: {fileID: 794238679}
-  M44: {fileID: 78255471}
-  C5: {fileID: 53421574}
-  M5: {fileID: 1026709988}
-  M55: {fileID: 1085702404}
+  F1: {fileID: 1034376985}
+  H1: {fileID: 1991326082}
+  H11: {fileID: 1780208484}
+  F2: {fileID: 1991092088}
+  H2: {fileID: 1199494860}
+  H22: {fileID: 1779061553}
+  F3: {fileID: 1355340708}
+  H3: {fileID: 1145651092}
+  H33: {fileID: 93516571}
+  F4: {fileID: 1907891008}
+  H4: {fileID: 794238679}
+  H44: {fileID: 78255471}
+  F5: {fileID: 53421574}
+  H5: {fileID: 1026709988}
+  H55: {fileID: 1085702404}
   cli1_1: {fileID: 1331395010}
   cli2_1: {fileID: 301237775}
   cli1_2: {fileID: 3916126}
@@ -9626,7 +9632,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2140547577}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2140547577

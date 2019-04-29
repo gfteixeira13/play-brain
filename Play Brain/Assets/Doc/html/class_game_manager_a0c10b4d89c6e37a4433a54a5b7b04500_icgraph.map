@@ -1,0 +1,4 @@
+<map id="GameManager.EndGame" name="GameManager.EndGame">
+<area shape="rect" id="node1" title="Chama tela de &#39;Game Over&#39;." alt="" coords="256,5,425,32"/>
+<area shape="rect" id="node2" href="$class_game_controller.html#a67f2b0ef6aad12da8f8c2911577e750d" title="Verifica as booleanas preenchidas na função &#39;Click&#39; e mostra as dicas." alt="" coords="5,5,208,32"/>
+</map>

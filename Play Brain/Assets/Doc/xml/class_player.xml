@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="class_player" kind="class" language="C#" prot="public">
+    <compoundname>Player</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">MonoBehaviour</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_player_1ac264ef6ed906f1c63009864a6b8735b0" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Player.ThePoints</definition>
+        <argsstring></argsstring>
+        <name>ThePoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/Player.cs" line="8" column="1" bodyfile="D:/Documentation/Scripts/Player.cs" bodystart="8" bodyend="-1"/>
+        <referencedby refid="class_player_1a5a43249ec575c49b2fd77331f3318b3d" compoundref="_player_8cs" startline="22" endline="27">ChangePoints</referencedby>
+        <referencedby refid="class_player_data_1a47929ba96be8ecea1989cd8587c14214" compoundref="_player_data_8cs" startline="12" endline="17">PlayerData.PlayerData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1ad89cb407e6df206d7a21a714006571c9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Player.Level</definition>
+        <argsstring></argsstring>
+        <name>Level</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/Player.cs" line="9" column="1" bodyfile="D:/Documentation/Scripts/Player.cs" bodystart="9" bodyend="-1"/>
+        <referencedby refid="class_player_1a703093100a6cb0b9f2ae5c5c1111267b" compoundref="_player_8cs" startline="32" endline="40">setLevel</referencedby>
+        <referencedby refid="class_player_1a4f949db32bed8a3ba87a36565b4432cd" compoundref="_player_8cs" startline="51" endline="57">LoadPlayer</referencedby>
+        <referencedby refid="class_player_data_1a47929ba96be8ecea1989cd8587c14214" compoundref="_player_data_8cs" startline="12" endline="17">PlayerData.PlayerData</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_player_1accb10340e8ff450fda56212820a2ae5b" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Player.GameWasSaved</definition>
+        <argsstring></argsstring>
+        <name>GameWasSaved</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/Player.cs" line="10" column="1" bodyfile="D:/Documentation/Scripts/Player.cs" bodystart="10" bodyend="-1"/>
+        <referencedby refid="class_player_1a4f949db32bed8a3ba87a36565b4432cd" compoundref="_player_8cs" startline="51" endline="57">LoadPlayer</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_player_1a1a09a3ded16ac1646f6bdd4f25fe0ddd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player.Start</definition>
+        <argsstring>()</argsstring>
+        <name>Start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/Player.cs" line="12" column="1" bodyfile="D:/Documentation/Scripts/Player.cs" bodystart="12" bodyend="17"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_player_1a5a43249ec575c49b2fd77331f3318b3d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player.ChangePoints</definition>
+        <argsstring>(GameController GC)</argsstring>
+        <name>ChangePoints</name>
+        <param>
+          <type><ref refid="class_game_controller" kindref="compound">GameController</ref></type>
+          <declname>GC</declname>
+        </param>
+        <briefdescription>
+<para>Função responsável por anexar a pontuação do jogo à pontuação do <ref refid="class_player" kindref="compound">Player</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>GC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Responsável por trazer dados do <ref refid="class_game_controller" kindref="compound">GameController</ref></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/Player.cs" line="22" column="1" bodyfile="D:/Documentation/Scripts/Player.cs" bodystart="22" bodyend="27"/>
+        <references refid="class_player_1ac264ef6ed906f1c63009864a6b8735b0" compoundref="_player_8cs" startline="8">ThePoints</references>
+        <references refid="class_game_controller_1a47d35ad5eadce423fcbd66b570968c74" compoundref="_game_controller_8cs" startline="65">GameController.points</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a703093100a6cb0b9f2ae5c5c1111267b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player.setLevel</definition>
+        <argsstring>(GameController GC)</argsstring>
+        <name>setLevel</name>
+        <param>
+          <type><ref refid="class_game_controller" kindref="compound">GameController</ref></type>
+          <declname>GC</declname>
+        </param>
+        <briefdescription>
+<para>Função responsável por anexar o último level desbloqueado ao <ref refid="class_player" kindref="compound">Player</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>GC</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Responsável por trazer dados do <ref refid="class_game_controller" kindref="compound">GameController</ref></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/Player.cs" line="32" column="1" bodyfile="D:/Documentation/Scripts/Player.cs" bodystart="32" bodyend="40"/>
+        <references refid="class_player_1ad89cb407e6df206d7a21a714006571c9" compoundref="_player_8cs" startline="9">Level</references>
+        <references refid="class_game_controller_1ab6b6acebcc0b0758061891e13520824d" compoundref="_game_controller_8cs" startline="49">GameController.phaseId</references>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a21cb3d28ae28cdc5e9a8d06fd2f08b97" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player.SavePlayer</definition>
+        <argsstring>()</argsstring>
+        <name>SavePlayer</name>
+        <briefdescription>
+<para>Salva os dados do <ref refid="class_player" kindref="compound">Player</ref> </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/Player.cs" line="44" column="1" bodyfile="D:/Documentation/Scripts/Player.cs" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_player_1a4f949db32bed8a3ba87a36565b4432cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Player.LoadPlayer</definition>
+        <argsstring>()</argsstring>
+        <name>LoadPlayer</name>
+        <briefdescription>
+<para>Carrega os dados do <ref refid="class_player" kindref="compound">Player</ref> a partir do arquivo Binário </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Documentation/Scripts/Player.cs" line="51" column="1" bodyfile="D:/Documentation/Scripts/Player.cs" bodystart="51" bodyend="57"/>
+        <references refid="class_player_1ad89cb407e6df206d7a21a714006571c9" compoundref="_player_8cs" startline="9">Level</references>
+        <references refid="class_player_data_1a533cced302f23144fcd25e58a04e96e4" compoundref="_player_data_8cs" startline="8">PlayerData.level</references>
+        <references refid="class_player_1accb10340e8ff450fda56212820a2ae5b" compoundref="_player_8cs" startline="10">GameWasSaved</references>
+        <references refid="class_player_data_1aefee7df606db56d47e71290cf7110d22" compoundref="_player_data_8cs" startline="10">PlayerData.gameWasSaved</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="26">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="25">
+        <label>Player</label>
+        <link refid="class_player"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="28">
+        <label>MonoBehaviour</label>
+      </node>
+      <node id="27">
+        <label>Player</label>
+        <link refid="class_player"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Documentation/Scripts/Player.cs" line="7" column="1" bodyfile="D:/Documentation/Scripts/Player.cs" bodystart="6" bodyend="59"/>
+    <listofallmembers>
+      <member refid="class_player_1a5a43249ec575c49b2fd77331f3318b3d" prot="public" virt="non-virtual"><scope>Player</scope><name>ChangePoints</name></member>
+      <member refid="class_player_1accb10340e8ff450fda56212820a2ae5b" prot="public" virt="non-virtual"><scope>Player</scope><name>GameWasSaved</name></member>
+      <member refid="class_player_1ad89cb407e6df206d7a21a714006571c9" prot="public" virt="non-virtual"><scope>Player</scope><name>Level</name></member>
+      <member refid="class_player_1a4f949db32bed8a3ba87a36565b4432cd" prot="public" virt="non-virtual"><scope>Player</scope><name>LoadPlayer</name></member>
+      <member refid="class_player_1a21cb3d28ae28cdc5e9a8d06fd2f08b97" prot="public" virt="non-virtual"><scope>Player</scope><name>SavePlayer</name></member>
+      <member refid="class_player_1a703093100a6cb0b9f2ae5c5c1111267b" prot="public" virt="non-virtual"><scope>Player</scope><name>setLevel</name></member>
+      <member refid="class_player_1a1a09a3ded16ac1646f6bdd4f25fe0ddd" prot="private" virt="non-virtual"><scope>Player</scope><name>Start</name></member>
+      <member refid="class_player_1ac264ef6ed906f1c63009864a6b8735b0" prot="public" virt="non-virtual"><scope>Player</scope><name>ThePoints</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

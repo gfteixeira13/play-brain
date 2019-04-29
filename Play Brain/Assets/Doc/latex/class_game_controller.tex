@@ -1,0 +1,471 @@
+\section{Referência à classe Game\+Controller}
+\label{class_game_controller}\index{GameController@{GameController}}
+
+
+Diagrama de heranças da classe Game\+Controller
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{class_game_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para Game\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{class_game_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Click} (string number)
+\begin{DoxyCompactList}\small\item\em Recebe o Clique do usuário e já compara com o número escondido, preenchendo as booleanas. \end{DoxyCompactList}\item 
+void \textbf{ Confirm\+Answer} ()
+\begin{DoxyCompactList}\small\item\em Verifica as booleanas preenchidas na função \textquotesingle{}Click\textquotesingle{} e mostra as dicas. \end{DoxyCompactList}\item 
+int \textbf{ G\+C\+Score} ()
+\begin{DoxyCompactList}\small\item\em Verifica em qual tentativa o usuário acertou e dá a respectiva pontuação. \end{DoxyCompactList}\item 
+void \textbf{ Proxima\+Fase} ()
+\begin{DoxyCompactList}\small\item\em Passa para a próxima fase \char`\"{}zerando\char`\"{} as variáveis necessárias. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+Animator \textbf{ open\+Lock1}
+\item 
+Animator \textbf{ open\+Lock2}
+\item 
+bool \textbf{ lock\+Has\+Open} = false
+\item 
+Game\+Object \textbf{ img\+MenuT}
+\item 
+\textbf{ Game\+Manager} \textbf{ Game\+Manager}
+\item 
+Game\+Object \textbf{ btn\+Confirm}
+\item 
+Game\+Object \textbf{ btn0}
+\item 
+Game\+Object \textbf{ btn1}
+\item 
+Game\+Object \textbf{ btn2}
+\item 
+Game\+Object \textbf{ btn3}
+\item 
+Game\+Object \textbf{ btn4}
+\item 
+Game\+Object \textbf{ btn5}
+\item 
+Game\+Object \textbf{ btn6}
+\item 
+Game\+Object \textbf{ btn7}
+\item 
+Game\+Object \textbf{ btn8}
+\item 
+Game\+Object \textbf{ btn9}
+\item 
+Game\+Object \textbf{ full}
+\item 
+Game\+Object \textbf{ half}
+\item 
+Game\+Object \textbf{ half2}
+\item 
+Text\+Mesh\+Pro\+U\+G\+UI \textbf{ txt\+Phase}
+\item 
+Text\+Mesh\+Pro\+U\+G\+UI \textbf{ text\+Attempts}
+\item 
+Text\+Mesh\+Pro\+U\+G\+UI \textbf{ text\+X1}
+\item 
+Text\+Mesh\+Pro\+U\+G\+UI \textbf{ text\+X2}
+\item 
+Text\+Mesh\+Pro\+U\+G\+UI \textbf{ click1txt}
+\item 
+Text\+Mesh\+Pro\+U\+G\+UI \textbf{ click2txt}
+\item 
+Audio\+Source \textbf{ sound\+Win}
+\item 
+string [$\,$] \textbf{ result}
+\item 
+string [$\,$] \textbf{ alternativeA}
+\item 
+string [$\,$] \textbf{ alternativeB}
+\item 
+string [$\,$] \textbf{ alternativeC}
+\item 
+string [$\,$] \textbf{ alternativeD}
+\item 
+string [$\,$] \textbf{ correct\+N1}
+\item 
+string [$\,$] \textbf{ correct\+N2}
+\item 
+int \textbf{ phase\+Id}
+\item 
+bool \textbf{ correct1}
+\item 
+bool \textbf{ correct2}
+\item 
+bool \textbf{ position\+E1}
+\item 
+bool \textbf{ position\+E2}
+\item 
+int \textbf{ attempts}
+\item 
+string [$\,$] \textbf{ click1}
+\item 
+string [$\,$] \textbf{ click2}
+\item 
+Text \textbf{ txt\+Points}
+\item 
+int \textbf{ points}
+\item 
+Game\+Object \textbf{ btn\+Menu}
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação dos métodos}
+\mbox{\label{class_game_controller_a68f7c3a2a7630e12e04de89b4a6d0d2d}} 
+\index{GameController@{GameController}!Click@{Click}}
+\index{Click@{Click}!GameController@{GameController}}
+\subsubsection{Click()}
+{\footnotesize\ttfamily void Game\+Controller.\+Click (\begin{DoxyParamCaption}\item[{string}]{number }\end{DoxyParamCaption})}
+
+
+
+Recebe o Clique do usuário e já compara com o número escondido, preenchendo as booleanas. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em number} & Número clicado pelo usuário.\\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_game_controller_a67f2b0ef6aad12da8f8c2911577e750d}} 
+\index{GameController@{GameController}!ConfirmAnswer@{ConfirmAnswer}}
+\index{ConfirmAnswer@{ConfirmAnswer}!GameController@{GameController}}
+\subsubsection{ConfirmAnswer()}
+{\footnotesize\ttfamily void Game\+Controller.\+Confirm\+Answer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica as booleanas preenchidas na função \textquotesingle{}Click\textquotesingle{} e mostra as dicas. 
+
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_controller_a67f2b0ef6aad12da8f8c2911577e750d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_game_controller_a2f94eec7d5eda41c2a7d573c98f58558}} 
+\index{GameController@{GameController}!GCScore@{GCScore}}
+\index{GCScore@{GCScore}!GameController@{GameController}}
+\subsubsection{GCScore()}
+{\footnotesize\ttfamily int Game\+Controller.\+G\+C\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica em qual tentativa o usuário acertou e dá a respectiva pontuação. 
+
+\begin{DoxyReturn}{Retorna}
+
+\end{DoxyReturn}
+Este é o diagrama das funções que utilizam esta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_controller_a2f94eec7d5eda41c2a7d573c98f58558_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{class_game_controller_acd3c2bfd80eed314ce9b253d9fa3ca71}} 
+\index{GameController@{GameController}!ProximaFase@{ProximaFase}}
+\index{ProximaFase@{ProximaFase}!GameController@{GameController}}
+\subsubsection{ProximaFase()}
+{\footnotesize\ttfamily void Game\+Controller.\+Proxima\+Fase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Passa para a próxima fase \char`\"{}zerando\char`\"{} as variáveis necessárias. 
+
+Fecha os Cadeados Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_controller_acd3c2bfd80eed314ce9b253d9fa3ca71_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\label{class_game_controller_aba1451c8f8ec8d59962cb9f7601dfcba}} 
+\index{GameController@{GameController}!alternativeA@{alternativeA}}
+\index{alternativeA@{alternativeA}!GameController@{GameController}}
+\subsubsection{alternativeA}
+{\footnotesize\ttfamily string [$\,$] Game\+Controller.\+alternativeA}
+
+\mbox{\label{class_game_controller_a1d948c8579ffc832ada3c8f350c1361c}} 
+\index{GameController@{GameController}!alternativeB@{alternativeB}}
+\index{alternativeB@{alternativeB}!GameController@{GameController}}
+\subsubsection{alternativeB}
+{\footnotesize\ttfamily string [$\,$] Game\+Controller.\+alternativeB}
+
+\mbox{\label{class_game_controller_a8b54e533bb4b295881ea2be8b9d1d516}} 
+\index{GameController@{GameController}!alternativeC@{alternativeC}}
+\index{alternativeC@{alternativeC}!GameController@{GameController}}
+\subsubsection{alternativeC}
+{\footnotesize\ttfamily string [$\,$] Game\+Controller.\+alternativeC}
+
+\mbox{\label{class_game_controller_a6dd8d5b841fb69efda307cfe8ab32a10}} 
+\index{GameController@{GameController}!alternativeD@{alternativeD}}
+\index{alternativeD@{alternativeD}!GameController@{GameController}}
+\subsubsection{alternativeD}
+{\footnotesize\ttfamily string [$\,$] Game\+Controller.\+alternativeD}
+
+\mbox{\label{class_game_controller_ae17003d8112fdbcbf47399289af10774}} 
+\index{GameController@{GameController}!attempts@{attempts}}
+\index{attempts@{attempts}!GameController@{GameController}}
+\subsubsection{attempts}
+{\footnotesize\ttfamily int Game\+Controller.\+attempts}
+
+\mbox{\label{class_game_controller_aaed180eef524ae3b5883970942ddfecc}} 
+\index{GameController@{GameController}!btn0@{btn0}}
+\index{btn0@{btn0}!GameController@{GameController}}
+\subsubsection{btn0}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn0}
+
+\mbox{\label{class_game_controller_a1bc3e8d4ea0d950dc0b38def86519b39}} 
+\index{GameController@{GameController}!btn1@{btn1}}
+\index{btn1@{btn1}!GameController@{GameController}}
+\subsubsection{btn1}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn1}
+
+\mbox{\label{class_game_controller_ac248d850b8f37888b01edf4c20552495}} 
+\index{GameController@{GameController}!btn2@{btn2}}
+\index{btn2@{btn2}!GameController@{GameController}}
+\subsubsection{btn2}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn2}
+
+\mbox{\label{class_game_controller_a60657597b7b3ca5bfb3cdf7c60b2f289}} 
+\index{GameController@{GameController}!btn3@{btn3}}
+\index{btn3@{btn3}!GameController@{GameController}}
+\subsubsection{btn3}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn3}
+
+\mbox{\label{class_game_controller_ad392f38152fcba858769cd3badea7c3f}} 
+\index{GameController@{GameController}!btn4@{btn4}}
+\index{btn4@{btn4}!GameController@{GameController}}
+\subsubsection{btn4}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn4}
+
+\mbox{\label{class_game_controller_a531663e0524487adc6a793c7ae7cb166}} 
+\index{GameController@{GameController}!btn5@{btn5}}
+\index{btn5@{btn5}!GameController@{GameController}}
+\subsubsection{btn5}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn5}
+
+\mbox{\label{class_game_controller_a2b292c3de099e4a556b089cb09773e0d}} 
+\index{GameController@{GameController}!btn6@{btn6}}
+\index{btn6@{btn6}!GameController@{GameController}}
+\subsubsection{btn6}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn6}
+
+\mbox{\label{class_game_controller_ad00b420a9a662a2e0b5f5563df5b88ce}} 
+\index{GameController@{GameController}!btn7@{btn7}}
+\index{btn7@{btn7}!GameController@{GameController}}
+\subsubsection{btn7}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn7}
+
+\mbox{\label{class_game_controller_a08d5596b4d2402bdb7596eae33dca170}} 
+\index{GameController@{GameController}!btn8@{btn8}}
+\index{btn8@{btn8}!GameController@{GameController}}
+\subsubsection{btn8}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn8}
+
+\mbox{\label{class_game_controller_ad9706c29ad490faf8afca7ccbc1f4c98}} 
+\index{GameController@{GameController}!btn9@{btn9}}
+\index{btn9@{btn9}!GameController@{GameController}}
+\subsubsection{btn9}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn9}
+
+\mbox{\label{class_game_controller_a0b81ac531da6c5493a36535cb4a7339b}} 
+\index{GameController@{GameController}!btnConfirm@{btnConfirm}}
+\index{btnConfirm@{btnConfirm}!GameController@{GameController}}
+\subsubsection{btnConfirm}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn\+Confirm}
+
+\mbox{\label{class_game_controller_a49d4faa8705baa1eb080b377ba635a69}} 
+\index{GameController@{GameController}!btnMenu@{btnMenu}}
+\index{btnMenu@{btnMenu}!GameController@{GameController}}
+\subsubsection{btnMenu}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+btn\+Menu}
+
+\mbox{\label{class_game_controller_a1d2ccb048f9ceda40ed2747722a4c362}} 
+\index{GameController@{GameController}!click1@{click1}}
+\index{click1@{click1}!GameController@{GameController}}
+\subsubsection{click1}
+{\footnotesize\ttfamily string [$\,$] Game\+Controller.\+click1}
+
+Recebe como Parâmetro a tentativa \mbox{\label{class_game_controller_ab6fcf4c5c69e4aa424d073626a5987fa}} 
+\index{GameController@{GameController}!click1txt@{click1txt}}
+\index{click1txt@{click1txt}!GameController@{GameController}}
+\subsubsection{click1txt}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+U\+G\+UI Game\+Controller.\+click1txt}
+
+\mbox{\label{class_game_controller_af076b749d817c413910c1dd1a024bb09}} 
+\index{GameController@{GameController}!click2@{click2}}
+\index{click2@{click2}!GameController@{GameController}}
+\subsubsection{click2}
+{\footnotesize\ttfamily string [$\,$] Game\+Controller.\+click2}
+
+Recebe como Parâmetro a tentativa \mbox{\label{class_game_controller_ae0595f1f7702d83181d71b9284a9a93d}} 
+\index{GameController@{GameController}!click2txt@{click2txt}}
+\index{click2txt@{click2txt}!GameController@{GameController}}
+\subsubsection{click2txt}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+U\+G\+UI Game\+Controller.\+click2txt}
+
+\mbox{\label{class_game_controller_a803c2b94557f1c8f94d148d42e4777a3}} 
+\index{GameController@{GameController}!correct1@{correct1}}
+\index{correct1@{correct1}!GameController@{GameController}}
+\subsubsection{correct1}
+{\footnotesize\ttfamily bool Game\+Controller.\+correct1}
+
+\mbox{\label{class_game_controller_a2e7370fb1ce7b2e6f0b4e1fb5bb1e1b2}} 
+\index{GameController@{GameController}!correct2@{correct2}}
+\index{correct2@{correct2}!GameController@{GameController}}
+\subsubsection{correct2}
+{\footnotesize\ttfamily bool Game\+Controller.\+correct2}
+
+\mbox{\label{class_game_controller_a6e882335c228556dd34004793f71b569}} 
+\index{GameController@{GameController}!correctN1@{correctN1}}
+\index{correctN1@{correctN1}!GameController@{GameController}}
+\subsubsection{correctN1}
+{\footnotesize\ttfamily string [$\,$] Game\+Controller.\+correct\+N1}
+
+\mbox{\label{class_game_controller_ae8124c0525a9eae9f28dc6f36efabce0}} 
+\index{GameController@{GameController}!correctN2@{correctN2}}
+\index{correctN2@{correctN2}!GameController@{GameController}}
+\subsubsection{correctN2}
+{\footnotesize\ttfamily string [$\,$] Game\+Controller.\+correct\+N2}
+
+\mbox{\label{class_game_controller_a12444e99db83409eba81c3f0a4e4f72d}} 
+\index{GameController@{GameController}!full@{full}}
+\index{full@{full}!GameController@{GameController}}
+\subsubsection{full}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+full}
+
+\mbox{\label{class_game_controller_a0d2693bb7a093d5a895decc27a574bc5}} 
+\index{GameController@{GameController}!GameManager@{GameManager}}
+\index{GameManager@{GameManager}!GameController@{GameController}}
+\subsubsection{GameManager}
+{\footnotesize\ttfamily \textbf{ Game\+Manager} Game\+Controller.\+Game\+Manager}
+
+\mbox{\label{class_game_controller_ae8416e47072a621345855824f57dbcb6}} 
+\index{GameController@{GameController}!half@{half}}
+\index{half@{half}!GameController@{GameController}}
+\subsubsection{half}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+half}
+
+\mbox{\label{class_game_controller_add6031b79c36a7a019a1c363b0677ec8}} 
+\index{GameController@{GameController}!half2@{half2}}
+\index{half2@{half2}!GameController@{GameController}}
+\subsubsection{half2}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+half2}
+
+\mbox{\label{class_game_controller_a9bc53f58881f381b46a16fb372eb1119}} 
+\index{GameController@{GameController}!imgMenuT@{imgMenuT}}
+\index{imgMenuT@{imgMenuT}!GameController@{GameController}}
+\subsubsection{imgMenuT}
+{\footnotesize\ttfamily Game\+Object Game\+Controller.\+img\+MenuT}
+
+\mbox{\label{class_game_controller_a202002c8d1c529e54f966e4d93bffc91}} 
+\index{GameController@{GameController}!lockHasOpen@{lockHasOpen}}
+\index{lockHasOpen@{lockHasOpen}!GameController@{GameController}}
+\subsubsection{lockHasOpen}
+{\footnotesize\ttfamily bool Game\+Controller.\+lock\+Has\+Open = false}
+
+\mbox{\label{class_game_controller_af8557d795bbbf7444de77d9c5ee8aa4b}} 
+\index{GameController@{GameController}!openLock1@{openLock1}}
+\index{openLock1@{openLock1}!GameController@{GameController}}
+\subsubsection{openLock1}
+{\footnotesize\ttfamily Animator Game\+Controller.\+open\+Lock1}
+
+\mbox{\label{class_game_controller_ac6e38d91eba5b70c6b3606ebb2da1c85}} 
+\index{GameController@{GameController}!openLock2@{openLock2}}
+\index{openLock2@{openLock2}!GameController@{GameController}}
+\subsubsection{openLock2}
+{\footnotesize\ttfamily Animator Game\+Controller.\+open\+Lock2}
+
+\mbox{\label{class_game_controller_ab6b6acebcc0b0758061891e13520824d}} 
+\index{GameController@{GameController}!phaseId@{phaseId}}
+\index{phaseId@{phaseId}!GameController@{GameController}}
+\subsubsection{phaseId}
+{\footnotesize\ttfamily int Game\+Controller.\+phase\+Id}
+
+\mbox{\label{class_game_controller_a47d35ad5eadce423fcbd66b570968c74}} 
+\index{GameController@{GameController}!points@{points}}
+\index{points@{points}!GameController@{GameController}}
+\subsubsection{points}
+{\footnotesize\ttfamily int Game\+Controller.\+points}
+
+\mbox{\label{class_game_controller_a76f5bc2426e3c3a985424aeab8e1197a}} 
+\index{GameController@{GameController}!positionE1@{positionE1}}
+\index{positionE1@{positionE1}!GameController@{GameController}}
+\subsubsection{positionE1}
+{\footnotesize\ttfamily bool Game\+Controller.\+position\+E1}
+
+\mbox{\label{class_game_controller_a634e1d0a1b3d8fb6b8f3975e4195889e}} 
+\index{GameController@{GameController}!positionE2@{positionE2}}
+\index{positionE2@{positionE2}!GameController@{GameController}}
+\subsubsection{positionE2}
+{\footnotesize\ttfamily bool Game\+Controller.\+position\+E2}
+
+\mbox{\label{class_game_controller_ab8f039dc0b898da4afa8a87b63c4b1ea}} 
+\index{GameController@{GameController}!result@{result}}
+\index{result@{result}!GameController@{GameController}}
+\subsubsection{result}
+{\footnotesize\ttfamily string [$\,$] Game\+Controller.\+result}
+
+\mbox{\label{class_game_controller_ad32c9e632fa13db91444312b3ed76dbf}} 
+\index{GameController@{GameController}!soundWin@{soundWin}}
+\index{soundWin@{soundWin}!GameController@{GameController}}
+\subsubsection{soundWin}
+{\footnotesize\ttfamily Audio\+Source Game\+Controller.\+sound\+Win}
+
+\mbox{\label{class_game_controller_a28e1db2bf1d348d75a6980f5198dde19}} 
+\index{GameController@{GameController}!textAttempts@{textAttempts}}
+\index{textAttempts@{textAttempts}!GameController@{GameController}}
+\subsubsection{textAttempts}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+U\+G\+UI Game\+Controller.\+text\+Attempts}
+
+\mbox{\label{class_game_controller_a7ef9db0d76479916e6c367b7e5358854}} 
+\index{GameController@{GameController}!textX1@{textX1}}
+\index{textX1@{textX1}!GameController@{GameController}}
+\subsubsection{textX1}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+U\+G\+UI Game\+Controller.\+text\+X1}
+
+\mbox{\label{class_game_controller_a2fda68e6b5c58ca6f2551f432803d0ba}} 
+\index{GameController@{GameController}!textX2@{textX2}}
+\index{textX2@{textX2}!GameController@{GameController}}
+\subsubsection{textX2}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+U\+G\+UI Game\+Controller.\+text\+X2}
+
+\mbox{\label{class_game_controller_a1a99d8f8eb4cfede9befa73fec24c6d0}} 
+\index{GameController@{GameController}!txtPhase@{txtPhase}}
+\index{txtPhase@{txtPhase}!GameController@{GameController}}
+\subsubsection{txtPhase}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+U\+G\+UI Game\+Controller.\+txt\+Phase}
+
+\mbox{\label{class_game_controller_aba0be2535315ea391f4b1e099d52791c}} 
+\index{GameController@{GameController}!txtPoints@{txtPoints}}
+\index{txtPoints@{txtPoints}!GameController@{GameController}}
+\subsubsection{txtPoints}
+{\footnotesize\ttfamily Text Game\+Controller.\+txt\+Points}
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Documentation/\+Scripts/\textbf{ Game\+Controller.\+cs}\end{DoxyCompactItemize}

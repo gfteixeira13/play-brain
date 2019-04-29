@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.15">
+  <compounddef id="dir_b72ab019610bbb2620762194b5790d68" kind="dir">
+    <compoundname>D:/Documentation/Scripts</compoundname>
+    <innerfile refid="_attempts_menu_8cs">AttemptsMenu.cs</innerfile>
+    <innerfile refid="_basic_commands_8cs">BasicCommands.cs</innerfile>
+    <innerfile refid="_game_controller_8cs">GameController.cs</innerfile>
+    <innerfile refid="_game_manager_8cs">GameManager.cs</innerfile>
+    <innerfile refid="_move_background_8cs">MoveBackground.cs</innerfile>
+    <innerfile refid="_phase_selection_8cs">PhaseSelection.cs</innerfile>
+    <innerfile refid="_player_8cs">Player.cs</innerfile>
+    <innerfile refid="_player_data_8cs">PlayerData.cs</innerfile>
+    <innerfile refid="_save_system_8cs">SaveSystem.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Documentation/Scripts/"/>
+  </compounddef>
+</doxygen>
