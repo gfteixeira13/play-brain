@@ -562,6 +562,24 @@ public class GameController : MonoBehaviour
         } 
     } 
 
+    public void Backspace()
+    {
+       if(txt2 == false)
+        {
+            if (txt1 == true)
+            {
+                textX1.text = " ";
+                txt1 = false;
+            }
+            
+        }
+       else if(txt1==true && txt2 == true)
+        {
+            textX2.text = " ";
+            txt2 = false;
+        }
+       
+    }
     IEnumerator TransitionFase()
     {
         yield return new WaitForSeconds(3f);

@@ -884,7 +884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -260, y: 472}
+  m_AnchoredPosition: {x: -260, y: 455}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &594169454
@@ -1461,7 +1461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btnPlay: {fileID: 285422320}
-  txtPhase: {fileID: 0}
+  txtPhase: {fileID: 251658539}
   Level2: {fileID: 753351568}
   Level3: {fileID: 747517650}
   Level4: {fileID: 835875383}

@@ -17,8 +17,7 @@ public class PhaseSelection : MonoBehaviour {
    /// É verificado se já houve algum salvamento, a partir disso é mostrado as fases desbloqueadas
    /// </summary>
     void Start () {
-        try
-        {
+        
             Player player = new Player();
 
             if (File.Exists(Application.persistentDataPath + "//player.dat"))
@@ -54,11 +53,8 @@ public class PhaseSelection : MonoBehaviour {
               
             }
                                   
-        }
-        catch(Exception ex)
-        {
-            throw new Exception(ex.Message);
-        }
+        
+      
     }
     /// <summary>
     /// Desbloqueia o botão Play a partir da seleção da fase
