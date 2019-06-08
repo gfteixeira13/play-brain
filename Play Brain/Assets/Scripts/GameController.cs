@@ -584,6 +584,7 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         GameManager.CompleteLevel();
+       
     }
 
     /// <summary>
@@ -601,6 +602,7 @@ public class GameController : MonoBehaviour
             if (correct1 == true && correct2 == true) 
             {
                 GCScore();
+                GameManager.Stars(points);
                 if (lockHasOpen == false)
                 {
                     openLock1.speed = 1;
@@ -747,7 +749,7 @@ public class GameController : MonoBehaviour
         }
         txtPoints.text = "" + points;
         Debug.Log(points);
-       
+        
         return points;
         
     }

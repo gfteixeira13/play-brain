@@ -7,12 +7,40 @@ public class GameManager : MonoBehaviour {
     public bool gameHasEnded = false;
     public GameObject CompleteLevelUI;
     public GameObject GameOver;
+    public GameObject starWin1;
+    public GameObject starWin2;
+    public GameObject starWin3;
+    public GameObject starF1;
+    public GameObject starF2;
+    public GameObject starF3;
     /// <summary>
     /// Tela de 'Level Complete' é chamada.
     /// </summary>
     public void CompleteLevel()
     {
+ 
         CompleteLevelUI.SetActive(true);
+       
+    }
+
+    public void Stars(int p)
+    {
+        if (p >= 8)
+        {
+            starWin1.SetActive(true);
+            starWin2.SetActive(true);
+            starWin3.SetActive(true);
+        }
+        else if(p >= 4)
+        {
+            starWin1.SetActive(true);
+            starWin2.SetActive(true);
+            
+        }
+        else if (p <= 2)
+        {
+            starWin1.SetActive(true);
+        }
     }
     /// <summary>
     /// Fecha tela de 'Level Complete'
