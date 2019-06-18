@@ -73,9 +73,11 @@ public class GameManager : MonoBehaviour {
  
 
     
-    public void Return()
+    public void Return(GameController GC)
     {
+        PlayerPrefs.SetInt("LevelClicado", GC.phaseId);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 
 }
