@@ -20,14 +20,15 @@ public class PhaseSelection : MonoBehaviour {
         
             Player player = new Player();
 
-            if (File.Exists(Application.persistentDataPath + "//player.dat"))
+            if (File.Exists(Application.persistentDataPath + "/player.dat"))
             {
                 player.LoadPlayer();
                 Debug.Log("Level desbloqueado na selecao de fase: " + player.Level);
-
+          
                 if (player.Level >= 1)
                 {
                     Level2.interactable = true;
+                   
                 }
                 if (player.Level >= 2)
                 {

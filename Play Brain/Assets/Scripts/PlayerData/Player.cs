@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-       public int ThePoints;
+      // public int[] ThePoints;
        public int Level;
        public bool GameWasSaved;
 
@@ -21,9 +21,14 @@ public class Player : MonoBehaviour
     /// <param name="GC">Responsável por trazer dados do GameController</param>
     public void ChangePoints(GameController GC)
     {
-        ThePoints = GC.points;
-        Debug.Log("Pontuação Classe Player: " + ThePoints);
-      
+      /*  if (ThePoints[GC.phaseId] < GC.points)
+        {
+            ThePoints[GC.phaseId] = GC.points;
+            Debug.Log("BATEU O RECORD DA FASE " + GC.phaseId + 1);
+        }
+       // Debug.Log(ThePoints[GC.phaseId] = GC.points);
+       // Debug.Log("Pontuação Classe Player: " + ThePoints[GC.phaseId] + "Fase" + GC.phaseId);
+      */
     }
     /// <summary>
     /// Função responsável por anexar o último level desbloqueado ao Player
@@ -53,6 +58,7 @@ public class Player : MonoBehaviour
  
         PlayerData data = SaveSystem.LoadPlayer();
         Level = data.level;
+       // ThePoints[data.level] = data.thePoints[data.level];
         GameWasSaved = data.gameWasSaved;
     }
 

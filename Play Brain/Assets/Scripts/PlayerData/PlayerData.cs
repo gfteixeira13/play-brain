@@ -6,13 +6,13 @@ using UnityEngine;
 public class PlayerData 
 {
     public int level;
-    public int thePoints;
     public bool gameWasSaved;
 
     public PlayerData(Player player)
     {
         level = player.Level;
-        thePoints = player.ThePoints;
+      //  thePoints[player.Level] = player.ThePoints[player.Level];
         gameWasSaved = true;
+       // Debug.Log(thePoints[player.Level] + "e " + player.Level);
     }
 }

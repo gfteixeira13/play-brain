@@ -4129,7 +4129,7 @@ RectTransform:
   - {fileID: 831252418}
   - {fileID: 115746530}
   m_Father: {fileID: 1756713284}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4793,7 +4793,7 @@ RectTransform:
   - {fileID: 2140547575}
   - {fileID: 858251546}
   m_Father: {fileID: 1756713284}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5407,6 +5407,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2088217848}
+        m_MethodName: ChangePoints
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2088217846}
+          m_ObjectArgumentAssemblyTypeName: GameController, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2088217848}
         m_MethodName: SavePlayer
         m_Mode: 1
         m_Arguments:
@@ -5434,17 +5445,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2088217848}
-        m_MethodName: ChangePoints
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2088217846}
-          m_ObjectArgumentAssemblyTypeName: GameController, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5619,85 +5619,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100130744}
-  m_CullTransparentMesh: 0
---- !u!1 &1124841113
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1124841114}
-  - component: {fileID: 1124841116}
-  - component: {fileID: 1124841115}
-  m_Layer: 5
-  m_Name: txtPoints
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1124841114
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124841113}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1756713284}
-  m_RootOrder: 27
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 240, y: 464}
-  m_SizeDelta: {x: 120, y: 63.2}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1124841115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124841113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.9716981, g: 0.71879643, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, Unity.ugui,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 3819970efa541764d99ce3e10b37f4e6, type: 3}
-    m_FontSize: 40
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 4
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 0
---- !u!222 &1124841116
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1124841113}
   m_CullTransparentMesh: 0
 --- !u!1 &1125591024
 GameObject:
@@ -7121,7 +7042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1494965254
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7146,7 +7067,7 @@ RectTransform:
   - {fileID: 341850955}
   - {fileID: 278127040}
   m_Father: {fileID: 1756713284}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8056,7 +7977,6 @@ RectTransform:
   - {fileID: 1782104965}
   - {fileID: 1140297814}
   - {fileID: 1322095505}
-  - {fileID: 1124841114}
   - {fileID: 906331949}
   - {fileID: 1494965254}
   - {fileID: 1010023205}
@@ -10016,7 +9936,6 @@ MonoBehaviour:
   - 
   - 
   - 
-  txtPoints: {fileID: 1124841115}
   points: 0
   btnMenu: {fileID: 1322095504}
 --- !u!4 &2088217847
@@ -10045,7 +9964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be624d860896f1478224661f46f726a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThePoints: 0
   Level: 0
   GameWasSaved: 0
 --- !u!114 &2088217849

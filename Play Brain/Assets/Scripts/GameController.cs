@@ -61,7 +61,6 @@ public class GameController : MonoBehaviour
     public string[] click1; /*!< Recebe como Parâmetro a tentativa */
     public string[] click2; /*!< Recebe como Parâmetro a tentativa */
 
-    public Text txtPoints;
     public int points;
     public GameObject btnMenu;
  
@@ -722,32 +721,31 @@ public class GameController : MonoBehaviour
         {
             if (attempts == 0)
             {
-                points += 10;
+                points = 10;
             }
             else if (attempts == 1)
             {
-                points += 8;
+                points = 8;
             }
             else if (attempts == 2)
             {
-                points += 6;
+                points = 6;
             }
             else if (attempts == 3)
             {
-                points += 4;
+                points = 4;
             }
             else if (attempts == 4)
             {
-                points += 2;
+                points = 2;
             }
            
             
         }
         else
         {
-            points += 0;
+            points = 0;
         }
-        txtPoints.text = "" + points;
         Debug.Log(points);
         
         return points;
