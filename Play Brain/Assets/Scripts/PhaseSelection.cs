@@ -12,7 +12,9 @@ public class PhaseSelection : MonoBehaviour {
  
     public Button btnPlay; //Botão para Inciar o Game
     public TextMeshProUGUI txtPhase; //Text que mostra a fase Selecionada
-    public Button Level2, Level3, Level4, Level5; 
+    public Button Level2, Level3, Level4, Level5, Level6, Level7, Level8, Level9, Level10;
+    //public int testeFase1Record;
+    //public GameObject StarOn1, StarOn2, StarOn3;
    /// <summary>
    /// É verificado se já houve algum salvamento, a partir disso é mostrado as fases desbloqueadas
    /// </summary>
@@ -28,6 +30,13 @@ public class PhaseSelection : MonoBehaviour {
                 if (player.Level >= 1)
                 {
                     Level2.interactable = true;
+               // testeFase1Record = player.Points[0];
+                 /*   if(player.Points[0] >= 8)
+                    {
+                        StarOn1.SetActive(true);
+                        StarOn2.SetActive(true);
+                        StarOn3.SetActive(true);
+                    }*/
                    
                 }
                 if (player.Level >= 2)
@@ -42,15 +51,35 @@ public class PhaseSelection : MonoBehaviour {
                 {
                     Level5.interactable = true;
                 }
+                if (player.Level >= 5)
+                {
+                    Level6.interactable = true;
+                }
+                if (player.Level >= 6)
+                {
+                    Level7.interactable = true;
+                }
+                if (player.Level >= 7)
+                {
+                    Level8.interactable = true;
+                }
+                if (player.Level >= 8)
+                {
+                    Level9.interactable = true;
+                }
+                if (player.Level >= 9)
+                {
+                    Level10.interactable = true;
+                }
 
-                txtPhase.text = "Seleciona a fase:";
+            txtPhase.text = "Selecione a fase:";
               
             }
                     
             else
             {
                 Debug.Log("Não tem nada salvo ainda");
-                txtPhase.text = "Seleciona a fase:";
+                txtPhase.text = "Selecione a fase:";
               
             }
                                   
@@ -64,6 +93,7 @@ public class PhaseSelection : MonoBehaviour {
 	public void SelectPhase(int i)
     {
         PlayerPrefs.SetInt("LevelClicado", (i-1));
+    
         btnPlay.interactable = true;
         txtPhase.text = "Fase: " + i;
     }

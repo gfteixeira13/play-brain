@@ -56,7 +56,7 @@ public class GameController : MonoBehaviour
     public bool positionE1;
     public bool positionE2;
 
-
+    public int aux;
     public int attempts;
     public string[] click1; /*!< Recebe como Parâmetro a tentativa */
     public string[] click2; /*!< Recebe como Parâmetro a tentativa */
@@ -93,7 +93,12 @@ public class GameController : MonoBehaviour
         /**As booleanas estão falsas pois os 'TextBox1' e 'TextBox2' não foram preenchidos*/
         txt1 = false; 
         txt2 = false;
-        
+       /* for(int i=3; i<=12; i++)
+        {
+            correctN1[i] = Convert.ToString(UnityEngine.Random.Range(1, 4));
+            correctN2[i] = Convert.ToString(UnityEngine.Random.Range(1, 4));
+        }
+        */
         /**Abaixo os botões são alocados em suas devidas posições dependendo da pré-definição das alternativas*/
         if (alternativeA[phaseId] == "0")
         {

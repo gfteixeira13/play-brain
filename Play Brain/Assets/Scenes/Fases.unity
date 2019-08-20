@@ -5325,8 +5325,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2088217848}
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: ChangePoints
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2088217846}
           m_ObjectArgumentAssemblyTypeName: GameController, Assembly-CSharp
@@ -5601,7 +5601,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -9646,7 +9646,18 @@ MonoBehaviour:
   - 
   - 
   - 
+  - 
+  - 
+  - 
+  - 
+  - 
   alternativeA:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
   - 1
   - 1
   - 1
@@ -9656,12 +9667,30 @@ MonoBehaviour:
   - 2
   - 2
   - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
   alternativeC:
   - 3
   - 3
   - 3
   - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
+  - 3
   alternativeD:
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
   - 4
   - 4
   - 4
@@ -9672,17 +9701,28 @@ MonoBehaviour:
   - 4
   - 1
   - 2
+  - 1
+  - 2
+  - 4
+  - 3
+  - 3
   correctN2:
   - 2
   - 1
   - 2
   - 3
   - 4
+  - 4
+  - 3
+  - 1
+  - 2
+  - 4
   phaseId: 0
   correct1: 0
   correct2: 0
   positionE1: 0
   positionE2: 0
+  aux: 0
   attempts: 0
   click1:
   - 
@@ -9690,7 +9730,17 @@ MonoBehaviour:
   - 
   - 
   - 
+  - 
+  - 
+  - 
+  - 
+  - 
   click2:
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -9724,6 +9774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be624d860896f1478224661f46f726a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Points: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   Level: 0
   GameWasSaved: 0
 --- !u!114 &2088217849

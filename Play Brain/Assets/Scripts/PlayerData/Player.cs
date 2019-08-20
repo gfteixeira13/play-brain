@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-      // public int[] ThePoints;
+       public int[] Points;
        public int Level;
        public bool GameWasSaved;
 
@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     {
         GameWasSaved = false;
         Level = 0;
+       
 
     }
     /// <summary>
@@ -21,14 +22,15 @@ public class Player : MonoBehaviour
     /// <param name="GC">Responsável por trazer dados do GameController</param>
     public void ChangePoints(GameController GC)
     {
-      /*  if (ThePoints[GC.phaseId] < GC.points)
+        if(Points[GC.phaseId] < GC.points)
         {
-            ThePoints[GC.phaseId] = GC.points;
-            Debug.Log("BATEU O RECORD DA FASE " + GC.phaseId + 1);
+            Points[GC.phaseId] = GC.points;
+            Debug.Log("BATEU O RECORD DA FASE " + GC.phaseId + "Pontuação: " + Points[GC.phaseId]);
         }
+ 
        // Debug.Log(ThePoints[GC.phaseId] = GC.points);
        // Debug.Log("Pontuação Classe Player: " + ThePoints[GC.phaseId] + "Fase" + GC.phaseId);
-      */
+    
     }
     /// <summary>
     /// Função responsável por anexar o último level desbloqueado ao Player
@@ -36,9 +38,9 @@ public class Player : MonoBehaviour
     /// <param name="GC">Responsável por trazer dados do GameController</param>
     public void setLevel(GameController GC)
     {
-        if (Level < GC.phaseId+ 1)
+        if (Level < GC.phaseId)
         {
-            Level = GC.phaseId + 1;
+            Level = GC.phaseId+1;
             Debug.Log("Level desbloqueado(some+1):" + Level);
         }
 
@@ -58,7 +60,12 @@ public class Player : MonoBehaviour
  
         PlayerData data = SaveSystem.LoadPlayer();
         Level = data.level;
-       // ThePoints[data.level] = data.thePoints[data.level];
+      //  for(int i=0; i <= 4; i++)
+       // {  
+       //     Points[i] = data.points[i];
+       //     Debug.Log("Points["+i+"]: " + Points[i] + " = " + "data.points["+i+"]: " +data.points[i]);
+       // }
+        // ThePoints[data.level] = data.thePoints[data.level];
         GameWasSaved = data.gameWasSaved;
     }
 
