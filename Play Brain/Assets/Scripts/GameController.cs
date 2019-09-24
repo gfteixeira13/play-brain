@@ -8,14 +8,14 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    public Animator openLock1; 
-    public Animator openLock2; 
-    public bool lockHasOpen = false; 
+    public Animator openLock1;
+    public Animator openLock2;
+    public bool lockHasOpen = false;
 
     public GameObject imgMenuT;
     public GameManager GameManager;
 
-    public GameObject btnConfirm; 
+    public GameObject btnConfirm;
     public GameObject btn0;
     public GameObject btn1;
     public GameObject btn2;
@@ -26,32 +26,35 @@ public class GameController : MonoBehaviour
     public GameObject btn7;
     public GameObject btn8;
     public GameObject btn9;
-    public GameObject full; 
-    public GameObject half; 
+    public GameObject full;
+    public GameObject half;
     public GameObject half2;
 
     public TextMeshProUGUI txtPhase;
     public TextMeshProUGUI textAttempts;
-    public TextMeshProUGUI textX1; 
-    public TextMeshProUGUI textX2; 
+    public TextMeshProUGUI textX1;
+    public TextMeshProUGUI textX2;
     public TextMeshProUGUI click1txt;
     public TextMeshProUGUI click2txt;
-    
+
     public AudioSource soundWin;
     public string[] result;
     public string[] alternativeA;
     public string[] alternativeB;
     public string[] alternativeC;
     public string[] alternativeD;
+    public string[] alternativeE;
+    public string[] alternativeF;
+  
     public string[] correctN1;
     public string[] correctN2;
 
-    public int phaseId; 
+    public int phaseId;
 
-    private bool txt1; 
-    private bool txt2; 
-       
-    public bool correct1;  
+    private bool txt1;
+    private bool txt2;
+
+    public bool correct1;
     public bool correct2;
     public bool positionE1;
     public bool positionE2;
@@ -63,15 +66,93 @@ public class GameController : MonoBehaviour
 
     public int points;
     public GameObject btnMenu;
- 
+
+
+    public List<string> list = new List<string>();
+    public int[] arrayControl = new int[12];
+
+   
+
     void Start()
     {
+       /* list.Add("1");
+        list.Add("2");
+
+        list.Add("1");
+        list.Add("3");
+
+        list.Add("1");
+        list.Add("4");
+
+        list.Add("2");
+        list.Add("1");
+
+        list.Add("2");
+        list.Add("3");
+
+        list.Add("2");
+        list.Add("4");
+
+        list.Add("3");
+        list.Add("1");
+
+        list.Add("3");
+        list.Add("2");
+
+        list.Add("3");
+        list.Add("4");
+
+        list.Add("4");
+        list.Add("1");
+
+        list.Add("4");
+        list.Add("2");
+
+        list.Add("4");
+        list.Add("3");
+        ///-----------------------//
+        int n = 0;
+        int valorGerado = 1;
+        bool contem = false;
+        for (int i = 0; i < arrayControl.Length; i++)
+        {
+        /*   for(int y = 0; y < arrayControl.Length; y++)
+            {
+                if(arrayControl[y] == valorGerado)
+                {
+                    contem = true;
+                }
+            } Ou usar o while abaixo -> 
+              / while (contem == false && arrayControl.Length < 11) //Esse while serve pra ver se o valorGerado está presente no vetor
+                {
+                    if (arrayControl[n] == valorGerado)
+                    {
+                        contem = true;
+                    }
+                    n = n + 1;
+                }
+              
+            while (valorGerado == 1 valor inicial || valorGerado % 2 != 0 verifica se é impar|| contem == true verifica se já contem no vetor)
+            {
+                valorGerado = UnityEngine.Random.Range(0, 22); //gera um valor aleatório entre 0 e 22
+            }
+            arrayControl[i] = valorGerado;
+           
+            Debug.Log("arrayControl[" + i + "]" + "=" + arrayControl[i]);
+          
+        }
+        for (int x = 0; x < arrayControl.Length; x++)
+        {
+            correctN1[x] = list[arrayControl[x]];
+            correctN2[x] = list[(arrayControl[x]) + 1];
+        }
+       */
         phaseId = PlayerPrefs.GetInt("LevelClicado"); //A Fase recebe a fase clicada na seleção de fases
-        Debug.Log("Level clicado recebido: " + phaseId);    
-        attempts = 0; 
+        Debug.Log("Level clicado recebido: " + phaseId);
+        attempts = 0;
         points = 0;
         textAttempts.text = "";
-        txtPhase.text = " " + (phaseId+1); 
+        txtPhase.text = " " + (phaseId + 1);
 
         full.SetActive(false);
         half.SetActive(false);
@@ -91,15 +172,51 @@ public class GameController : MonoBehaviour
         btnMenu.SetActive(false);
 
         /**As booleanas estão falsas pois os 'TextBox1' e 'TextBox2' não foram preenchidos*/
-        txt1 = false; 
+        txt1 = false;
         txt2 = false;
-       /* for(int i=3; i<=12; i++)
-        {
-            correctN1[i] = Convert.ToString(UnityEngine.Random.Range(1, 4));
-            correctN2[i] = Convert.ToString(UnityEngine.Random.Range(1, 4));
-        }
-        */
+        /*-------------------------------------------*/
+
+
+
         /**Abaixo os botões são alocados em suas devidas posições dependendo da pré-definição das alternativas*/
+        if (phaseId > 9)
+        {
+          if(alternativeA[phaseId] == "1")
+            {
+                btn1.transform.localPosition = new Vector3(-145, 9, 0);
+                btn1.SetActive(true);
+            }
+          if(alternativeB[phaseId] == "2")
+            {
+                btn2.transform.localPosition = new Vector3(4, 9, 0);
+                btn2.SetActive(true);
+            }
+            if (alternativeC[phaseId] == "3")
+            {
+                btn3.transform.localPosition = new Vector3(152, 9, 0);
+                btn3.SetActive(true);
+            }
+            if (alternativeD[phaseId] == "4")
+            {
+                btn4.transform.localPosition = new Vector3(-145, -171, 0);
+                btn4.SetActive(true);
+            }
+            if (alternativeE[phaseId] == "5")
+            {
+                btn5.transform.localPosition = new Vector3(4, -171, 0);
+                btn5.SetActive(true);
+            }
+            if (alternativeF[phaseId] == "6")
+            {
+                btn6.transform.localPosition = new Vector3(152, -171, 0);
+                btn6.SetActive(true);
+            }
+
+        }
+        else
+        {
+
+       
         if (alternativeA[phaseId] == "0")
         {
             btn0.transform.localPosition = new Vector3(-90, 9, 0);
@@ -347,6 +464,7 @@ public class GameController : MonoBehaviour
             btn9.SetActive(true);
 
         }
+        }
     }
 
     /// <summary>
@@ -440,6 +558,46 @@ public class GameController : MonoBehaviour
                     correct1 = false;
                 }
                 else if ((alternativeD[phaseId] != correctN1[phaseId]) && (alternativeD[phaseId] != correctN2[phaseId]))
+                {
+                    correct1 = false;
+                    positionE1 = false;
+                }
+            }
+            else if(number == alternativeE[phaseId])
+            {
+                textX1.text = alternativeE[phaseId];
+                txt1 = true;
+                if (alternativeE[phaseId] == correctN1[phaseId])
+                {
+                    correct1 = true;
+                    positionE1 = false;
+                }
+                else if (alternativeE[phaseId] == correctN2[phaseId])
+                {
+                    positionE1 = true;
+                    correct1 = false;
+                }
+                else if ((alternativeE[phaseId] != correctN1[phaseId]) && (alternativeE[phaseId] != correctN2[phaseId]))
+                {
+                    correct1 = false;
+                    positionE1 = false;
+                }
+            }
+            else if (number == alternativeF[phaseId])
+            {
+                textX1.text = alternativeF[phaseId];
+                txt1 = true;
+                if (alternativeF[phaseId] == correctN1[phaseId])
+                {
+                    correct1 = true;
+                    positionE1 = false;
+                }
+                else if (alternativeF[phaseId] == correctN2[phaseId])
+                {
+                    positionE1 = true;
+                    correct1 = false;
+                }
+                else if ((alternativeF[phaseId] != correctN1[phaseId]) && (alternativeF[phaseId] != correctN2[phaseId]))
                 {
                     correct1 = false;
                     positionE1 = false;
@@ -562,10 +720,64 @@ public class GameController : MonoBehaviour
 
                 }
             }
+            else if (number == alternativeE[phaseId])
+            {
+                textX2.text = alternativeE[phaseId];
+                txt2 = true;
+                btnConfirm.SetActive(true);
+
+                if (alternativeE[phaseId] == correctN2[phaseId])
+                {
+                    correct2 = true;
+                    positionE2 = false;
+
+
+                }
+                else if (alternativeE[phaseId] == correctN1[phaseId])
+                {
+                    positionE2 = true;
+                    correct2 = false;
+
+
+                }
+                else if (alternativeE[phaseId] != correctN2[phaseId] && alternativeE[phaseId] != correctN1[phaseId])
+                {
+                    correct2 = false;
+                    positionE2 = false;
+
+                }
+            }
+            else if (number == alternativeF[phaseId])
+            {
+                textX2.text = alternativeF[phaseId];
+                txt2 = true;
+                btnConfirm.SetActive(true);
+
+                if (alternativeF[phaseId] == correctN2[phaseId])
+                {
+                    correct2 = true;
+                    positionE2 = false;
+
+
+                }
+                else if (alternativeF[phaseId] == correctN1[phaseId])
+                {
+                    positionE2 = true;
+                    correct2 = false;
+
+
+                }
+                else if (alternativeF[phaseId] != correctN2[phaseId] && alternativeF[phaseId] != correctN1[phaseId])
+                {
+                    correct2 = false;
+                    positionE2 = false;
+
+                }
+            }
 
         } 
     } 
-
+    
     public void Backspace()
     {
        if(txt2 == false)
@@ -792,8 +1004,45 @@ public class GameController : MonoBehaviour
         openLock1.Play("CadeadoAbrindo", 0, 0f);
         openLock2.Play("CadeadoAbrindo2", 0, 0f);
         lockHasOpen = false;
- 
-           
+
+        if (phaseId > 9)
+        {
+            if (alternativeA[phaseId] == "1")
+            {
+                btn1.transform.localPosition = new Vector3(-145, 9, 0);
+                btn1.SetActive(true);
+            }
+            if (alternativeB[phaseId] == "2")
+            {
+                btn2.transform.localPosition = new Vector3(4, 9, 0);
+                btn2.SetActive(true);
+            }
+            if (alternativeC[phaseId] == "3")
+            {
+                btn3.transform.localPosition = new Vector3(152, 9, 0);
+                btn3.SetActive(true);
+            }
+            if (alternativeD[phaseId] == "4")
+            {
+                btn4.transform.localPosition = new Vector3(-145, -171, 0);
+                btn4.SetActive(true);
+            }
+            if (alternativeE[phaseId] == "5")
+            {
+                btn5.transform.localPosition = new Vector3(4, -171, 0);
+                btn5.SetActive(true);
+            }
+            if (alternativeF[phaseId] == "6")
+            {
+                btn6.transform.localPosition = new Vector3(152, -171, 0);
+                btn6.SetActive(true);
+            }
+
+        }
+        else
+        {
+
+       
         if (alternativeA[phaseId] == "0")
         {
             btn0.transform.localPosition = new Vector3(-90, 9, 0);
@@ -1045,6 +1294,7 @@ public class GameController : MonoBehaviour
             btn9.transform.localPosition = new Vector3(90, -171, 0);
             btn9.SetActive(true);
 
+        }
         }
 
         textX1.text = " ";

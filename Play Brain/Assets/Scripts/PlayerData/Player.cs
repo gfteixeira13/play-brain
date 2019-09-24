@@ -38,10 +38,10 @@ public class Player : MonoBehaviour
     /// <param name="GC">Responsável por trazer dados do GameController</param>
     public void setLevel(GameController GC)
     {
-        if (Level < GC.phaseId)
+        if (Level < (GC.phaseId+1))
         {
             Level = GC.phaseId+1;
-            Debug.Log("Level desbloqueado(some+1):" + Level);
+            Debug.Log("Level desbloqueado:" + Level);
         }
 
     }
