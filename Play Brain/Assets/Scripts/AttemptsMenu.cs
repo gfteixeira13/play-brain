@@ -485,4 +485,29 @@ public class AttemptsMenu : MonoBehaviour
         imgMenuT.SetActive(false);
     }
 
+    public void ClearMenuAttempts()
+    {
+        F1.SetActive(false);
+        H1.SetActive(false);
+        H11.SetActive(false);
+        F2.SetActive(false);
+        H2.SetActive(false);
+        H22.SetActive(false);
+        F3.SetActive(false);
+        H3.SetActive(false);
+        H33.SetActive(false);
+        F4.SetActive(false);
+        H4.SetActive(false);
+        H44.SetActive(false);
+        F5.SetActive(false);
+        H5.SetActive(false);
+        H55.SetActive(false);
+
+        cli1_1.SetText(""); cli2_1.SetText("");
+        cli1_2.SetText(""); cli2_2.SetText("");
+        cli1_3.SetText(""); cli2_3.SetText("");
+        cli1_4.SetText(""); cli2_4.SetText("");
+        cli1_5.SetText(""); cli2_5.SetText("");
+    }
+
 }

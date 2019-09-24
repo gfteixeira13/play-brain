@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI textX2;
     public TextMeshProUGUI click1txt;
     public TextMeshProUGUI click2txt;
-
+   
     public AudioSource soundWin;
     public string[] result;
     public string[] alternativeA;
@@ -68,8 +68,8 @@ public class GameController : MonoBehaviour
     public GameObject btnMenu;
 
 
-    public List<string> list = new List<string>();
-    public int[] arrayControl = new int[12];
+  ///  public List<string> list = new List<string>();
+    //public int[] arrayControl = new int[12];
 
    
 
@@ -986,14 +986,24 @@ public class GameController : MonoBehaviour
         half2.SetActive(false);
         attempts = 0;
         textAttempts.text = "";
-
+        
         txtPhase.text = "" + (phaseId+1);
-
+        for(int i=0; i < phaseId; i++)
+        {
+            click1[i] = null;
+            click2[i] = null;
+            result[i] = null;
+        }
+   
 
         correct1 = false;
         correct2 = false;
         positionE1 = false;
         positionE2 = false;
+        half2.SetActive(false);
+        half.SetActive(false);
+        full.SetActive(false);
+       
 
         txt1 = false;
         txt2 = false;
