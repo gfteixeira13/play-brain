@@ -1,4 +1,0 @@
-<map id="GameManager.CloseCompleteLevel" name="GameManager.CloseCompleteLevel">
-<area shape="rect" id="node1" title="Fecha tela de &#39;Level Complete&#39;" alt="" coords="247,5,445,47"/>
-<area shape="rect" id="node2" href="$class_game_controller.html#acd3c2bfd80eed314ce9b253d9fa3ca71" title="Passa para a próxima fase &quot;zerando&quot; as variáveis necessárias." alt="" coords="5,13,199,39"/>
-</map>

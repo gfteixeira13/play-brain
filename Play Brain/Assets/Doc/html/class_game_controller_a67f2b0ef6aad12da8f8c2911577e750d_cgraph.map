@@ -1,5 +1,0 @@
-<map id="GameController.ConfirmAnswer" name="GameController.ConfirmAnswer">
-<area shape="rect" id="node1" title="Verifica as booleanas preenchidas na função &#39;Click&#39; e mostra as dicas." alt="" coords="5,31,208,57"/>
-<area shape="rect" id="node2" href="$class_game_manager.html#a0c10b4d89c6e37a4433a54a5b7b04500" title="Chama tela de &#39;Game Over&#39;." alt="" coords="256,5,425,32"/>
-<area shape="rect" id="node3" href="$class_game_controller.html#a2f94eec7d5eda41c2a7d573c98f58558" title="Verifica em qual tentativa o usuário acertou e dá a respectiva pontuação." alt="" coords="256,56,425,83"/>
-</map>
