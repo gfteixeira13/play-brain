@@ -1,13 +1,10 @@
-# play-brain
-Este é um jogo mobile desenvolvido na disciplina de Projeto Integrador no curso técnico em informática integrado ao ensino médio.
-O jogo consiste em adivinhar dois números escondidos pré-determinados pelo sistema, a partir das tentativas o usuário recebe dicas - baseado nas mesmas o usuário exercita seu raciocínio lógico para encontrar os números.
-<br><br>
+# Play Brain
 
 <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Tela_Inicial.png" height="30%" width="30%">  <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Selecao_de_fases.png" height="30%" width="30%">  <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Fase.png" height="30%" width="30%"> 
 <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Menu_tentativas.png" height="30%" width="30%">  <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Nivel_Completo.png" height="30%" width="30%">  <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Fim_do_jogo.png" height="30%" width="30%">
 <br><br>
 
-# SOBRE O PROJETO
+# Sobre
 Segundo a Avaliação Nacional de Alfabetização de 2016, o desempenho em Matemática da maioria dos alunos do 3° ano do Ensino Fundamental foi insuficiente. Para alterar essa situação, este projeto visa desenvolver um jogo portátil e gratuito que auxilie no desenvolvimento do raciocínio lógico nas crianças.
 
 A premissa do jogo foi baseada no jogo de tabuleiro "Code Breaker", desenvolvido pela empresa "Mind Lab". Tal jogo consiste basicamente em adivinhar 4 números, de 1 a 6, através de dicas. Este, por sua vez, só pode ser jogado entre duas pessoas, as quais cada uma tem que adivinhar os números escritos pela outra.
