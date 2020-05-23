@@ -17,5 +17,5 @@ Este Símbolo diz que o usuário acertou um número, porém na posição errada(
 <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/meio.png"><br>
 # Metodologia
 
-O jogo está sendo desenvolvido na Unity(2d) com a linguagem C#. Todo o design foi feito no Paint Tool Sai e no Photoshop pelo integrante do grupo Luca Schutzenhofer.
+O jogo foi desenvolvido na plataforma Unity utilizando a linguagem C#. Todo o design foi feito no Paint Tool Sai e no Photoshop pelo integrante do grupo Luca Schutzenhofer(não possui conta no GitHub).
 
