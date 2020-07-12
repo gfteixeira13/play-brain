@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
 using TMPro;
-
+//Esse script é basicamente o "centro" do jogo já que é nele que está toda a lógica do jogo juntamente com as atribuições dos objetos na tela.
+//Já o script "GameManager" é responsável pelas funções de endGame, LevelComplete e suas derivadas.
 public class GameController : MonoBehaviour
 {
     public Animator openLock1;
