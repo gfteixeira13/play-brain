@@ -67,86 +67,8 @@ public class GameController : MonoBehaviour
     public int points;
     public GameObject btnMenu;
 
-
-  ///  public List<string> list = new List<string>();
-    //public int[] arrayControl = new int[12];
-
-   
-
     void Start()
     {
-       /* list.Add("1");
-        list.Add("2");
-
-        list.Add("1");
-        list.Add("3");
-
-        list.Add("1");
-        list.Add("4");
-
-        list.Add("2");
-        list.Add("1");
-
-        list.Add("2");
-        list.Add("3");
-
-        list.Add("2");
-        list.Add("4");
-
-        list.Add("3");
-        list.Add("1");
-
-        list.Add("3");
-        list.Add("2");
-
-        list.Add("3");
-        list.Add("4");
-
-        list.Add("4");
-        list.Add("1");
-
-        list.Add("4");
-        list.Add("2");
-
-        list.Add("4");
-        list.Add("3");
-        ///-----------------------//
-        int n = 0;
-        int valorGerado = 1;
-        bool contem = false;
-        for (int i = 0; i < arrayControl.Length; i++)
-        {
-        /*   for(int y = 0; y < arrayControl.Length; y++)
-            {
-                if(arrayControl[y] == valorGerado)
-                {
-                    contem = true;
-                }
-            } Ou usar o while abaixo -> 
-              / while (contem == false && arrayControl.Length < 11) //Esse while serve pra ver se o valorGerado está presente no vetor
-                {
-                    if (arrayControl[n] == valorGerado)
-                    {
-                        contem = true;
-                    }
-                    n = n + 1;
-                }
-              
-            while (valorGerado == 1 valor inicial || valorGerado % 2 != 0 verifica se é impar|| contem == true verifica se já contem no vetor)
-            {
-                valorGerado = UnityEngine.Random.Range(0, 22); //gera um valor aleatório entre 0 e 22
-            }
-            arrayControl[i] = valorGerado;
-           
-            Debug.Log("arrayControl[" + i + "]" + "=" + arrayControl[i]);
-          
-        }
-        for (int x = 0; x < arrayControl.Length; x++)
-        {
-            correctN1[x] = list[arrayControl[x]];
-            correctN2[x] = list[(arrayControl[x]) + 1];
-        }
-       */
         phaseId = PlayerPrefs.GetInt("LevelClicado"); //A Fase recebe a fase clicada na seleção de fases
         Debug.Log("Level clicado recebido: " + phaseId);
         attempts = 0;
