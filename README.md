@@ -1,6 +1,5 @@
 # Play Brain
-
-Jogo mobile desenvolvido em grupo na disciplina de Projeto Integrador no curso técnico em informática integrado ao ensino médio. O jogo consiste em adivinhar dois números escondidos pré-determinados pelo sistema, a partir das tentativas o usuário recebe dicas, de modo que seu raciocínio lógico é exercitado no processo.
+Jogo mobile desenvolvido em grupo na disciplina "Projeto Integrador" no curso técnico em informática integrado ao ensino médio. O jogo consiste em adivinhar dois números escondidos pré-determinados pelo sistema, a partir das tentativas o usuário recebe dicas, de modo que seu raciocínio lógico é exercitado no processo.
 
 <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Tela_Inicial.png" height="30%" width="30%">  <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Selecao_de_fases.png" height="30%" width="30%">  <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Fase.png" height="30%" width="30%"> 
 <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Menu_tentativas.png" height="30%" width="30%">  <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Nivel_Completo.png" height="30%" width="30%">  <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/Fim_do_jogo.png" height="30%" width="30%">
