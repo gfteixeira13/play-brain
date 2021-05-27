@@ -17,6 +17,6 @@ Este Símbolo diz que o usuário acertou um número(não especificando qual): <b
 <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/certo.png"><br>
 Este Símbolo diz que o usuário acertou um número, porém na posição errada(não especificando qual): <br>
 <img src="https://github.com/teixeira1305/play-brain/blob/master/Screenshots/meio.png"><br>
-# Metodologia
+# Tecnologias
 
 O jogo foi desenvolvido na plataforma Unity utilizando a linguagem C#. Todo o design foi feito no Paint Tool Sai e no Photoshop.
